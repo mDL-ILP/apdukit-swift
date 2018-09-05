@@ -1,0 +1,27 @@
+stages:
+  - lint
+  - test
+
+variables:
+  LC_ALL: "en_US.UTF-8"
+  LANG: "en_US.UTF-8"
+
+before_script:
+  - gem install bundler
+  - bundle install
+  - pod install
+
+lint:
+  stage: lint
+  script:
+    - pod lib lint
+  tags:
+    - macos
+
+test:
+  dependencies: []
+  stage: test
+  script:
+    - bundle exec fastlane tests
+  tags:
+    - macos
