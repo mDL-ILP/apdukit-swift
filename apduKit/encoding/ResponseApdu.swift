@@ -49,6 +49,13 @@ class ResponseApdu: Apdu {
         }
     }
     
+    /**
+     * Apdu from bytes. Routes and initializes the right command APDU subclass depending on the instructionCode
+     */
+    static func fromBytes(_ buf: [byte]) throws -> ResponseApdu {
+        return try ResponseApdu(stream: ByteArrayInputStream(bytes: buf))
+    }
+    
     func validate() throws {
         guard self.statusCode != nil else {
             throw ApduErrors.ValueNotSetException(value: "statusCode")

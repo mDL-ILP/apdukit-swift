@@ -83,6 +83,8 @@
 		27C82254213EC306005D7B9B /* TransportLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C82253213EC306005D7B9B /* TransportLayer.swift */; };
 		27C82257213EC3D6005D7B9B /* TransportLayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C82256213EC3D6005D7B9B /* TransportLayerDelegate.swift */; };
 		27C8225B213EC40F005D7B9B /* TransportLayerSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C8225A213EC40F005D7B9B /* TransportLayerSimulator.swift */; };
+		27DB4BBB2141775A005E0884 /* InternalAuthenticateCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DB4BBA2141775A005E0884 /* InternalAuthenticateCommand.swift */; };
+		27DB4BBC2141775C005E0884 /* InternalAuthenticateCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DB4BBA2141775A005E0884 /* InternalAuthenticateCommand.swift */; };
 		DF767E696FBACB2187AB8E77 /* libPods-apduKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BC7D1FF68A78E332DE2F26D /* libPods-apduKit.a */; };
 /* End PBXBuildFile section */
 
@@ -146,6 +148,7 @@
 		27C82253213EC306005D7B9B /* TransportLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportLayer.swift; sourceTree = "<group>"; };
 		27C82256213EC3D6005D7B9B /* TransportLayerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportLayerDelegate.swift; sourceTree = "<group>"; };
 		27C8225A213EC40F005D7B9B /* TransportLayerSimulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportLayerSimulator.swift; sourceTree = "<group>"; };
+		27DB4BBA2141775A005E0884 /* InternalAuthenticateCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalAuthenticateCommand.swift; sourceTree = "<group>"; };
 		4168A7FF25407A3FDA5F6472 /* Pods-apduKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apduKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-apduKit/Pods-apduKit.release.xcconfig"; sourceTree = "<group>"; };
 		66E2C831B4874F0A2706873D /* Pods-apduKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apduKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-apduKitTests/Pods-apduKitTests.release.xcconfig"; sourceTree = "<group>"; };
 		7BC7D1FF68A78E332DE2F26D /* libPods-apduKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-apduKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -263,6 +266,7 @@
 				271EFF912137EEFB0000CBAF /* ReadBinaryCommand.swift */,
 				271EFF94213817E60000CBAF /* ReadBinaryShortFileIDCommand.swift */,
 				271EFF99213826910000CBAF /* ReadBinaryOffsetCommand.swift */,
+				27DB4BBA2141775A005E0884 /* InternalAuthenticateCommand.swift */,
 			);
 			path = encoding;
 			sourceTree = "<group>";
@@ -573,6 +577,7 @@
 				271EFF95213817E60000CBAF /* ReadBinaryShortFileIDCommand.swift in Sources */,
 				27BAE42D2135420D00EEE5A1 /* ByteArrayInputStream.swift in Sources */,
 				27BAE4232134484100EEE5A1 /* ApduLengthUtils.swift in Sources */,
+				27DB4BBB2141775A005E0884 /* InternalAuthenticateCommand.swift in Sources */,
 				27BAE41021340DFB00EEE5A1 /* StatusCode.swift in Sources */,
 				2745A0772130440300A4F538 /* ConversionUtilsErrors.swift in Sources */,
 				27BAE40E21340D2800EEE5A1 /* SelectFileType.swift in Sources */,
@@ -605,6 +610,7 @@
 				27530A1D213698180064B48B /* StatusCode.swift in Sources */,
 				271EFFA1213830C90000CBAF /* ReadBinaryOffsetCommand.swift in Sources */,
 				27530A15213698150064B48B /* CommandApdu.swift in Sources */,
+				27DB4BBC2141775C005E0884 /* InternalAuthenticateCommand.swift in Sources */,
 				27530A24213698200064B48B /* ApduFile.swift in Sources */,
 				27C82251213EBB33005D7B9B /* ReadBinaryShortFileIDCommandBuildTests.swift in Sources */,
 				271EFF98213824480000CBAF /* ReadBinaryOffsetCommandBuildTests.swift in Sources */,

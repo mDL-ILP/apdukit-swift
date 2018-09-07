@@ -30,8 +30,8 @@ enum StatusCode: short {
     case ERROR_WRONG_PARAMETERS = 0x6B00
     //Indicates a generic error.
     case ERROR_UNKNOWN = 0x6F00
-    //Indicates that the security status isn't high enough.
-    case ERROR_INVALID_SECURITY_STATUS = 0x6982
+    //Indicates access denied
+    case ERROR_SECURITY_STATUS_NOT_SATISFIED = 0x6982
     
     //Returns a StatusCode for raw value byte.
     static func valueOf(code value: short?) -> StatusCode? {

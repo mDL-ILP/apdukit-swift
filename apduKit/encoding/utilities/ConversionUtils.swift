@@ -57,20 +57,19 @@ class ConversionUtils {
     
     /**
      * converts byte to bits
-     * @param b byte
+     * @param value byte
      * @return array of bits max 8 long.
      */
-    public static func byteToBits(byte b: byte) -> [byte] {
+    public static func byteToBits(byte value: byte) -> [byte] {
         var result = Array<byte>(repeating: 0, count: 8)
-        var _byte = b
-        for i in (0...7).reversed() {
-            if (_byte & 1) == 1 {
-                result[i] = 1
-            } else {
-                result[i] = 0
-            }
-            _byte >>= 1
-        }
+        result[7] = (value & 0x01) != 0 ? 1 : 0
+        result[6] = (value & 0x02) != 0 ? 1 : 0
+        result[5] = (value & 0x04) != 0 ? 1 : 0
+        result[4] = (value & 0x08) != 0 ? 1 : 0
+        result[3] = (value & 0x10) != 0 ? 1 : 0
+        result[2] = (value & 0x20) != 0 ? 1 : 0
+        result[1] = (value & 0x40) != 0 ? 1 : 0
+        result[0] = (value & 0x80) != 0 ? 1 : 0
         return result
     }
     

@@ -21,7 +21,7 @@ class ReadBinaryShortFileIDCommandBuildTests: XCTestCase {
         //Setup
         subject.elementaryFileID = ExampleApp.instance.ValidEF2
         subject.offset = byte(40)
-        subject.maximumExpectedLength = short(7)
+        subject.maximumExpectedLength = int(7)
         
         //Call
         let result = try! subject.toBytes().buffer
@@ -38,7 +38,7 @@ class ReadBinaryShortFileIDCommandBuildTests: XCTestCase {
         //Setup
         subject.elementaryFileID = ExampleApp.instance.ValidEF2
         subject.offset = byte(0x01)
-        subject.maximumExpectedLength = short(261)//Above 255
+        subject.maximumExpectedLength = int(261)//Above 255
         
         //Call
         let result = try! subject.toBytes().buffer

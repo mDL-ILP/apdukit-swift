@@ -48,7 +48,7 @@ class ReadBinaryOffsetCommandParseTests: XCTestCase {
         let command = try? CommandApdu.fromBytes(input)
         XCTAssertTrue(command is ReadBinaryOffsetCommand)
         let result = command as? ReadBinaryOffsetCommand
-        XCTAssertEqual(Constants.EXTENDED_LENGTH, result?.maximumExpectedLength);
+        XCTAssertEqual(Constants.DEFAULT_MAX_EXPECTED_LENGTH_EXTENDED, result?.maximumExpectedLength);
     }
     
 }

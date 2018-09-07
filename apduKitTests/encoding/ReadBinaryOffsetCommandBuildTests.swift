@@ -20,7 +20,7 @@ class ReadBinaryOffsetCommandBuildTests: XCTestCase {
     func testOffsetBelow255() {
         //Setup
         subject.offset = short(40)
-        subject.maximumExpectedLength = short(6)
+        subject.maximumExpectedLength = int(6)
         
         //Call
         let result = try! subject.toBytes().buffer
@@ -36,7 +36,7 @@ class ReadBinaryOffsetCommandBuildTests: XCTestCase {
     func testOffsetAbove255() {
         //Setup
         subject.offset = short(270)//Above 255
-        subject.maximumExpectedLength = short(123)
+        subject.maximumExpectedLength = int(123)
         
         //Call
         let result = try! subject.toBytes().buffer
@@ -52,7 +52,7 @@ class ReadBinaryOffsetCommandBuildTests: XCTestCase {
     func testExtendedMaxExpLength() {
         //Setup
         subject.offset = short(0x01)//Above 255
-        subject.maximumExpectedLength = short(261)
+        subject.maximumExpectedLength = int(261)
         
         //Call
         let result = try! subject.toBytes().buffer

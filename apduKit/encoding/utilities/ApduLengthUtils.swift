@@ -25,7 +25,7 @@ class ApduLengthUtils {
      * @throws ParseException
      * @throws InvalidNumericException
      */
-    public static func decodeMaxExpectedLength(stream: ByteArrayInputStream) throws -> short {
+    public static func decodeMaxExpectedLength(stream: ByteArrayInputStream) throws -> int {
         guard let firstByte = stream.readByte() else {
             throw ApduErrors.ParseException(description: "Not enough bytes given to read expected length")
         }
@@ -35,7 +35,7 @@ class ApduLengthUtils {
         if firstByte == 0 {
             //If there are two bytes left in the stream. Read it as a short (extended length)
             if secondByte != nil && thirdByte != nil {
-                return try ConversionUtils.fromBytesToShort([secondByte!, thirdByte!])
+                return try int(ConversionUtils.fromBytesToShort([secondByte!, thirdByte!]))
             }
             //If the byte is set to '00', then Ne is 256.
             if secondByte == nil && thirdByte == nil {
@@ -43,12 +43,12 @@ class ApduLengthUtils {
             }
             //If the two bytes are set to '0000', then Ne is 65 536.
             if secondByte != nil && secondByte == 0 && thirdByte == nil {
-                return Constants.EXTENDED_LENGTH
+                return Constants.DEFAULT_MAX_EXPECTED_LENGTH_EXTENDED
             }
         } else {
             //From '01' to 'FF', the byte encodes Nc from one to 255.
             if secondByte == nil && thirdByte == nil {
-                return short(firstByte)
+                return int(firstByte)
             }
         }
         throw ApduErrors.ParseException(description: "Unhandled or invalid expected length.")
@@ -90,9 +90,6 @@ class ApduLengthUtils {
      * @return byte array representing the given length.
      */
     public static func encodeDataLength(length: short) -> [byte] {
-        if length == Constants.EXTENDED_LENGTH {
-            return [0x00, 0x00]
-        }
         if length == 256 {
             return [0x00]
         }
@@ -104,7 +101,18 @@ class ApduLengthUtils {
         return [parts[1]]
     }
     
-    public static func encodeMaxExpectedLength(length: short) -> [byte] {
-        return encodeDataLength(length: length)
+    /**
+    * For a given max expected length encode it into bytes.
+    * Now this length is a short. But we use int because the standard overflows a short with the value 65536 which is 1 more than a short. The standard replaces the value 0 for the value 65536.
+    */
+    public static func encodeMaxExpectedLength(length: int) throws -> [byte] {
+        if length == Constants.DEFAULT_MAX_EXPECTED_LENGTH_EXTENDED {
+            return [0x00, 0x00]
+        }
+        //Check if it doesn't overflow a short.
+        if length > Constants.DEFAULT_MAX_EXPECTED_LENGTH_EXTENDED {
+            throw ApduErrors.InvalidNumericException(description: "max expected length overflows extended length.")
+        }
+        return encodeDataLength(length: short(length))
     }
 }

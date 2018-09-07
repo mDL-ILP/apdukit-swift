@@ -70,7 +70,7 @@ class ApduLengthUtilsUnitTests: XCTestCase {
     
     func testDecodeMaxExpectedLengthExtended2() {
         let stream = ByteArrayInputStream(bytes: [0x00, 0x00])
-        XCTAssertEqual(Constants.EXTENDED_LENGTH, try ApduLengthUtils.decodeMaxExpectedLength(stream: stream))
+        XCTAssertEqual(Constants.DEFAULT_MAX_EXPECTED_LENGTH_EXTENDED, try ApduLengthUtils.decodeMaxExpectedLength(stream: stream))
     }
     
     func testDecodeMaxExpectedLengthExtended3() {
@@ -88,9 +88,13 @@ class ApduLengthUtilsUnitTests: XCTestCase {
         XCTAssertThrowsError(try ApduLengthUtils.decodeMaxExpectedLength(stream: stream))
     }
     
-    func testEncodeMaxExpectedLengthExtended_EdgeCase() {
-        let value = ApduLengthUtils.encodeDataLength(length: Constants.EXTENDED_LENGTH)
+    func testEncodeMaxExpectedLengthExtended_EdgeCase() throws {
+        let value = try ApduLengthUtils.encodeMaxExpectedLength(length: Constants.DEFAULT_MAX_EXPECTED_LENGTH_EXTENDED)
         XCTAssertEqual([0x00, 0x00], value)
+    }
+    
+    func testInvalidMaxExpectedLengthEncoding() {
+        XCTAssertThrowsError(try ApduLengthUtils.encodeMaxExpectedLength(length: 65537))
     }
     
 }

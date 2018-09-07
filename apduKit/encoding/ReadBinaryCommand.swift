@@ -9,7 +9,7 @@
 import Foundation
 
 class ReadBinaryCommand: CommandApdu {
-    var maximumExpectedLength: short = 0//0 means EXTENDED_LENGTH. 65535.
+    var maximumExpectedLength: int = 0//0 means EXTENDED_LENGTH. 65535.
     
     init() {
         super.init(instructionCode: .READ_BINARY)
@@ -17,13 +17,6 @@ class ReadBinaryCommand: CommandApdu {
     
     override init(stream: ByteArrayInputStream) throws {
         try super.init(stream: stream)
-    }
-    
-    override func validate() throws {
-        try super.validate()
-        guard let instructionCode = self.instructionCode, instructionCode == .READ_BINARY else {
-            throw ApduErrors.InvalidApduException(description: "InstructionCode is not READ_BINARY")
-        }
     }
     
     open func decodeMaximumExpectedLength(_ stream: ByteArrayInputStream) throws {
@@ -34,16 +27,25 @@ class ReadBinaryCommand: CommandApdu {
     }
     
     open func encodeMaximumExpectedLength(_ stream: ByteArrayOutputStream) throws {
-        let maximumExpectedLengthBuffer = ApduLengthUtils.encodeMaxExpectedLength(length: self.maximumExpectedLength)
+        let maximumExpectedLengthBuffer = try ApduLengthUtils.encodeMaxExpectedLength(length: self.maximumExpectedLength)
         stream.write(bytes: maximumExpectedLengthBuffer)
+    }
+    
+    override func validate() throws {
+        try super.validate()
+        guard let instructionCode = self.instructionCode, instructionCode == .READ_BINARY else {
+            throw ApduErrors.InvalidApduException(description: "InstructionCode is not READ_BINARY")
+        }
     }
     
     /**
      * Apdu from bytes. Routes and initializes the right read binary subclass depending on the file id bits.
      */
-    static func fromBytes(stream: ByteArrayInputStream) throws -> ReadBinaryCommand? {
+    static func fromBytes(stream: ByteArrayInputStream) throws -> ReadBinaryCommand {
         stream.skip(2)//Skip the instruction class + instruction code
-        guard let fileIdFirstByte = stream.readByte() else { return nil }
+        guard let fileIdFirstByte = stream.readByte() else {
+            throw ApduErrors.ParseException(description: "Could not read first byte of file id")
+        }
         stream.reset()
         if ConversionUtils.areTheFirstThreeBits100(value: fileIdFirstByte) {
             return try ReadBinaryShortFileIDCommand(stream: stream)

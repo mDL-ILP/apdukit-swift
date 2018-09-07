@@ -15,6 +15,7 @@ import Foundation
 enum InstructionCode: byte {
     case SELECT = 0xA4
     case READ_BINARY = 0xB0
+    case INTERNAL_AUTHENTICATE = 0x88
     
     //Returns a InstructionCode for raw value byte.
     static func valueOf(byte value: byte?) -> InstructionCode? {

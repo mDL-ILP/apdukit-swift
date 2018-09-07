@@ -8,6 +8,6 @@
 
 import Foundation
 
-public typealias int = CInt
+public typealias int = Int
 public typealias byte = UInt8//In java its a signed int8. Meaning that some values overflowing a UInt8 are negative in Java.
 public typealias short = u_short

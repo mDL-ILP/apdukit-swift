@@ -9,7 +9,7 @@
 
 import Foundation
 
-class ByteArrayOutputStream /*: OutputStream*/ {
+public class ByteArrayOutputStream /*: OutputStream*/ {
     /**
      * The buffer where data is stored.
      */
