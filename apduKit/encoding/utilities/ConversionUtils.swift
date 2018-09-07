@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Bitter
 
 class ConversionUtils {
     /**

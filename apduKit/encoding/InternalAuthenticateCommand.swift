@@ -35,8 +35,9 @@ public class InternalAuthenticateCommand: CommandApdu {
     
     open func encodeChallenge(_ stream: ByteArrayOutputStream) throws {
         guard let challenge = self.challenge else { return }
-        let maximumExpectedLengthBuffer = try ApduLengthUtils.encodeMaxExpectedLength(length: challenge.count)
-        stream.write(bytes: maximumExpectedLengthBuffer)
+        let challengeLength = try ApduLengthUtils.encodeDataLength(length: short(challenge.count))
+        stream.write(bytes: challengeLength)
+        stream.write(bytes: challenge)
     }
     
     open func decodeMaxExpectedLength(_ stream: ByteArrayInputStream) throws {
@@ -56,7 +57,7 @@ public class InternalAuthenticateCommand: CommandApdu {
         guard let instructionCode = self.instructionCode, instructionCode == .INTERNAL_AUTHENTICATE else {
             throw ApduErrors.InvalidApduException(description: "Instruction code is not INTERNAL_AUTHENTICATE")
         }
-        guard let challenge = self.challenge, challenge.count != Constants.DEFAULT_CHALLENGE_LENGTH else {
+        guard let challenge = self.challenge, challenge.count == Constants.DEFAULT_CHALLENGE_LENGTH else {
             throw ApduErrors.InvalidApduException(description: "Invalid challenge")
         }
         guard self.algorithmInfo != nil else {

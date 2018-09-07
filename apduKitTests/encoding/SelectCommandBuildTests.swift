@@ -53,7 +53,7 @@ class SelectCommandBuildTests: XCTestCase {
         XCTAssertEqual(expected, result!)
     }
     
-    func testCalidation() {
+    func testValidation() {
         callValidation(expected: "fileID")
         subject.fileID = ExampleApp.instance.ValidEF1
         callValidation(expected: "expectedResult")

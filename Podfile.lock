@@ -1,18 +1,14 @@
 PODS:
-  - Bitter (3.1.1)
   - Cuckoo (0.11.3)
 
 DEPENDENCIES:
-  - Bitter (~> 3.1.1)
   - Cuckoo
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - Bitter
     - Cuckoo
 
 SPEC CHECKSUMS:
-  Bitter: 9a6aa16f2c4e4303720c441108581b27c400ec27
   Cuckoo: 97522dd7ac6f18adba6022bdc74aa69e82ca691a
 
 PODFILE CHECKSUM: 18db5cf6f02c544e59a4935f1fe8747215fd5f75

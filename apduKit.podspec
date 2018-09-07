@@ -24,5 +24,5 @@ Pod::Spec.new do |s|
   s.swift_version = '3.2'
 
   s.source_files = 'apduKit/**/*'
-  s.dependency 'Bitter', '~> 3.1.1'
+  #s.dependency 'Bitter', '~> 3.1.1'
 end

@@ -53,7 +53,7 @@ class ReadBinaryShortFileIDCommandBuildTests: XCTestCase {
         XCTAssertEqual(0x05, result[6], "le_1")
     }
     
-    func testCalidation() {
+    func testValidation() {
         callValidation(expected: "elementaryFileID")
         subject.elementaryFileID = ExampleApp.instance.ValidEF1
         try! subject.validate()

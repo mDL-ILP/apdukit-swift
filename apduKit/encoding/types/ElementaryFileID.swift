@@ -18,7 +18,7 @@ class ElementaryFileID: FileID, Equatable {
     }
     
     init(shortIdentifier: byte) throws {
-        self.shortIdentifier = ConversionUtils.replaceBit8with0(shortIdentifier)
+        self.shortIdentifier = shortIdentifier
         self.normalIdentifier = nil
         try self.validate()
     }

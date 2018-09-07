@@ -40,6 +40,10 @@ class ApduLengthUtilsUnitTests: XCTestCase {
         XCTAssertThrowsError(try ApduLengthUtils.decodeDataLength(stream: stream))
     }
     
+    func testDecodeDataLength_NoData() {
+        XCTAssertThrowsError(try ApduLengthUtils.decodeDataLength(stream: ByteArrayInputStream(bytes: [])))
+    }
+    
     func testDecodeDataLengthExtendedSuccess() {
         var data = Array<byte>.init(repeating: 0, count: 263)
         data[0] = 0

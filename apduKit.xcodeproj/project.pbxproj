@@ -45,7 +45,7 @@
 		2745A0772130440300A4F538 /* ConversionUtilsErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2745A0762130440300A4F538 /* ConversionUtilsErrors.swift */; };
 		2745A0782130441E00A4F538 /* ConversionUtilsErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2745A0762130440300A4F538 /* ConversionUtilsErrors.swift */; };
 		27530A08213578B60064B48B /* ApduUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BAE4202134322800EEE5A1 /* ApduUtils.swift */; };
-		27530A0B21357DBE0064B48B /* ApduLengthUtilsUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27530A0A21357DBE0064B48B /* ApduLengthUtilsUnitTests.swift */; };
+		27530A0B21357DBE0064B48B /* ApduLengthUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27530A0A21357DBE0064B48B /* ApduLengthUtilsTests.swift */; };
 		27530A0C21357ED10064B48B /* ApduLengthUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BAE4222134484100EEE5A1 /* ApduLengthUtils.swift */; };
 		27530A0D213587FD0064B48B /* ApduErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BAE41721341FBA00EEE5A1 /* ApduErrors.swift */; };
 		27530A10213691A80064B48B /* SelectCommandBuildTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27530A0F213691A80064B48B /* SelectCommandBuildTests.swift */; };
@@ -85,6 +85,8 @@
 		27C8225B213EC40F005D7B9B /* TransportLayerSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C8225A213EC40F005D7B9B /* TransportLayerSimulator.swift */; };
 		27DB4BBB2141775A005E0884 /* InternalAuthenticateCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DB4BBA2141775A005E0884 /* InternalAuthenticateCommand.swift */; };
 		27DB4BBC2141775C005E0884 /* InternalAuthenticateCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DB4BBA2141775A005E0884 /* InternalAuthenticateCommand.swift */; };
+		27DB4BBF21427C82005E0884 /* ElementaryFileIDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DB4BBE21427C82005E0884 /* ElementaryFileIDTests.swift */; };
+		27DB4BC12142806D005E0884 /* InternalAuthenticateCommandBuildTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DB4BC02142806D005E0884 /* InternalAuthenticateCommandBuildTests.swift */; };
 		DF767E696FBACB2187AB8E77 /* libPods-apduKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BC7D1FF68A78E332DE2F26D /* libPods-apduKit.a */; };
 /* End PBXBuildFile section */
 
@@ -127,7 +129,7 @@
 		2745A06F213031FB00A4F538 /* InstructionClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionClass.swift; sourceTree = "<group>"; };
 		2745A0722130331700A4F538 /* ConversionUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionUtilsTests.swift; sourceTree = "<group>"; };
 		2745A0762130440300A4F538 /* ConversionUtilsErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionUtilsErrors.swift; sourceTree = "<group>"; };
-		27530A0A21357DBE0064B48B /* ApduLengthUtilsUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApduLengthUtilsUnitTests.swift; sourceTree = "<group>"; };
+		27530A0A21357DBE0064B48B /* ApduLengthUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApduLengthUtilsTests.swift; sourceTree = "<group>"; };
 		27530A0F213691A80064B48B /* SelectCommandBuildTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCommandBuildTests.swift; sourceTree = "<group>"; };
 		27530A252136987A0064B48B /* ExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleApp.swift; sourceTree = "<group>"; };
 		27530A292136CD5A0064B48B /* SelectCommandParseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCommandParseTests.swift; sourceTree = "<group>"; };
@@ -149,6 +151,8 @@
 		27C82256213EC3D6005D7B9B /* TransportLayerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportLayerDelegate.swift; sourceTree = "<group>"; };
 		27C8225A213EC40F005D7B9B /* TransportLayerSimulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportLayerSimulator.swift; sourceTree = "<group>"; };
 		27DB4BBA2141775A005E0884 /* InternalAuthenticateCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalAuthenticateCommand.swift; sourceTree = "<group>"; };
+		27DB4BBE21427C82005E0884 /* ElementaryFileIDTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementaryFileIDTests.swift; sourceTree = "<group>"; };
+		27DB4BC02142806D005E0884 /* InternalAuthenticateCommandBuildTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalAuthenticateCommandBuildTests.swift; sourceTree = "<group>"; };
 		4168A7FF25407A3FDA5F6472 /* Pods-apduKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apduKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-apduKit/Pods-apduKit.release.xcconfig"; sourceTree = "<group>"; };
 		66E2C831B4874F0A2706873D /* Pods-apduKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apduKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-apduKitTests/Pods-apduKitTests.release.xcconfig"; sourceTree = "<group>"; };
 		7BC7D1FF68A78E332DE2F26D /* libPods-apduKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-apduKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -253,7 +257,6 @@
 			isa = PBXGroup;
 			children = (
 				2745A06E213031DA00A4F538 /* types */,
-				2745A05E213002BB00A4F538 /* validation */,
 				2745A05C213002B000A4F538 /* utilities */,
 				2745A05B213002AB00A4F538 /* exceptions */,
 				2745A05A213002A600A4F538 /* enums */,
@@ -319,16 +322,10 @@
 			path = utilities;
 			sourceTree = "<group>";
 		};
-		2745A05E213002BB00A4F538 /* validation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = validation;
-			sourceTree = "<group>";
-		};
 		2745A06D2130244500A4F538 /* encoding */ = {
 			isa = PBXGroup;
 			children = (
+				27DB4BBD21427C55005E0884 /* types */,
 				2745A071213032FD00A4F538 /* utilities */,
 				27530A0F213691A80064B48B /* SelectCommandBuildTests.swift */,
 				27530A292136CD5A0064B48B /* SelectCommandParseTests.swift */,
@@ -338,6 +335,7 @@
 				271EFFA221383D5C0000CBAF /* ReadBinaryOffsetCommandParseTests.swift */,
 				271EFFA4213844A50000CBAF /* ReadBinaryShortFileIDCommandParseTests.swift */,
 				27C82250213EBB33005D7B9B /* ReadBinaryShortFileIDCommandBuildTests.swift */,
+				27DB4BC02142806D005E0884 /* InternalAuthenticateCommandBuildTests.swift */,
 			);
 			path = encoding;
 			sourceTree = "<group>";
@@ -357,7 +355,7 @@
 			isa = PBXGroup;
 			children = (
 				2745A0722130331700A4F538 /* ConversionUtilsTests.swift */,
-				27530A0A21357DBE0064B48B /* ApduLengthUtilsUnitTests.swift */,
+				27530A0A21357DBE0064B48B /* ApduLengthUtilsTests.swift */,
 			);
 			path = utilities;
 			sourceTree = "<group>";
@@ -395,6 +393,14 @@
 				2713D12A213EC8670026F412 /* TransportLayerSimulatorTests.swift */,
 			);
 			path = interpreter;
+			sourceTree = "<group>";
+		};
+		27DB4BBD21427C55005E0884 /* types */ = {
+			isa = PBXGroup;
+			children = (
+				27DB4BBE21427C82005E0884 /* ElementaryFileIDTests.swift */,
+			);
+			path = types;
 			sourceTree = "<group>";
 		};
 		BAAADE8799BFD547F43B80DB /* Frameworks */ = {
@@ -442,8 +448,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2745A04F2130016800A4F538 /* Build configuration list for PBXNativeTarget "apduKitTests" */;
 			buildPhases = (
-				2713D130213ECA6A0026F412 /* ShellScript */,
 				FDEC08E6E34644582B6CB88F /* [CP] Check Pods Manifest.lock */,
+				2713D130213ECA6A0026F412 /* ShellScript */,
 				2745A03D2130016800A4F538 /* Sources */,
 				2745A03E2130016800A4F538 /* Frameworks */,
 				2745A03F2130016800A4F538 /* Resources */,
@@ -614,7 +620,7 @@
 				27530A24213698200064B48B /* ApduFile.swift in Sources */,
 				27C82251213EBB33005D7B9B /* ReadBinaryShortFileIDCommandBuildTests.swift in Sources */,
 				271EFF98213824480000CBAF /* ReadBinaryOffsetCommandBuildTests.swift in Sources */,
-				27530A0B21357DBE0064B48B /* ApduLengthUtilsUnitTests.swift in Sources */,
+				27530A0B21357DBE0064B48B /* ApduLengthUtilsTests.swift in Sources */,
 				27530A1C213698180064B48B /* SelectFileType.swift in Sources */,
 				27530A21213698200064B48B /* FileID.swift in Sources */,
 				27BAE42E2135451600EEE5A1 /* ByteArrayInputStream.swift in Sources */,
@@ -641,6 +647,7 @@
 				271EFF9C213830C90000CBAF /* Types.swift in Sources */,
 				27530A2A2136CD5A0064B48B /* SelectCommandParseTests.swift in Sources */,
 				271EFF9E213830C90000CBAF /* ResponseApdu.swift in Sources */,
+				27DB4BC12142806D005E0884 /* InternalAuthenticateCommandBuildTests.swift in Sources */,
 				27530A0D213587FD0064B48B /* ApduErrors.swift in Sources */,
 				27530A14213698150064B48B /* Apdu.swift in Sources */,
 				271EFFA5213844A50000CBAF /* ReadBinaryShortFileIDCommandParseTests.swift in Sources */,
@@ -651,6 +658,7 @@
 				2745A0782130441E00A4F538 /* ConversionUtilsErrors.swift in Sources */,
 				2713D12E213EC9DF0026F412 /* TransportLayerDelegate.swift in Sources */,
 				27530A23213698200064B48B /* ElementaryFileID.swift in Sources */,
+				27DB4BBF21427C82005E0884 /* ElementaryFileIDTests.swift in Sources */,
 				2713D136213ECDF00026F412 /* MatchableArray.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -800,11 +808,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "$(SRCROOT)/apduKit/resources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ul-ts.apduKit";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -828,11 +832,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "$(SRCROOT)/apduKit/resources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ul-ts.apduKit";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -849,11 +849,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C8466875AK;
 				INFOPLIST_FILE = apduKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ul-ts.apduKitTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -869,11 +865,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C8466875AK;
 				INFOPLIST_FILE = apduKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ul-ts.apduKitTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
