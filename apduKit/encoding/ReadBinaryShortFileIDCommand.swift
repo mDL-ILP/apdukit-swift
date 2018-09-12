@@ -9,8 +9,8 @@
 import Foundation
 
 class ReadBinaryShortFileIDCommand: ReadBinaryCommand {
-    var elementaryFileID: ElementaryFileID?
-    var offset: byte?
+    private(set) var elementaryFileID: ElementaryFileID?
+    private(set) var offset: byte?
     
     override init() {
         super.init()
@@ -65,6 +65,16 @@ class ReadBinaryShortFileIDCommand: ReadBinaryCommand {
         try self.encodeOffset(stream)
         try self.encodeMaximumExpectedLength(stream)
         return stream
+    }
+    
+    func set(offset: byte) -> ReadBinaryShortFileIDCommand {
+        self.offset = offset
+        return self
+    }
+    
+    func set(elementaryFileID: ElementaryFileID) -> ReadBinaryShortFileIDCommand {
+        self.elementaryFileID = elementaryFileID
+        return self
     }
     
 }

@@ -1,32 +1,29 @@
 //
-//  ApduUtils.swift
+//  TLVInfo.swift
 //  apduKit
-//  All the APDU cheat codes on planet earth.
-//  Created by Iain Munro on 27/08/2018.
+//
+//  Created by Iain Munro on 12/09/2018.
 //  Copyright © 2018 UL-TS. All rights reserved.
 //
 
 import Foundation
 
-public struct TLVInfo {
-    ///Tag
-    var tag: int
-    ///Length of the TLV structure
-    var length: short
-    ///At what offset the actual data (value) starts
-    var dataOffset: int
-}
-
-public class ApduUtils {
+public class TLVInfo {
+    /// Tag
+    private(set) var tag: int
+    /// Length of the TLV structure
+    private(set) var length: short
+    /// At what offset the actual data (value) starts
+    private(set) var dataOffset: int
     
     /**
      * Parses a TLV structure and returns the tag, length and dataOffset
      * @param data TLV data
      * @return TLVInfo containing TLV information
      */
-    func parseTLV(bytes data: [byte]) -> TLVInfo? {
+    init(data: [byte]) throws {
         if data.count < Constants.BYTE_OFFSET_TILL_LENGTH {
-            return nil
+            throw ApduErrors.ParseException(description: "Not enough bytes to parse TLV structure")
         }
         var dataOffset = Constants.BYTE_OFFSET_TILL_LENGTH
         let tag = Int(data[0])
@@ -40,13 +37,15 @@ public class ApduUtils {
             let lengthValueSize = int(ConversionUtils.bitsToByte(bits: bits))
             let lengthEndOffset = int(Constants.BYTE_OFFSET_TILL_LENGTH) + lengthValueSize
             if data.count < lengthEndOffset {
-                return nil
+                throw ApduErrors.ParseException(description: "Invalid TLV structure. Length doesn't make any sense")
             }
             lengthBytes = Array(data[Int(Constants.BYTE_OFFSET_TILL_LENGTH)...Int(lengthEndOffset)])
             dataOffset = Int(lengthEndOffset)
         }
-        guard let length = try? ConversionUtils.fromBytesToShort(lengthBytes) else { return nil }
-        return TLVInfo(tag: int(tag), length: short(length), dataOffset: int(dataOffset))
+        let length = try ConversionUtils.fromBytesToShort(lengthBytes)
+        self.tag = tag
+        self.length = length
+        self.dataOffset = dataOffset
     }
     
 }

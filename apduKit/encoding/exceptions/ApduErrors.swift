@@ -14,4 +14,5 @@ public enum ApduErrors: Error {
     case InvalidApduException(description: String)
     case InvalidElementaryFileId(description: String)
     case InvalidNumericException(description: String)
+    case InvalidApduFileException(description: String)
 }

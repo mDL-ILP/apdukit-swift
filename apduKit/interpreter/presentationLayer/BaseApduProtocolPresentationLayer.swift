@@ -19,6 +19,7 @@ public class BaseApduProtocolPresentationLayer: PresentationLayer {
     //State
     var selectedDF: DedicatedFileID?
     var selectedEF: ElementaryFileID?
+    private var maxExpLength = Constants.DEFAULT_MAX_EXPECTED_LENGTH_NOT_EXTENDED
     
     init(sessionLayer: SessionLayer) {
         self.sessionLayer = sessionLayer
@@ -66,36 +67,30 @@ public class BaseApduProtocolPresentationLayer: PresentationLayer {
     }
     
     /**
-     * Routes call to right EF read. If short it'll use the short id otherwise it'll use the normal.
-     * @param fileID
-     * @return
+     * Read contents of EF using shortID.
+     * @param fileID specifying the file
+     * @param offset the offset of the data. Cannot exceed the file size.
+     * @return bytes of the file
      */
-    public func read(EF fileID: ElementaryFileID) -> Promise<[byte]> {
-        var data: [byte] = []
-        return Promise<[byte]>(value: data)
+    public func readBinary(EF fileID: ElementaryFileID, offset: byte) -> Promise<[byte]> {
+        let command = ReadBinaryShortFileIDCommand()
+            .set(offset: offset)
+            .set(elementaryFileID: fileID)
+        _ = command.set(maximumExpectedLength: self.maxExpLength)
+        return self.sessionLayer.send(command: command).then(readReadBinaryResponse)
     }
     
     /**
-     * Creates the intial first part of a APDU file by selecting the ElementaryFileID on at the holder and read a few initial bytes.
-     * @param fileID
-     * @return
+     * Read contents of EF using normalID. The EF must first be selected.
+     * @param offset the offset of the data. Cannot exceed the file size.
+     * @return bytes of the file
      */
-    /*
-    private func openApduFile(fileID: ElementaryFileID) -> Promise<ApduFile> {
-        var promise: Promise<[byte]>
-        //If short file id is available, a read will also instantly select the file.
-        if fileID.isShortIDAvailable() {
-//            promise = self.read
-        } else {
-            promise = selectedEF(fileID).
-        }
-        return promise.then({ (data) in
-            do {
-                let result = ApduFile(
-            }
-        })
+    public func readBinary(offset: byte) -> Promise<[byte]> {
+        let command = ReadBinaryOffsetCommand()
+            .set(offset: short(offset))
+        _ = command.set(maximumExpectedLength: self.maxExpLength)
+        return self.sessionLayer.send(command: command).then(readReadBinaryResponse)
     }
-*/
     
     /**
      * Reads the response APDU and returns a new promise that will be rejected if the status code is not SUCCESSFUL

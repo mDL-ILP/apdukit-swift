@@ -9,7 +9,7 @@
 import Foundation
 
 public class ReadBinaryCommand: CommandApdu {
-    var maximumExpectedLength: int = 0//0 means EXTENDED_LENGTH. 65535.
+    private(set) var maximumExpectedLength: int = 0//0 means EXTENDED_LENGTH. 65535.
     
     init() {
         super.init(instructionCode: .READ_BINARY)
@@ -51,5 +51,10 @@ public class ReadBinaryCommand: CommandApdu {
             return try ReadBinaryShortFileIDCommand(stream: stream)
         }
         return try ReadBinaryOffsetCommand(stream: stream)
+    }
+    
+    func set(maximumExpectedLength: int) -> ReadBinaryCommand {
+        self.maximumExpectedLength = maximumExpectedLength
+        return self
     }
 }

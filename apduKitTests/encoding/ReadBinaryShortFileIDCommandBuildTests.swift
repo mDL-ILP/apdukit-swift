@@ -19,9 +19,9 @@ class ReadBinaryShortFileIDCommandBuildTests: XCTestCase {
     
     func testOffsetBelow255() {
         //Setup
-        subject.elementaryFileID = ExampleApp.instance.ValidEF2
-        subject.offset = byte(40)
-        subject.maximumExpectedLength = int(7)
+        _ = subject.set(elementaryFileID: ExampleApp.instance.ValidEF2)
+        _ = subject.set(offset: 40)
+        _ = subject.set(maximumExpectedLength: 7)
         
         //Call
         let result = try! subject.toBytes().buffer
@@ -36,9 +36,9 @@ class ReadBinaryShortFileIDCommandBuildTests: XCTestCase {
     
     func testOffsetAbove255() {
         //Setup
-        subject.elementaryFileID = ExampleApp.instance.ValidEF2
-        subject.offset = byte(0x01)
-        subject.maximumExpectedLength = int(261)//Above 255
+        _ = subject.set(elementaryFileID: ExampleApp.instance.ValidEF2)
+        _ = subject.set(offset: byte(0x01))
+        _ = subject.set(maximumExpectedLength: 261)
         
         //Call
         let result = try! subject.toBytes().buffer
@@ -55,7 +55,7 @@ class ReadBinaryShortFileIDCommandBuildTests: XCTestCase {
     
     func testValidation() {
         callValidation(expected: "elementaryFileID")
-        subject.elementaryFileID = ExampleApp.instance.ValidEF1
+        _ = subject.set(elementaryFileID: ExampleApp.instance.ValidEF1)
         try! subject.validate()
     }
     

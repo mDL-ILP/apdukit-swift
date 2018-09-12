@@ -10,7 +10,7 @@ import Foundation
 
 class ReadBinaryOffsetCommand: ReadBinaryCommand {
     
-    var offset: short = 0;
+    private(set) var offset: short = 0;
     
     override init() {
         super.init()
@@ -41,5 +41,10 @@ class ReadBinaryOffsetCommand: ReadBinaryCommand {
         try self.encodeOffset(stream)
         try self.encodeMaximumExpectedLength(stream)
         return stream
+    }
+    
+    func set(offset: short) -> ReadBinaryOffsetCommand {
+        self.offset = offset
+        return self
     }
 }

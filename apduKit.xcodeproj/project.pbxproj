@@ -44,7 +44,6 @@
 		2745A0752130338800A4F538 /* ConversionUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2745A0692130176700A4F538 /* ConversionUtils.swift */; };
 		2745A0772130440300A4F538 /* ConversionUtilsErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2745A0762130440300A4F538 /* ConversionUtilsErrors.swift */; };
 		2745A0782130441E00A4F538 /* ConversionUtilsErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2745A0762130440300A4F538 /* ConversionUtilsErrors.swift */; };
-		27530A08213578B60064B48B /* ApduUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BAE4202134322800EEE5A1 /* ApduUtils.swift */; };
 		27530A0B21357DBE0064B48B /* ApduLengthUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27530A0A21357DBE0064B48B /* ApduLengthUtilsTests.swift */; };
 		27530A0C21357ED10064B48B /* ApduLengthUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BAE4222134484100EEE5A1 /* ApduLengthUtils.swift */; };
 		27530A0D213587FD0064B48B /* ApduErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BAE41721341FBA00EEE5A1 /* ApduErrors.swift */; };
@@ -72,7 +71,6 @@
 		27BAE41821341FBA00EEE5A1 /* ApduErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BAE41721341FBA00EEE5A1 /* ApduErrors.swift */; };
 		27BAE41D213426DC00EEE5A1 /* SelectCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BAE41C213426DC00EEE5A1 /* SelectCommand.swift */; };
 		27BAE41F2134283B00EEE5A1 /* FileControlInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BAE41E2134283B00EEE5A1 /* FileControlInfo.swift */; };
-		27BAE4212134322800EEE5A1 /* ApduUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BAE4202134322800EEE5A1 /* ApduUtils.swift */; };
 		27BAE4232134484100EEE5A1 /* ApduLengthUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BAE4222134484100EEE5A1 /* ApduLengthUtils.swift */; };
 		27BAE42621344EC900EEE5A1 /* StreamsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BAE42521344EC900EEE5A1 /* StreamsTest.swift */; };
 		27BAE42A21353CAE00EEE5A1 /* ByteArrayOutputStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BAE42921353CAE00EEE5A1 /* ByteArrayOutputStream.swift */; };
@@ -94,6 +92,11 @@
 		27E9D32C214936F6007729F4 /* PresentationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9D32B214936F6007729F4 /* PresentationLayer.swift */; };
 		27E9D32E21493790007729F4 /* PresentationLayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9D32D21493790007729F4 /* PresentationLayerDelegate.swift */; };
 		27E9D330214938D1007729F4 /* BaseApduProtocolPresentationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9D32F214938D1007729F4 /* BaseApduProtocolPresentationLayer.swift */; };
+		27E9D33221495047007729F4 /* TLVInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9D33121495047007729F4 /* TLVInfo.swift */; };
+		27E9D3332149518E007729F4 /* TLVInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9D33121495047007729F4 /* TLVInfo.swift */; };
+		27E9D33621496439007729F4 /* ApplicationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9D33521496439007729F4 /* ApplicationLayer.swift */; };
+		27E9D3382149646C007729F4 /* HolderApplicationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9D3372149646C007729F4 /* HolderApplicationLayer.swift */; };
+		27E9D33A21496474007729F4 /* ReaderApplicationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9D33921496474007729F4 /* ReaderApplicationLayer.swift */; };
 		DF767E696FBACB2187AB8E77 /* libPods-apduKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BC7D1FF68A78E332DE2F26D /* libPods-apduKit.a */; };
 /* End PBXBuildFile section */
 
@@ -148,7 +151,6 @@
 		27BAE41721341FBA00EEE5A1 /* ApduErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApduErrors.swift; sourceTree = "<group>"; };
 		27BAE41C213426DC00EEE5A1 /* SelectCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCommand.swift; sourceTree = "<group>"; };
 		27BAE41E2134283B00EEE5A1 /* FileControlInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileControlInfo.swift; sourceTree = "<group>"; };
-		27BAE4202134322800EEE5A1 /* ApduUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApduUtils.swift; sourceTree = "<group>"; };
 		27BAE4222134484100EEE5A1 /* ApduLengthUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApduLengthUtils.swift; sourceTree = "<group>"; };
 		27BAE42521344EC900EEE5A1 /* StreamsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamsTest.swift; sourceTree = "<group>"; };
 		27BAE42921353CAE00EEE5A1 /* ByteArrayOutputStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByteArrayOutputStream.swift; sourceTree = "<group>"; };
@@ -167,6 +169,10 @@
 		27E9D32B214936F6007729F4 /* PresentationLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationLayer.swift; sourceTree = "<group>"; };
 		27E9D32D21493790007729F4 /* PresentationLayerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationLayerDelegate.swift; sourceTree = "<group>"; };
 		27E9D32F214938D1007729F4 /* BaseApduProtocolPresentationLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseApduProtocolPresentationLayer.swift; sourceTree = "<group>"; };
+		27E9D33121495047007729F4 /* TLVInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLVInfo.swift; sourceTree = "<group>"; };
+		27E9D33521496439007729F4 /* ApplicationLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationLayer.swift; sourceTree = "<group>"; };
+		27E9D3372149646C007729F4 /* HolderApplicationLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolderApplicationLayer.swift; sourceTree = "<group>"; };
+		27E9D33921496474007729F4 /* ReaderApplicationLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderApplicationLayer.swift; sourceTree = "<group>"; };
 		4168A7FF25407A3FDA5F6472 /* Pods-apduKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apduKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-apduKit/Pods-apduKit.release.xcconfig"; sourceTree = "<group>"; };
 		66E2C831B4874F0A2706873D /* Pods-apduKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apduKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-apduKitTests/Pods-apduKitTests.release.xcconfig"; sourceTree = "<group>"; };
 		7BC7D1FF68A78E332DE2F26D /* libPods-apduKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-apduKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -291,6 +297,7 @@
 		2745A054213001A500A4F538 /* interpreter */ = {
 			isa = PBXGroup;
 			children = (
+				27E9D3342149642D007729F4 /* applicationLayer */,
 				27E9D32A214936DF007729F4 /* presentationLayer */,
 				27E9D31E21490496007729F4 /* sessionLayer */,
 				2713D126213EC5630026F412 /* exceptions */,
@@ -332,7 +339,6 @@
 			isa = PBXGroup;
 			children = (
 				2745A0692130176700A4F538 /* ConversionUtils.swift */,
-				27BAE4202134322800EEE5A1 /* ApduUtils.swift */,
 				27BAE4222134484100EEE5A1 /* ApduLengthUtils.swift */,
 			);
 			path = utilities;
@@ -363,6 +369,7 @@
 				2745A0612130034700A4F538 /* DedicatedFileID.swift */,
 				2745A0632130037000A4F538 /* ElementaryFileID.swift */,
 				27BAE411213413F700EEE5A1 /* ApduFile.swift */,
+				27E9D33121495047007729F4 /* TLVInfo.swift */,
 			);
 			path = types;
 			sourceTree = "<group>";
@@ -438,6 +445,16 @@
 				27E9D32F214938D1007729F4 /* BaseApduProtocolPresentationLayer.swift */,
 			);
 			path = presentationLayer;
+			sourceTree = "<group>";
+		};
+		27E9D3342149642D007729F4 /* applicationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				27E9D33521496439007729F4 /* ApplicationLayer.swift */,
+				27E9D3372149646C007729F4 /* HolderApplicationLayer.swift */,
+				27E9D33921496474007729F4 /* ReaderApplicationLayer.swift */,
+			);
+			path = applicationLayer;
 			sourceTree = "<group>";
 		};
 		BAAADE8799BFD547F43B80DB /* Frameworks */ = {
@@ -618,6 +635,7 @@
 				27C8225B213EC40F005D7B9B /* TransportLayerSimulator.swift in Sources */,
 				271EFF922137EEFB0000CBAF /* ReadBinaryCommand.swift in Sources */,
 				271EFF95213817E60000CBAF /* ReadBinaryShortFileIDCommand.swift in Sources */,
+				27E9D3382149646C007729F4 /* HolderApplicationLayer.swift in Sources */,
 				27BAE42D2135420D00EEE5A1 /* ByteArrayInputStream.swift in Sources */,
 				27BAE4232134484100EEE5A1 /* ApduLengthUtils.swift in Sources */,
 				27DB4BBB2141775A005E0884 /* InternalAuthenticateCommand.swift in Sources */,
@@ -630,6 +648,8 @@
 				271EFF9A213826910000CBAF /* ReadBinaryOffsetCommand.swift in Sources */,
 				27530A2C2136DD3B0064B48B /* ResponseApdu.swift in Sources */,
 				2745A0602130030500A4F538 /* FileID.swift in Sources */,
+				27E9D33221495047007729F4 /* TLVInfo.swift in Sources */,
+				27E9D33A21496474007729F4 /* ReaderApplicationLayer.swift in Sources */,
 				27BAE412213413F700EEE5A1 /* ApduFile.swift in Sources */,
 				27E9D32C214936F6007729F4 /* PresentationLayer.swift in Sources */,
 				27BAE42A21353CAE00EEE5A1 /* ByteArrayOutputStream.swift in Sources */,
@@ -641,13 +661,13 @@
 				27E9D330214938D1007729F4 /* BaseApduProtocolPresentationLayer.swift in Sources */,
 				2745A0592130026E00A4F538 /* CommandApdu.swift in Sources */,
 				2745A0642130037000A4F538 /* ElementaryFileID.swift in Sources */,
+				27E9D33621496439007729F4 /* ApplicationLayer.swift in Sources */,
 				27BAE41821341FBA00EEE5A1 /* ApduErrors.swift in Sources */,
 				27E9D32E21493790007729F4 /* PresentationLayerDelegate.swift in Sources */,
 				27E9D32221490A88007729F4 /* SessionLayerDelegate.swift in Sources */,
 				2713D128213EC57D0026F412 /* InterpreterErrors.swift in Sources */,
 				27530A262136987A0064B48B /* ExampleApp.swift in Sources */,
 				27BAE41D213426DC00EEE5A1 /* SelectCommand.swift in Sources */,
-				27BAE4212134322800EEE5A1 /* ApduUtils.swift in Sources */,
 				27E9D32921492ED9007729F4 /* HolderSessionLayer.swift in Sources */,
 				2745A06A2130176700A4F538 /* ConversionUtils.swift in Sources */,
 			);
@@ -693,11 +713,11 @@
 				271EFF9E213830C90000CBAF /* ResponseApdu.swift in Sources */,
 				27DB4BC12142806D005E0884 /* InternalAuthenticateCommandBuildTests.swift in Sources */,
 				27530A0D213587FD0064B48B /* ApduErrors.swift in Sources */,
+				27E9D3332149518E007729F4 /* TLVInfo.swift in Sources */,
 				27530A14213698150064B48B /* Apdu.swift in Sources */,
 				271EFFA5213844A50000CBAF /* ReadBinaryShortFileIDCommandParseTests.swift in Sources */,
 				27530A1B213698180064B48B /* InstructionCode.swift in Sources */,
 				2713D129213EC5820026F412 /* InterpreterErrors.swift in Sources */,
-				27530A08213578B60064B48B /* ApduUtils.swift in Sources */,
 				271EFF9D213830C90000CBAF /* SelectCommand.swift in Sources */,
 				2745A0782130441E00A4F538 /* ConversionUtilsErrors.swift in Sources */,
 				2713D12E213EC9DF0026F412 /* TransportLayerDelegate.swift in Sources */,
