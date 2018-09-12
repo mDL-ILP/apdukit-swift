@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: apduKit/interpreter/transportLayer/TransportLayerDelegate.swift at 2018-09-07 11:01:08 +0000
+// MARK: - Mocks generated from file: apduKit/interpreter/transportLayer/TransportLayerDelegate.swift at 2018-09-12 09:15:10 +0000
 
 //
 //  TransportLayerDelegate.swift
@@ -24,8 +24,8 @@ class MockTransportLayerDelegate: TransportLayerDelegate, Cuckoo.ProtocolMock {
     
 
     
-    // ["name": "onReceive", "returnSignature": " throws", "fullyQualifiedName": "onReceive(data: [byte]) throws", "parameterSignature": "data: [byte]", "parameterSignatureWithoutNames": "data: [byte]", "inputTypes": "[byte]", "isThrowing": true, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "data", "call": "data: data", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("data"), name: "data", type: "[byte]", range: CountableRange(217..<229), nameRange: CountableRange(217..<221))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnThrowingFunction"]
-     func onReceive(data: [byte])  throws {
+    // ["name": "onReceive", "returnSignature": " throws", "fullyQualifiedName": "onReceive(data: [byte]) throws", "parameterSignature": "data: [byte]", "parameterSignatureWithoutNames": "data: [byte]", "inputTypes": "[byte]", "isThrowing": true, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "public", "parameterNames": "data", "call": "data: data", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("data"), name: "data", type: "[byte]", range: CountableRange(224..<236), nameRange: CountableRange(224..<228))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnThrowingFunction"]
+    public func onReceive(data: [byte])  throws {
         
             return try cuckoo_manager.callThrows("onReceive(data: [byte]) throws",
                 parameters: (data),
@@ -82,14 +82,14 @@ class MockTransportLayerDelegate: TransportLayerDelegate, Cuckoo.ProtocolMock {
     
 
     
-     func onReceive(data: [byte])  throws {
+    public func onReceive(data: [byte])  throws {
         return DefaultValueRegistry.defaultValue(for: Void.self)
     }
     
 }
 
 
-// MARK: - Mocks generated from file: apduKit/interpreter/transportLayer/TransportLayerSimulator.swift at 2018-09-07 11:01:08 +0000
+// MARK: - Mocks generated from file: apduKit/interpreter/transportLayer/TransportLayerSimulator.swift at 2018-09-12 09:15:10 +0000
 
 //
 //  TransportLayerSimulator.swift
@@ -127,8 +127,8 @@ class MockTransportLayerSimulator: TransportLayerSimulator, Cuckoo.ClassMock {
         
     }
     
-    // ["name": "externalMockTransportLayer", "stubType": "ClassToBeStubbedProperty", "@type": "InstanceVariable", "type": "TransportLayer?", "isReadOnly": false, "accessibility": ""]
-     override var externalMockTransportLayer: TransportLayer? {
+    // ["name": "externalMockTransportLayer", "stubType": "ClassToBeStubbedProperty", "@type": "InstanceVariable", "type": "TransportLayerSimulator?", "isReadOnly": false, "accessibility": ""]
+     override var externalMockTransportLayer: TransportLayerSimulator? {
         get {
             
             return cuckoo_manager.getter("externalMockTransportLayer", superclassCall: super.externalMockTransportLayer)
@@ -147,10 +147,10 @@ class MockTransportLayerSimulator: TransportLayerSimulator, Cuckoo.ClassMock {
     
 
     
-    // ["name": "connect", "returnSignature": "", "fullyQualifiedName": "connect(transportLayer: TransportLayer)", "parameterSignature": "transportLayer: TransportLayer", "parameterSignatureWithoutNames": "transportLayer: TransportLayer", "inputTypes": "TransportLayer", "isThrowing": false, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "", "parameterNames": "transportLayer", "call": "transportLayer: transportLayer", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("transportLayer"), name: "transportLayer", type: "TransportLayer", range: CountableRange(330..<360), nameRange: CountableRange(330..<344))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ClassStubNoReturnFunction"]
-     override func connect(transportLayer: TransportLayer)  {
+    // ["name": "connect", "returnSignature": "", "fullyQualifiedName": "connect(transportLayer: TransportLayerSimulator)", "parameterSignature": "transportLayer: TransportLayerSimulator", "parameterSignatureWithoutNames": "transportLayer: TransportLayerSimulator", "inputTypes": "TransportLayerSimulator", "isThrowing": false, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "", "parameterNames": "transportLayer", "call": "transportLayer: transportLayer", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("transportLayer"), name: "transportLayer", type: "TransportLayerSimulator", range: CountableRange(339..<378), nameRange: CountableRange(339..<353))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ClassStubNoReturnFunction"]
+     override func connect(transportLayer: TransportLayerSimulator)  {
         
-            return cuckoo_manager.call("connect(transportLayer: TransportLayer)",
+            return cuckoo_manager.call("connect(transportLayer: TransportLayerSimulator)",
                 parameters: (transportLayer),
                 superclassCall:
                     
@@ -159,7 +159,7 @@ class MockTransportLayerSimulator: TransportLayerSimulator, Cuckoo.ClassMock {
         
     }
     
-    // ["name": "write", "returnSignature": " throws", "fullyQualifiedName": "write(data: [byte]) throws", "parameterSignature": "data: [byte]", "parameterSignatureWithoutNames": "data: [byte]", "inputTypes": "[byte]", "isThrowing": true, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "", "parameterNames": "data", "call": "data: data", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("data"), name: "data", type: "[byte]", range: CountableRange(447..<459), nameRange: CountableRange(447..<451))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ClassStubNoReturnThrowingFunction"]
+    // ["name": "write", "returnSignature": " throws", "fullyQualifiedName": "write(data: [byte]) throws", "parameterSignature": "data: [byte]", "parameterSignatureWithoutNames": "data: [byte]", "inputTypes": "[byte]", "isThrowing": true, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "", "parameterNames": "data", "call": "data: data", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("data"), name: "data", type: "[byte]", range: CountableRange(465..<477), nameRange: CountableRange(465..<469))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ClassStubNoReturnThrowingFunction"]
      override func write(data: [byte])  throws {
         
             return try cuckoo_manager.callThrows("write(data: [byte]) throws",
@@ -183,7 +183,7 @@ class MockTransportLayerSimulator: TransportLayerSimulator, Cuckoo.ClassMock {
         
     }
     
-    // ["name": "set", "returnSignature": "", "fullyQualifiedName": "set(delegate: TransportLayerDelegate)", "parameterSignature": "delegate: TransportLayerDelegate", "parameterSignatureWithoutNames": "delegate: TransportLayerDelegate", "inputTypes": "TransportLayerDelegate", "isThrowing": false, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "", "parameterNames": "delegate", "call": "delegate: delegate", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("delegate"), name: "delegate", type: "TransportLayerDelegate", range: CountableRange(763..<795), nameRange: CountableRange(763..<771))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ClassStubNoReturnFunction"]
+    // ["name": "set", "returnSignature": "", "fullyQualifiedName": "set(delegate: TransportLayerDelegate)", "parameterSignature": "delegate: TransportLayerDelegate", "parameterSignatureWithoutNames": "delegate: TransportLayerDelegate", "inputTypes": "TransportLayerDelegate", "isThrowing": false, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "", "parameterNames": "delegate", "call": "delegate: delegate", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("delegate"), name: "delegate", type: "TransportLayerDelegate", range: CountableRange(781..<813), nameRange: CountableRange(781..<789))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ClassStubNoReturnFunction"]
      override func set(delegate: TransportLayerDelegate)  {
         
             return cuckoo_manager.call("set(delegate: TransportLayerDelegate)",
@@ -195,8 +195,8 @@ class MockTransportLayerSimulator: TransportLayerSimulator, Cuckoo.ClassMock {
         
     }
     
-    // ["name": "onReceive", "returnSignature": " throws", "fullyQualifiedName": "onReceive(data: [byte]) throws", "parameterSignature": "data: [byte]", "parameterSignatureWithoutNames": "data: [byte]", "inputTypes": "[byte]", "isThrowing": true, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "", "parameterNames": "data", "call": "data: data", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("data"), name: "data", type: "[byte]", range: CountableRange(862..<874), nameRange: CountableRange(862..<866))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ClassStubNoReturnThrowingFunction"]
-     override func onReceive(data: [byte])  throws {
+    // ["name": "onReceive", "returnSignature": " throws", "fullyQualifiedName": "onReceive(data: [byte]) throws", "parameterSignature": "data: [byte]", "parameterSignatureWithoutNames": "data: [byte]", "inputTypes": "[byte]", "isThrowing": true, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "public", "parameterNames": "data", "call": "data: data", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("data"), name: "data", type: "[byte]", range: CountableRange(887..<899), nameRange: CountableRange(887..<891))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ClassStubNoReturnThrowingFunction"]
+    public override func onReceive(data: [byte])  throws {
         
             return try cuckoo_manager.callThrows("onReceive(data: [byte]) throws",
                 parameters: (data),
@@ -219,14 +219,14 @@ class MockTransportLayerSimulator: TransportLayerSimulator, Cuckoo.ClassMock {
 	        return .init(manager: cuckoo_manager, name: "delegate")
 	    }
 	    
-	    var externalMockTransportLayer: Cuckoo.ClassToBeStubbedProperty<MockTransportLayerSimulator, TransportLayer?> {
+	    var externalMockTransportLayer: Cuckoo.ClassToBeStubbedProperty<MockTransportLayerSimulator, TransportLayerSimulator?> {
 	        return .init(manager: cuckoo_manager, name: "externalMockTransportLayer")
 	    }
 	    
 	    
-	    func connect<M1: Cuckoo.Matchable>(transportLayer: M1) -> Cuckoo.ClassStubNoReturnFunction<(TransportLayer)> where M1.MatchedType == TransportLayer {
-	        let matchers: [Cuckoo.ParameterMatcher<(TransportLayer)>] = [wrap(matchable: transportLayer) { $0 }]
-	        return .init(stub: cuckoo_manager.createStub(for: MockTransportLayerSimulator.self, method: "connect(transportLayer: TransportLayer)", parameterMatchers: matchers))
+	    func connect<M1: Cuckoo.Matchable>(transportLayer: M1) -> Cuckoo.ClassStubNoReturnFunction<(TransportLayerSimulator)> where M1.MatchedType == TransportLayerSimulator {
+	        let matchers: [Cuckoo.ParameterMatcher<(TransportLayerSimulator)>] = [wrap(matchable: transportLayer) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockTransportLayerSimulator.self, method: "connect(transportLayer: TransportLayerSimulator)", parameterMatchers: matchers))
 	    }
 	    
 	    func write<M1: Cuckoo.Matchable>(data: M1) -> Cuckoo.ClassStubNoReturnThrowingFunction<([byte])> where M1.MatchedType == [byte] {
@@ -267,16 +267,16 @@ class MockTransportLayerSimulator: TransportLayerSimulator, Cuckoo.ClassMock {
 	        return .init(manager: cuckoo_manager, name: "delegate", callMatcher: callMatcher, sourceLocation: sourceLocation)
 	    }
 	    
-	    var externalMockTransportLayer: Cuckoo.VerifyProperty<TransportLayer?> {
+	    var externalMockTransportLayer: Cuckoo.VerifyProperty<TransportLayerSimulator?> {
 	        return .init(manager: cuckoo_manager, name: "externalMockTransportLayer", callMatcher: callMatcher, sourceLocation: sourceLocation)
 	    }
 	    
 	
 	    
 	    @discardableResult
-	    func connect<M1: Cuckoo.Matchable>(transportLayer: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == TransportLayer {
-	        let matchers: [Cuckoo.ParameterMatcher<(TransportLayer)>] = [wrap(matchable: transportLayer) { $0 }]
-	        return cuckoo_manager.verify("connect(transportLayer: TransportLayer)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    func connect<M1: Cuckoo.Matchable>(transportLayer: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == TransportLayerSimulator {
+	        let matchers: [Cuckoo.ParameterMatcher<(TransportLayerSimulator)>] = [wrap(matchable: transportLayer) { $0 }]
+	        return cuckoo_manager.verify("connect(transportLayer: TransportLayerSimulator)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
 	    }
 	    
 	    @discardableResult
@@ -318,9 +318,9 @@ class MockTransportLayerSimulator: TransportLayerSimulator, Cuckoo.ClassMock {
         
     }
     
-     override var externalMockTransportLayer: TransportLayer? {
+     override var externalMockTransportLayer: TransportLayerSimulator? {
         get {
-            return DefaultValueRegistry.defaultValue(for: (TransportLayer?).self)
+            return DefaultValueRegistry.defaultValue(for: (TransportLayerSimulator?).self)
         }
         
         set { }
@@ -331,7 +331,7 @@ class MockTransportLayerSimulator: TransportLayerSimulator, Cuckoo.ClassMock {
     
 
     
-     override func connect(transportLayer: TransportLayer)  {
+     override func connect(transportLayer: TransportLayerSimulator)  {
         return DefaultValueRegistry.defaultValue(for: Void.self)
     }
     
@@ -347,7 +347,7 @@ class MockTransportLayerSimulator: TransportLayerSimulator, Cuckoo.ClassMock {
         return DefaultValueRegistry.defaultValue(for: Void.self)
     }
     
-     override func onReceive(data: [byte])  throws {
+    public override func onReceive(data: [byte])  throws {
         return DefaultValueRegistry.defaultValue(for: Void.self)
     }
     

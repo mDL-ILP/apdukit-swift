@@ -10,9 +10,9 @@ import Foundation
 
 class TransportLayerSimulator: TransportLayer {
     var delegate: TransportLayerDelegate?
-    var externalMockTransportLayer: TransportLayer?
+    var externalMockTransportLayer: TransportLayerSimulator?
     
-    func connect(transportLayer: TransportLayer) {
+    func connect(transportLayer: TransportLayerSimulator) {
         self.externalMockTransportLayer = transportLayer
     }
     
@@ -31,11 +31,11 @@ class TransportLayerSimulator: TransportLayer {
         self.delegate = delegate
     }
     
-    func onReceive(data: [byte]) throws {
+    public func onReceive(data: [byte]) throws {
         guard let delegate = self.delegate else {
             throw InterpeterErrors.SocketException()
         }
-        try delegate.onReceive(data: data)
+        delegate.onReceive(data: data)
     }
     
 }

@@ -10,4 +10,5 @@ import Foundation
 
 enum InterpeterErrors: Error {
     case SocketException()
+    case OutOfSequenceException()
 }

@@ -12,5 +12,4 @@ protocol TransportLayer {
     func write(data: [byte]) throws
     func close() throws
     func set(delegate: TransportLayerDelegate)
-    func onReceive(data: [byte]) throws
 }

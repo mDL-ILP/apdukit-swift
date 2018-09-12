@@ -7,9 +7,9 @@ target 'apduKit' do
 	workspace 'apduKit.xcworkspace'
 	podspec
 
-  target 'apduKitTests' do
-    inherit! :search_paths
-    pod "Cuckoo"
-  end
+    target 'apduKitTests' do
+        inherit! :search_paths
+        pod "Cuckoo"
+    end
 
 end

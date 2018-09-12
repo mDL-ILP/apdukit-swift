@@ -87,6 +87,9 @@
 		27DB4BBC2141775C005E0884 /* InternalAuthenticateCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DB4BBA2141775A005E0884 /* InternalAuthenticateCommand.swift */; };
 		27DB4BBF21427C82005E0884 /* ElementaryFileIDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DB4BBE21427C82005E0884 /* ElementaryFileIDTests.swift */; };
 		27DB4BC12142806D005E0884 /* InternalAuthenticateCommandBuildTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DB4BC02142806D005E0884 /* InternalAuthenticateCommandBuildTests.swift */; };
+		27E9D32021490501007729F4 /* SessionLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9D31F21490501007729F4 /* SessionLayer.swift */; };
+		27E9D32221490A88007729F4 /* SessionLayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9D32121490A88007729F4 /* SessionLayerDelegate.swift */; };
+		27E9D32421490B78007729F4 /* ReaderSessionLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9D32321490B78007729F4 /* ReaderSessionLayer.swift */; };
 		DF767E696FBACB2187AB8E77 /* libPods-apduKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BC7D1FF68A78E332DE2F26D /* libPods-apduKit.a */; };
 /* End PBXBuildFile section */
 
@@ -153,6 +156,9 @@
 		27DB4BBA2141775A005E0884 /* InternalAuthenticateCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalAuthenticateCommand.swift; sourceTree = "<group>"; };
 		27DB4BBE21427C82005E0884 /* ElementaryFileIDTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementaryFileIDTests.swift; sourceTree = "<group>"; };
 		27DB4BC02142806D005E0884 /* InternalAuthenticateCommandBuildTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalAuthenticateCommandBuildTests.swift; sourceTree = "<group>"; };
+		27E9D31F21490501007729F4 /* SessionLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionLayer.swift; sourceTree = "<group>"; };
+		27E9D32121490A88007729F4 /* SessionLayerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionLayerDelegate.swift; sourceTree = "<group>"; };
+		27E9D32321490B78007729F4 /* ReaderSessionLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderSessionLayer.swift; sourceTree = "<group>"; };
 		4168A7FF25407A3FDA5F6472 /* Pods-apduKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apduKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-apduKit/Pods-apduKit.release.xcconfig"; sourceTree = "<group>"; };
 		66E2C831B4874F0A2706873D /* Pods-apduKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apduKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-apduKitTests/Pods-apduKitTests.release.xcconfig"; sourceTree = "<group>"; };
 		7BC7D1FF68A78E332DE2F26D /* libPods-apduKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-apduKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -192,12 +198,12 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		2713D126213EC5630026F412 /* Exceptions */ = {
+		2713D126213EC5630026F412 /* exceptions */ = {
 			isa = PBXGroup;
 			children = (
 				2713D127213EC57D0026F412 /* InterpreterErrors.swift */,
 			);
-			path = Exceptions;
+			path = exceptions;
 			sourceTree = "<group>";
 		};
 		2745A02E2130016700A4F538 = {
@@ -223,6 +229,7 @@
 		2745A03A2130016700A4F538 /* apduKit */ = {
 			isa = PBXGroup;
 			children = (
+				2745A06B21301A5800A4F538 /* Types.swift */,
 				27BAE4132134153300EEE5A1 /* extensions */,
 				2745A055213001B300A4F538 /* resources */,
 				2745A054213001A500A4F538 /* interpreter */,
@@ -263,7 +270,6 @@
 				2745A056213001D500A4F538 /* Apdu.swift */,
 				2745A0582130026E00A4F538 /* CommandApdu.swift */,
 				2745A0652130094A00A4F538 /* Constants.swift */,
-				2745A06B21301A5800A4F538 /* Types.swift */,
 				27BAE41C213426DC00EEE5A1 /* SelectCommand.swift */,
 				27530A2B2136DD3B0064B48B /* ResponseApdu.swift */,
 				271EFF912137EEFB0000CBAF /* ReadBinaryCommand.swift */,
@@ -277,7 +283,8 @@
 		2745A054213001A500A4F538 /* interpreter */ = {
 			isa = PBXGroup;
 			children = (
-				2713D126213EC5630026F412 /* Exceptions */,
+				27E9D31E21490496007729F4 /* sessionLayer */,
+				2713D126213EC5630026F412 /* exceptions */,
 				27C82252213EC2EC005D7B9B /* transportLayer */,
 			);
 			path = interpreter;
@@ -401,6 +408,16 @@
 				27DB4BBE21427C82005E0884 /* ElementaryFileIDTests.swift */,
 			);
 			path = types;
+			sourceTree = "<group>";
+		};
+		27E9D31E21490496007729F4 /* sessionLayer */ = {
+			isa = PBXGroup;
+			children = (
+				27E9D31F21490501007729F4 /* SessionLayer.swift */,
+				27E9D32121490A88007729F4 /* SessionLayerDelegate.swift */,
+				27E9D32321490B78007729F4 /* ReaderSessionLayer.swift */,
+			);
+			path = sessionLayer;
 			sourceTree = "<group>";
 		};
 		BAAADE8799BFD547F43B80DB /* Frameworks */ = {
@@ -589,6 +606,7 @@
 				27BAE40E21340D2800EEE5A1 /* SelectFileType.swift in Sources */,
 				2745A070213031FB00A4F538 /* InstructionClass.swift in Sources */,
 				2745A0622130034700A4F538 /* DedicatedFileID.swift in Sources */,
+				27E9D32021490501007729F4 /* SessionLayer.swift in Sources */,
 				271EFF9A213826910000CBAF /* ReadBinaryOffsetCommand.swift in Sources */,
 				27530A2C2136DD3B0064B48B /* ResponseApdu.swift in Sources */,
 				2745A0602130030500A4F538 /* FileID.swift in Sources */,
@@ -597,10 +615,12 @@
 				27BAE40A2133FDD000EEE5A1 /* InstructionCode.swift in Sources */,
 				2745A057213001D500A4F538 /* Apdu.swift in Sources */,
 				27BAE41F2134283B00EEE5A1 /* ExpectedResult.swift in Sources */,
+				27E9D32421490B78007729F4 /* ReaderSessionLayer.swift in Sources */,
 				27C82257213EC3D6005D7B9B /* TransportLayerDelegate.swift in Sources */,
 				2745A0592130026E00A4F538 /* CommandApdu.swift in Sources */,
 				2745A0642130037000A4F538 /* ElementaryFileID.swift in Sources */,
 				27BAE41821341FBA00EEE5A1 /* ApduErrors.swift in Sources */,
+				27E9D32221490A88007729F4 /* SessionLayerDelegate.swift in Sources */,
 				2713D128213EC57D0026F412 /* InterpreterErrors.swift in Sources */,
 				27530A262136987A0064B48B /* ExampleApp.swift in Sources */,
 				27BAE41D213426DC00EEE5A1 /* SelectCommand.swift in Sources */,
@@ -808,7 +828,11 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "$(SRCROOT)/apduKit/resources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ul-ts.apduKit";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -832,7 +856,11 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "$(SRCROOT)/apduKit/resources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ul-ts.apduKit";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -849,7 +877,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C8466875AK;
 				INFOPLIST_FILE = apduKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ul-ts.apduKitTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -865,7 +897,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C8466875AK;
 				INFOPLIST_FILE = apduKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ul-ts.apduKitTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

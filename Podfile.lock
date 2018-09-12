@@ -1,16 +1,20 @@
 PODS:
   - Cuckoo (0.11.3)
+  - Promises (2.0.1)
 
 DEPENDENCIES:
   - Cuckoo
+  - Promises (~> 2.0.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Cuckoo
+    - Promises
 
 SPEC CHECKSUMS:
   Cuckoo: 97522dd7ac6f18adba6022bdc74aa69e82ca691a
+  Promises: e94e1d74d818d1d2f8933e1f4f12d443c3bb4f3b
 
-PODFILE CHECKSUM: 18db5cf6f02c544e59a4935f1fe8747215fd5f75
+PODFILE CHECKSUM: 2ec372a904e10bdf6d479c0435d01d309d75631f
 
 COCOAPODS: 1.5.3
