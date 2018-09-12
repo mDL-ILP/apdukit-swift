@@ -1,5 +1,5 @@
 //
-//  SessionLayerDelegate.swift
+//  PresentationLayerDelegate.swift
 //  apduKit
 //
 //  Created by Iain Munro on 12/09/2018.
@@ -8,11 +8,10 @@
 
 import Foundation
 
-public protocol SessionLayerDelegate {
-    /// Responds with the binary data of that EF file.
-    func receivedReadCommand(command: ReadBinaryCommand) -> ResponseApdu
-    /// Responds with the appropriate status code.
-    func receivedSelectCommand(command: SelectCommand) -> ResponseApdu
+public protocol PresentationLayerDelegate {
+    func getLocalfile(id: ElementaryFileID) -> ApduFile
+    func getAppId() -> DedicatedFileID
+    func isFileAllowed(file: ElementaryFileID) -> Bool
     
     /// Informs the delegate when got an exception when sending has failed.
     func onSendFailure(exception: Error)//This can be a IO Exception (lost connection) or invalid APDU.

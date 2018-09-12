@@ -7,6 +7,6 @@
 //
 
 import Foundation
-protocol FileID {
+public protocol FileID {
     func getValue() -> [byte]?
 }

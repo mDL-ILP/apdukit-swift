@@ -1,5 +1,5 @@
 //
-//  SelectFileType.swift
+//  FileType.swift
 //  apduKit
 //
 //  Created by Iain Munro on 27/08/2018.
@@ -9,19 +9,19 @@
 import Foundation
 
 /**
- * SelectFileType - indicates what kind type of file it should expect.
+ * FileType - indicates what kind type of file it should expect.
  *
  */
-enum SelectFileType: byte {
+public enum FileType: byte {
     //Dedicated file
     case DF = 0x04
     //Elementary file
     case EF = 0x02
     
-    //Returns a SelectCommandExpected for raw value byte.
-    static func valueOf(code value: byte?) -> SelectFileType? {
+    //Returns a FileType for raw value byte.
+    static func valueOf(code value: byte?) -> FileType? {
         guard let value = value else { return nil }
-        return SelectFileType.init(rawValue: value)
+        return FileType.init(rawValue: value)
     }
     
     func getValue() -> byte {

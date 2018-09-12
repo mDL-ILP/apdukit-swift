@@ -15,5 +15,5 @@ import Promise
  */
 public protocol SessionLayer: TransportLayerDelegate {
     func send(command: CommandApdu) -> Promise<ResponseApdu>
-    func setDelegate(delegate: SessionLayerDelegate)
+    func set(delegate: SessionLayerDelegate)
 }

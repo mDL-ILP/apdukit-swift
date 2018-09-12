@@ -8,7 +8,7 @@
 
 import Foundation
 public class ResponseApdu: Apdu {
-    var statusCode: StatusCode?
+    var statusCode: StatusCode!
     var data: [byte]?
     
     init(stream: ByteArrayInputStream) throws {
@@ -17,22 +17,20 @@ public class ResponseApdu: Apdu {
         try self.validate()
     }
     
-    init() {
-        
-    }
+    init() {}
     
     private func encodeStatusCode(_ stream: ByteArrayOutputStream) throws {
-        guard let statusCode = self.statusCode else {
-            return
-        }
-        stream.write(bytes: ConversionUtils.fromShortToBytes(statusCode.getValue()))
+        stream.write(bytes: ConversionUtils.fromShortToBytes(self.statusCode.getValue()))
     }
     
     private func decodeStatusCode(_ stream: ByteArrayInputStream) throws {
-        guard let statusCode = try? stream.readBytes(size: 2) else {
+        guard let statusCodeByte = try? stream.readBytes(size: 2) else {
             throw ApduErrors.ParseException(description: "Missing 2 bytes for the status code")
         }
-        self.statusCode = StatusCode.valueOf(code: try ConversionUtils.fromBytesToShort(statusCode))
+        guard let statusCode = StatusCode.valueOf(code: try ConversionUtils.fromBytesToShort(statusCodeByte)) else {
+            throw ApduErrors.ParseException(description: "Could not map status code")
+        }
+        self.statusCode = statusCode
     }
     
     private func encodeData(_ stream: ByteArrayOutputStream) throws {
@@ -70,5 +68,13 @@ public class ResponseApdu: Apdu {
         return stream
     }
     
+    public func set(statusCode: StatusCode) -> ResponseApdu {
+        self.statusCode = statusCode
+        return self
+    }
     
+    public func set(data: [byte]) -> ResponseApdu {
+        self.data = data
+        return self
+    }
 }

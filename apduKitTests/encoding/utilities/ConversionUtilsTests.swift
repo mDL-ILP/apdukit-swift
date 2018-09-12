@@ -42,7 +42,7 @@ class ConversionUtilsTests: XCTestCase {
     func testShortToBytes() {
         let input = short(0x9000)
         let expected: [byte] = [0x90, 0x00]
-        XCTAssertEqual(expected, try ConversionUtils.fromShortToBytes(input))
+        XCTAssertEqual(expected, ConversionUtils.fromShortToBytes(input))
     }
     
     func testByteToBits() {

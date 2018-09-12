@@ -22,6 +22,7 @@ public class ReaderSessionLayer: SessionLayer {
     
     init(transportLayer: TransportLayer) {
         self.transportLayer = transportLayer
+        self.transportLayer.set(delegate: self)
     }
     
     private func commandToBytes(input: CommandApdu) -> Promise<[byte]> {
@@ -60,7 +61,7 @@ public class ReaderSessionLayer: SessionLayer {
         return p
     }
     
-    public func setDelegate(delegate: SessionLayerDelegate) {
+    public func set(delegate: SessionLayerDelegate) {
         self.delegate = delegate
     }
     

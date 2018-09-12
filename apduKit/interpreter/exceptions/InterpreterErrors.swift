@@ -11,4 +11,6 @@ import Foundation
 enum InterpeterErrors: Error {
     case SocketException()
     case OutOfSequenceException()
+    case Exception(message: String)
+    case ResponseApduStatusCodeError(code: StatusCode)
 }

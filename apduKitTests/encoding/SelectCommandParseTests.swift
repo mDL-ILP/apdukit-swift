@@ -17,8 +17,8 @@ class SelectCommandParseTests: XCTestCase {
         XCTAssertTrue(command is SelectCommand)
         let result = command as? SelectCommand
         
-        XCTAssertEqual(SelectFileType.DF, result?.fileType)
-        XCTAssertEqual(ExpectedResultType.NOTHING, result?.expectedResult)
+        XCTAssertEqual(FileType.DF, result?.fileType)
+        XCTAssertEqual(FileControlInfo.NOFCIReturn, result?.fileControlInfo)
         XCTAssertEqual(ExampleApp.instance.ValidDF_NormalLength2.getValue(), result?.fileID?.getValue())
     }
     
@@ -30,8 +30,8 @@ class SelectCommandParseTests: XCTestCase {
         XCTAssertTrue(command is SelectCommand)
         let result = command as? SelectCommand
         
-        XCTAssertEqual(SelectFileType.DF, result?.fileType)
-        XCTAssertEqual(ExpectedResultType.NOTHING, result?.expectedResult)
+        XCTAssertEqual(FileType.DF, result?.fileType)
+        XCTAssertEqual(FileControlInfo.NOFCIReturn, result?.fileControlInfo)
         XCTAssertEqual(ExampleApp.instance.ValidDF_ExtendedLength.getValue(), result?.fileID?.getValue())
     }
     
@@ -43,8 +43,8 @@ class SelectCommandParseTests: XCTestCase {
         XCTAssertTrue(command is SelectCommand)
         let result = command as? SelectCommand
         
-        XCTAssertEqual(SelectFileType.EF, result?.fileType)
-        XCTAssertEqual(ExpectedResultType.NOTHING, result?.expectedResult)
+        XCTAssertEqual(FileType.EF, result?.fileType)
+        XCTAssertEqual(FileControlInfo.NOFCIReturn, result?.fileControlInfo)
         XCTAssertEqual(ExampleApp.instance.ValidEF_NoShortId.getValue(), result?.fileID?.getValue())
     }
 }

@@ -7,18 +7,18 @@
 //
 
 import Foundation
-class DedicatedFileID: FileID, Equatable {
+public class DedicatedFileID: FileID, Equatable {
     private(set) var value: [UInt8]
     
     init(_ value: [UInt8]) {
         self.value = value
     }
     
-    static func == (lhs: DedicatedFileID, rhs: DedicatedFileID) -> Bool {
+    public static func == (lhs: DedicatedFileID, rhs: DedicatedFileID) -> Bool {
         return lhs.value.elementsEqual(rhs.value)
     }
     
-    func getValue() -> [byte]? {
+    public func getValue() -> [byte]? {
         return self.value
     }
     

@@ -11,8 +11,8 @@ import Foundation
 * SelectCommand - Is a apdu command that allows to select a file. This is done by specifying a dedicated or elementary file id.
 */
 public class SelectCommand: CommandApdu {
-    private(set) var fileType: SelectFileType?
-    var expectedResult: ExpectedResultType?
+    private(set) var fileType: FileType?
+    var fileControlInfo: FileControlInfo?
     var fileID: FileID? {
         didSet {
             if self.fileID is DedicatedFileID {
@@ -30,8 +30,8 @@ public class SelectCommand: CommandApdu {
     
     override init(stream: ByteArrayInputStream) throws {
         try super.init(stream: stream)
-        self.fileType = SelectFileType.valueOf(code: stream.readByte())
-        self.expectedResult = ExpectedResultType.valueOf(code: stream.readByte())
+        self.fileType = FileType.valueOf(code: stream.readByte())
+        self.fileControlInfo = FileControlInfo.valueOf(code: stream.readByte())
         try self.decodeFileId(stream)
     }
     
@@ -75,7 +75,7 @@ public class SelectCommand: CommandApdu {
         if fileType == .EF && !(self.fileID is ElementaryFileID) {
             throw ApduErrors.InvalidApduException(description: "filetype does not match file id instance type")
         }
-        guard self.expectedResult != nil else {
+        guard self.fileControlInfo != nil else {
             throw ApduErrors.ValueNotSetException(value: "expectedResult")
         }
     }
@@ -84,9 +84,19 @@ public class SelectCommand: CommandApdu {
         try validate()
         let stream = try super.toBytes()
         stream.write(byte: fileType!.getValue())
-        stream.write(byte: expectedResult!.getValue())
+        stream.write(byte: fileControlInfo!.getValue())
         try encodeFileId(stream)
         return stream
+    }
+    
+    public func set(fileControlInfo: FileControlInfo) -> SelectCommand {
+        self.fileControlInfo = fileControlInfo
+        return self
+    }
+    
+    public func set(fileID: FileID) -> SelectCommand {
+        self.fileID = fileID
+        return self
     }
     
 }

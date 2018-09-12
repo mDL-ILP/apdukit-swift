@@ -20,7 +20,7 @@ class SelectCommandBuildTests: XCTestCase {
     func testSelectDF() {
         //Setup
         subject.fileID = ExampleApp.instance.ValidDF_NormalLength2
-        subject.expectedResult = ExpectedResultType.NOTHING
+        subject.fileControlInfo = FileControlInfo.NOFCIReturn
         let expected: [byte] = [0x0, 0xA4, 0x04, 0x0C, 0x07, 0xA0, 0x00, 0x00, 0x02, 0x48, 0x04, 0x00]
         //Call
         let result = try? subject.toBytes().buffer
@@ -32,7 +32,7 @@ class SelectCommandBuildTests: XCTestCase {
     func testSelectExtendedDF() {
         //Setup
         subject.fileID = ExampleApp.instance.ValidDF_ExtendedLength
-        subject.expectedResult = ExpectedResultType.NOTHING
+        subject.fileControlInfo = FileControlInfo.NOFCIReturn
         let expected: [byte] = [0x0, 0xA4, 0x04, 0x0C, 0x00, 0x01, 0x05] + ExampleApp.instance.ValidDF_ExtendedLength.getValue()!
         //Call
         let result = try? subject.toBytes().buffer
@@ -44,7 +44,7 @@ class SelectCommandBuildTests: XCTestCase {
     func testSelectEF() {
         //Setup
         subject.fileID = ExampleApp.instance.ValidEF_NoShortId
-        subject.expectedResult = ExpectedResultType.NOTHING
+        subject.fileControlInfo = FileControlInfo.NOFCIReturn
         let expected: [byte] = [0x00, 0xA4, 0x02, 0x0C, 0x02, 0x01, 0x1C]
         //Call
         let result = try? subject.toBytes().buffer
@@ -57,7 +57,7 @@ class SelectCommandBuildTests: XCTestCase {
         callValidation(expected: "fileID")
         subject.fileID = ExampleApp.instance.ValidEF1
         callValidation(expected: "expectedResult")
-        subject.expectedResult = .NOTHING
+        subject.fileControlInfo = FileControlInfo.NOFCIReturn
         try! subject.validate()
     }
     
