@@ -1,6 +1,6 @@
 stages:
-  - lint
   - test
+  - lint
 
 variables:
   LC_ALL: "en_US.UTF-8"
@@ -11,17 +11,17 @@ before_script:
   - bundle install
   - pod install
 
-lint:
-  stage: lint
-  script:
-    - pod lib lint
-  tags:
-    - macos
-
 test:
   dependencies: []
   stage: test
   script:
     - bundle exec fastlane tests
+  tags:
+    - macos
+
+lint:
+  stage: lint
+  script:
+    - pod lib lint
   tags:
     - macos

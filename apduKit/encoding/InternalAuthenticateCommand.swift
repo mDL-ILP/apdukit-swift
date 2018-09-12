@@ -35,7 +35,7 @@ public class InternalAuthenticateCommand: CommandApdu {
     
     open func encodeChallenge(_ stream: ByteArrayOutputStream) throws {
         guard let challenge = self.challenge else { return }
-        let challengeLength = try ApduLengthUtils.encodeDataLength(length: short(challenge.count))
+        let challengeLength = ApduLengthUtils.encodeDataLength(length: short(challenge.count))
         stream.write(bytes: challengeLength)
         stream.write(bytes: challenge)
     }

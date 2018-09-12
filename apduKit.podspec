@@ -20,8 +20,10 @@ Pod::Spec.new do |s|
   s.author           = { 'UL-Transactions' => 'transactionsecurity@ul.com' }
   s.source           = { :git => 'ssh://git@git.ul-ts.com:5022/sl-advisory/RDW/swift-apdukit.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
+
   s.swift_version = '3.2'
+  s.frameworks = 'Foundation'
 
   s.source_files = 'apduKit/**/*'
   s.dependency 'Promises', '~> 2.0.1'

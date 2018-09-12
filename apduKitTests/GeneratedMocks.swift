@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: apduKit/interpreter/transportLayer/TransportLayerDelegate.swift at 2018-09-12 09:15:10 +0000
+// MARK: - Mocks generated from file: apduKit/interpreter/transportLayer/TransportLayerDelegate.swift at 2018-09-12 09:20:28 +0000
 
 //
 //  TransportLayerDelegate.swift
@@ -24,10 +24,10 @@ class MockTransportLayerDelegate: TransportLayerDelegate, Cuckoo.ProtocolMock {
     
 
     
-    // ["name": "onReceive", "returnSignature": " throws", "fullyQualifiedName": "onReceive(data: [byte]) throws", "parameterSignature": "data: [byte]", "parameterSignatureWithoutNames": "data: [byte]", "inputTypes": "[byte]", "isThrowing": true, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "public", "parameterNames": "data", "call": "data: data", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("data"), name: "data", type: "[byte]", range: CountableRange(224..<236), nameRange: CountableRange(224..<228))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnThrowingFunction"]
-    public func onReceive(data: [byte])  throws {
+    // ["name": "onReceive", "returnSignature": "", "fullyQualifiedName": "onReceive(data: [byte])", "parameterSignature": "data: [byte]", "parameterSignatureWithoutNames": "data: [byte]", "inputTypes": "[byte]", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "public", "parameterNames": "data", "call": "data: data", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("data"), name: "data", type: "[byte]", range: CountableRange(224..<236), nameRange: CountableRange(224..<228))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
+    public func onReceive(data: [byte])  {
         
-            return try cuckoo_manager.callThrows("onReceive(data: [byte]) throws",
+            return cuckoo_manager.call("onReceive(data: [byte])",
                 parameters: (data),
                 superclassCall:
                     
@@ -45,9 +45,9 @@ class MockTransportLayerDelegate: TransportLayerDelegate, Cuckoo.ProtocolMock {
 	    }
 	    
 	    
-	    func onReceive<M1: Cuckoo.Matchable>(data: M1) -> Cuckoo.ProtocolStubNoReturnThrowingFunction<([byte])> where M1.MatchedType == [byte] {
+	    func onReceive<M1: Cuckoo.Matchable>(data: M1) -> Cuckoo.ProtocolStubNoReturnFunction<([byte])> where M1.MatchedType == [byte] {
 	        let matchers: [Cuckoo.ParameterMatcher<([byte])>] = [wrap(matchable: data) { $0 }]
-	        return .init(stub: cuckoo_manager.createStub(for: MockTransportLayerDelegate.self, method: "onReceive(data: [byte]) throws", parameterMatchers: matchers))
+	        return .init(stub: cuckoo_manager.createStub(for: MockTransportLayerDelegate.self, method: "onReceive(data: [byte])", parameterMatchers: matchers))
 	    }
 	    
 	}
@@ -69,7 +69,7 @@ class MockTransportLayerDelegate: TransportLayerDelegate, Cuckoo.ProtocolMock {
 	    @discardableResult
 	    func onReceive<M1: Cuckoo.Matchable>(data: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == [byte] {
 	        let matchers: [Cuckoo.ParameterMatcher<([byte])>] = [wrap(matchable: data) { $0 }]
-	        return cuckoo_manager.verify("onReceive(data: [byte]) throws", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	        return cuckoo_manager.verify("onReceive(data: [byte])", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
 	    }
 	    
 	}
@@ -82,14 +82,14 @@ class MockTransportLayerDelegate: TransportLayerDelegate, Cuckoo.ProtocolMock {
     
 
     
-    public func onReceive(data: [byte])  throws {
+    public func onReceive(data: [byte])  {
         return DefaultValueRegistry.defaultValue(for: Void.self)
     }
     
 }
 
 
-// MARK: - Mocks generated from file: apduKit/interpreter/transportLayer/TransportLayerSimulator.swift at 2018-09-12 09:15:10 +0000
+// MARK: - Mocks generated from file: apduKit/interpreter/transportLayer/TransportLayerSimulator.swift at 2018-09-12 09:20:28 +0000
 
 //
 //  TransportLayerSimulator.swift

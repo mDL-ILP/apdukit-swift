@@ -65,6 +65,7 @@ public class ReaderSessionLayer: SessionLayer {
     }
     
     public func onReceive(data: [byte]) {
+        //We received an unwanted response?
         guard let openRequest = self.openRequest else {
             self.delegate?.onReceiveInvalidApdu(exception: ApduErrors.InvalidApduException(description: "received unwanted response"))
             return

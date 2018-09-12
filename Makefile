@@ -1,0 +1,2 @@
+validate:
+	pod lib lint
