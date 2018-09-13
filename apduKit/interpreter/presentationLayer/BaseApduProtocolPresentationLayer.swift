@@ -23,7 +23,6 @@ public class BaseApduProtocolPresentationLayer: PresentationLayer {
     
     init(sessionLayer: SessionLayer) {
         self.sessionLayer = sessionLayer
-        self.sessionLayer.set(delegate: self)
     }
     
     /**
@@ -125,21 +124,5 @@ public class BaseApduProtocolPresentationLayer: PresentationLayer {
     
     public func set(delegate: PresentationLayerDelegate) {
         self.delegate = delegate
-    }
-    
-    public func receivedReadCommand(command: ReadBinaryCommand) -> ResponseApdu {
-        return ResponseApdu()
-    }
-    
-    public func receivedSelectCommand(command: SelectCommand) -> ResponseApdu {
-        return ResponseApdu()
-    }
-    
-    public func onSendFailure(exception: Error) {
-        self.delegate?.onSendFailure(exception: exception)
-    }
-    
-    public func onReceiveInvalidApdu(exception: Error) {
-        self.delegate?.onReceiveInvalidApdu(exception: exception)
     }
 }

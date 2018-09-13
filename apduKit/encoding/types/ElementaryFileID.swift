@@ -31,18 +31,22 @@ public class ElementaryFileID: FileID, Equatable {
         return shortIdentifier != nil
     }
     
-    func getShortIDValueAsAShort() -> short? {
-        guard let shortIdentifier = self.shortIdentifier else { return nil }
-        return try? ConversionUtils.fromBytesToShort([shortIdentifier])
+    func getShortIDValueAsAShort() throws -> short {
+        guard let shortIdentifier = self.shortIdentifier else {
+            throw ApduErrors.InvalidNumericException(description: "The short id is not available")
+        }
+        return try ConversionUtils.fromBytesToShort([shortIdentifier])
     }
     
     public func getValue() -> [byte]? {
         return self.normalIdentifier
     }
     
-    func getNormalIDValueAsAShort() -> short? {
-        guard let normalIdentifier = self.normalIdentifier else { return nil }
-        return try? ConversionUtils.fromBytesToShort(normalIdentifier);
+    func getNormalIDValueAsAShort() throws -> short {
+        guard let normalIdentifier = self.normalIdentifier else {
+            throw ApduErrors.InvalidNumericException(description: "The normal id is not available")
+        }
+        return try ConversionUtils.fromBytesToShort(normalIdentifier);
     }
     
     func validate() throws {

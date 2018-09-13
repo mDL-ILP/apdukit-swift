@@ -9,7 +9,7 @@
 import Foundation
 
 class ReadBinaryShortFileIDCommand: ReadBinaryCommand {
-    private(set) var elementaryFileID: ElementaryFileID?
+    private(set) var elementaryFileID: ElementaryFileID!
     private(set) var offset: byte?
     
     override init() {

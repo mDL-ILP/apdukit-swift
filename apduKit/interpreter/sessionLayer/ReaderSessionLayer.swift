@@ -26,27 +26,41 @@ public class ReaderSessionLayer: SessionLayer {
     }
     
     private func commandToBytes(input: CommandApdu) -> Promise<[byte]> {
-        return Promise<[byte]>(work: { fulfill, reject in
+        let p =  Promise<[byte]>(work: { fulfill, reject in
             do {
-                fulfill(try input.toBytes().buffer)
+                usleep(1000)
+                let payload: [byte] = [0, 1, 2, 3]
+//                let payload = try input.toBytes().buffer
+                fulfill(payload)
             } catch let e {
                 reject(e)
             }
         })
-    }
-    
-    public func send(command: CommandApdu) -> Promise<ResponseApdu> {
-        if openRequestLock.wait(timeout: DispatchTime.now()) == DispatchTimeoutResult.timedOut {
-            return Promise<ResponseApdu>(error: InterpeterErrors.OutOfSequenceException())
-        }
-        let p = commandToBytes(input: command).then(self.sendBytes)
-        p.always {
-            self.openRequestLock.signal()
-        }
+        p.then({ (data) in
+            print(data)
+        })
         return p
     }
     
+    public func send(command: CommandApdu) -> Promise<ResponseApdu> {
+//        if openRequestLock.wait(timeout: DispatchTime.now()) == DispatchTimeoutResult.timedOut {
+//            return Promise<ResponseApdu>(error: InterpeterErrors.OutOfSequenceException())
+//        }
+        let b = commandToBytes(input: command).then { (test) in
+            print("yesss")
+        }
+        return Promise<ResponseApdu>(work: { fulfill, reject in
+            
+        })
+//        let p = commandToBytes(input: command).then(self.sendBytes)
+//        p.always {
+//            self.openRequestLock.signal()
+//        }
+//        return p
+    }
+    
     public func sendBytes(data: [byte]) -> Promise<ResponseApdu> {
+        print("test")
         let p = Promise<ResponseApdu>(work: { fulfill, reject in
             do {
                 try self.transportLayer.write(data: data)

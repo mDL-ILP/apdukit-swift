@@ -9,7 +9,7 @@
 import Foundation
 import Promise
 
-public protocol PresentationLayer: SessionLayerDelegate {
+public protocol PresentationLayer {
     func select(DF fileID: DedicatedFileID) -> Promise<()>
     func select(EF fileID: ElementaryFileID) -> Promise<()>
     func readBinary(EF fileID: ElementaryFileID, offset: byte) -> Promise<[byte]>

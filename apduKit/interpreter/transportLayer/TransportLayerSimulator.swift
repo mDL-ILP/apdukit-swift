@@ -8,7 +8,7 @@
 
 import Foundation
 
-class TransportLayerSimulator: TransportLayer {
+public class TransportLayerSimulator: TransportLayer {
     var delegate: TransportLayerDelegate?
     var externalMockTransportLayer: TransportLayerSimulator?
     

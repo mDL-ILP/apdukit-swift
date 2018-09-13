@@ -11,9 +11,9 @@ import Foundation
 * SelectCommand - Is a apdu command that allows to select a file. This is done by specifying a dedicated or elementary file id.
 */
 public class SelectCommand: CommandApdu {
-    private(set) var fileType: FileType?
-    var fileControlInfo: FileControlInfo?
-    var fileID: FileID? {
+    private(set) var fileType: FileType!
+    var fileControlInfo: FileControlInfo!
+    var fileID: FileID! {
         didSet {
             if self.fileID is DedicatedFileID {
                 self.fileType = .DF

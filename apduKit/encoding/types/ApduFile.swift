@@ -47,8 +47,14 @@ public class ApduFile {
     }
     
     public func getData() -> [byte] {
-        
         return data.buffer
+    }
+    
+    public func appendValue(value: [byte]) throws {
+        if value.count > remainingBytes() {
+            throw ApduErrors.InvalidApduFileException(description: "Actual data exceeds expected data")
+        }
+        self.data.write(bytes: value)
     }
     
     public func getDeclaredSize() -> short {

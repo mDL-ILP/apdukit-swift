@@ -9,11 +9,7 @@
 /* Begin PBXBuildFile section */
 		0E4FA1BDA30CBE745FF6567A /* libPods-apduKitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECCD530AFE02D99E7F4C2939 /* libPods-apduKitTests.a */; };
 		2713D128213EC57D0026F412 /* InterpreterErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2713D127213EC57D0026F412 /* InterpreterErrors.swift */; };
-		2713D129213EC5820026F412 /* InterpreterErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2713D127213EC57D0026F412 /* InterpreterErrors.swift */; };
 		2713D12B213EC8670026F412 /* TransportLayerSimulatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2713D12A213EC8670026F412 /* TransportLayerSimulatorTests.swift */; };
-		2713D12D213EC9DF0026F412 /* TransportLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C82253213EC306005D7B9B /* TransportLayer.swift */; };
-		2713D12E213EC9DF0026F412 /* TransportLayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C82256213EC3D6005D7B9B /* TransportLayerDelegate.swift */; };
-		2713D12F213EC9DF0026F412 /* TransportLayerSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C8225A213EC40F005D7B9B /* TransportLayerSimulator.swift */; };
 		2713D132213ECB4A0026F412 /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2713D131213ECB4A0026F412 /* GeneratedMocks.swift */; };
 		2713D136213ECDF00026F412 /* MatchableArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2713D135213ECDF00026F412 /* MatchableArray.swift */; };
 		271EFF8D2137E48D0000CBAF /* ResponseApduBuildTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271EFF8C2137E48D0000CBAF /* ResponseApduBuildTests.swift */; };
@@ -64,6 +60,7 @@
 		27530A2821369CC50064B48B /* ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27530A252136987A0064B48B /* ExampleApp.swift */; };
 		27530A2A2136CD5A0064B48B /* SelectCommandParseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27530A292136CD5A0064B48B /* SelectCommandParseTests.swift */; };
 		27530A2C2136DD3B0064B48B /* ResponseApdu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27530A2B2136DD3B0064B48B /* ResponseApdu.swift */; };
+		276EC057214A60DD0052DBC7 /* PromiseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276EC056214A60DD0052DBC7 /* PromiseTest.swift */; };
 		27BAE40A2133FDD000EEE5A1 /* InstructionCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BAE4092133FDD000EEE5A1 /* InstructionCode.swift */; };
 		27BAE40E21340D2800EEE5A1 /* FileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BAE40D21340D2800EEE5A1 /* FileType.swift */; };
 		27BAE41021340DFB00EEE5A1 /* StatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BAE40F21340DFB00EEE5A1 /* StatusCode.swift */; };
@@ -97,6 +94,27 @@
 		27E9D33621496439007729F4 /* ApplicationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9D33521496439007729F4 /* ApplicationLayer.swift */; };
 		27E9D3382149646C007729F4 /* HolderApplicationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9D3372149646C007729F4 /* HolderApplicationLayer.swift */; };
 		27E9D33A21496474007729F4 /* ReaderApplicationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9D33921496474007729F4 /* ReaderApplicationLayer.swift */; };
+		27E9D33C21496561007729F4 /* ApduProtocolPresentationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9D33B21496561007729F4 /* ApduProtocolPresentationLayer.swift */; };
+		27E9D33E2149D51B007729F4 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9D33D2149D51B007729F4 /* Promise.swift */; };
+		27E9D340214A5072007729F4 /* IntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9D33F214A5072007729F4 /* IntegrationTests.swift */; };
+		27E9D34C214A5109007729F4 /* ApplicationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9D33521496439007729F4 /* ApplicationLayer.swift */; };
+		27E9D34D214A5109007729F4 /* HolderApplicationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9D3372149646C007729F4 /* HolderApplicationLayer.swift */; };
+		27E9D34E214A5109007729F4 /* ReaderApplicationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9D33921496474007729F4 /* ReaderApplicationLayer.swift */; };
+		27E9D34F214A5109007729F4 /* PresentationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9D32B214936F6007729F4 /* PresentationLayer.swift */; };
+		27E9D350214A5109007729F4 /* PresentationLayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9D32D21493790007729F4 /* PresentationLayerDelegate.swift */; };
+		27E9D351214A5109007729F4 /* BaseApduProtocolPresentationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9D32F214938D1007729F4 /* BaseApduProtocolPresentationLayer.swift */; };
+		27E9D352214A5109007729F4 /* ApduProtocolPresentationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9D33B21496561007729F4 /* ApduProtocolPresentationLayer.swift */; };
+		27E9D353214A5109007729F4 /* SessionLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9D31F21490501007729F4 /* SessionLayer.swift */; };
+		27E9D354214A5109007729F4 /* SessionLayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9D32121490A88007729F4 /* SessionLayerDelegate.swift */; };
+		27E9D355214A5109007729F4 /* ReaderSessionLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9D32321490B78007729F4 /* ReaderSessionLayer.swift */; };
+		27E9D356214A5109007729F4 /* HolderSessionLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9D32821492ED9007729F4 /* HolderSessionLayer.swift */; };
+		27E9D357214A5109007729F4 /* InterpreterErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2713D127213EC57D0026F412 /* InterpreterErrors.swift */; };
+		27E9D358214A5115007729F4 /* TransportLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C82253213EC306005D7B9B /* TransportLayer.swift */; };
+		27E9D359214A5115007729F4 /* TransportLayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C82256213EC3D6005D7B9B /* TransportLayerDelegate.swift */; };
+		27E9D35A214A5115007729F4 /* TransportLayerSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C8225A213EC40F005D7B9B /* TransportLayerSimulator.swift */; };
+		27E9D35C214A5310007729F4 /* TestHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9D35B214A5310007729F4 /* TestHolder.swift */; };
+		27E9D35E214A534A007729F4 /* TestReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9D35D214A534A007729F4 /* TestReader.swift */; };
+		27E9D360214A54CF007729F4 /* ReaderIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9D35F214A54CF007729F4 /* ReaderIntegrationTests.swift */; };
 		DF767E696FBACB2187AB8E77 /* libPods-apduKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BC7D1FF68A78E332DE2F26D /* libPods-apduKit.a */; };
 /* End PBXBuildFile section */
 
@@ -144,6 +162,7 @@
 		27530A252136987A0064B48B /* ExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleApp.swift; sourceTree = "<group>"; };
 		27530A292136CD5A0064B48B /* SelectCommandParseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCommandParseTests.swift; sourceTree = "<group>"; };
 		27530A2B2136DD3B0064B48B /* ResponseApdu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseApdu.swift; sourceTree = "<group>"; };
+		276EC056214A60DD0052DBC7 /* PromiseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromiseTest.swift; sourceTree = "<group>"; };
 		27BAE4092133FDD000EEE5A1 /* InstructionCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionCode.swift; sourceTree = "<group>"; };
 		27BAE40D21340D2800EEE5A1 /* FileType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileType.swift; sourceTree = "<group>"; };
 		27BAE40F21340DFB00EEE5A1 /* StatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCode.swift; sourceTree = "<group>"; };
@@ -173,6 +192,12 @@
 		27E9D33521496439007729F4 /* ApplicationLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationLayer.swift; sourceTree = "<group>"; };
 		27E9D3372149646C007729F4 /* HolderApplicationLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolderApplicationLayer.swift; sourceTree = "<group>"; };
 		27E9D33921496474007729F4 /* ReaderApplicationLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderApplicationLayer.swift; sourceTree = "<group>"; };
+		27E9D33B21496561007729F4 /* ApduProtocolPresentationLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApduProtocolPresentationLayer.swift; sourceTree = "<group>"; };
+		27E9D33D2149D51B007729F4 /* Promise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promise.swift; sourceTree = "<group>"; };
+		27E9D33F214A5072007729F4 /* IntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegrationTests.swift; sourceTree = "<group>"; };
+		27E9D35B214A5310007729F4 /* TestHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHolder.swift; sourceTree = "<group>"; };
+		27E9D35D214A534A007729F4 /* TestReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestReader.swift; sourceTree = "<group>"; };
+		27E9D35F214A54CF007729F4 /* ReaderIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderIntegrationTests.swift; sourceTree = "<group>"; };
 		4168A7FF25407A3FDA5F6472 /* Pods-apduKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apduKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-apduKit/Pods-apduKit.release.xcconfig"; sourceTree = "<group>"; };
 		66E2C831B4874F0A2706873D /* Pods-apduKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apduKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-apduKitTests/Pods-apduKitTests.release.xcconfig"; sourceTree = "<group>"; };
 		7BC7D1FF68A78E332DE2F26D /* libPods-apduKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-apduKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -388,6 +413,7 @@
 			children = (
 				27BAE42921353CAE00EEE5A1 /* ByteArrayOutputStream.swift */,
 				27BAE42C2135420D00EEE5A1 /* ByteArrayInputStream.swift */,
+				27E9D33D2149D51B007729F4 /* Promise.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -396,6 +422,7 @@
 			isa = PBXGroup;
 			children = (
 				27BAE42521344EC900EEE5A1 /* StreamsTest.swift */,
+				276EC056214A60DD0052DBC7 /* PromiseTest.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -414,6 +441,10 @@
 			isa = PBXGroup;
 			children = (
 				2713D12A213EC8670026F412 /* TransportLayerSimulatorTests.swift */,
+				27E9D33F214A5072007729F4 /* IntegrationTests.swift */,
+				27E9D35B214A5310007729F4 /* TestHolder.swift */,
+				27E9D35D214A534A007729F4 /* TestReader.swift */,
+				27E9D35F214A54CF007729F4 /* ReaderIntegrationTests.swift */,
 			);
 			path = interpreter;
 			sourceTree = "<group>";
@@ -443,6 +474,7 @@
 				27E9D32B214936F6007729F4 /* PresentationLayer.swift */,
 				27E9D32D21493790007729F4 /* PresentationLayerDelegate.swift */,
 				27E9D32F214938D1007729F4 /* BaseApduProtocolPresentationLayer.swift */,
+				27E9D33B21496561007729F4 /* ApduProtocolPresentationLayer.swift */,
 			);
 			path = presentationLayer;
 			sourceTree = "<group>";
@@ -647,6 +679,7 @@
 				27E9D32021490501007729F4 /* SessionLayer.swift in Sources */,
 				271EFF9A213826910000CBAF /* ReadBinaryOffsetCommand.swift in Sources */,
 				27530A2C2136DD3B0064B48B /* ResponseApdu.swift in Sources */,
+				27E9D33E2149D51B007729F4 /* Promise.swift in Sources */,
 				2745A0602130030500A4F538 /* FileID.swift in Sources */,
 				27E9D33221495047007729F4 /* TLVInfo.swift in Sources */,
 				27E9D33A21496474007729F4 /* ReaderApplicationLayer.swift in Sources */,
@@ -662,6 +695,7 @@
 				2745A0592130026E00A4F538 /* CommandApdu.swift in Sources */,
 				2745A0642130037000A4F538 /* ElementaryFileID.swift in Sources */,
 				27E9D33621496439007729F4 /* ApplicationLayer.swift in Sources */,
+				27E9D33C21496561007729F4 /* ApduProtocolPresentationLayer.swift in Sources */,
 				27BAE41821341FBA00EEE5A1 /* ApduErrors.swift in Sources */,
 				27E9D32E21493790007729F4 /* PresentationLayerDelegate.swift in Sources */,
 				27E9D32221490A88007729F4 /* SessionLayerDelegate.swift in Sources */,
@@ -678,30 +712,42 @@
 			buildActionMask = 2147483647;
 			files = (
 				27530A1D213698180064B48B /* StatusCode.swift in Sources */,
+				276EC057214A60DD0052DBC7 /* PromiseTest.swift in Sources */,
 				271EFFA1213830C90000CBAF /* ReadBinaryOffsetCommand.swift in Sources */,
 				27530A15213698150064B48B /* CommandApdu.swift in Sources */,
 				27DB4BBC2141775C005E0884 /* InternalAuthenticateCommand.swift in Sources */,
 				27530A24213698200064B48B /* ApduFile.swift in Sources */,
 				27C82251213EBB33005D7B9B /* ReadBinaryShortFileIDCommandBuildTests.swift in Sources */,
 				271EFF98213824480000CBAF /* ReadBinaryOffsetCommandBuildTests.swift in Sources */,
+				27E9D35A214A5115007729F4 /* TransportLayerSimulator.swift in Sources */,
+				27E9D357214A5109007729F4 /* InterpreterErrors.swift in Sources */,
 				27530A0B21357DBE0064B48B /* ApduLengthUtilsTests.swift in Sources */,
+				27E9D340214A5072007729F4 /* IntegrationTests.swift in Sources */,
 				27530A1C213698180064B48B /* FileType.swift in Sources */,
 				27530A21213698200064B48B /* FileID.swift in Sources */,
+				27E9D35C214A5310007729F4 /* TestHolder.swift in Sources */,
 				27BAE42E2135451600EEE5A1 /* ByteArrayInputStream.swift in Sources */,
+				27E9D356214A5109007729F4 /* HolderSessionLayer.swift in Sources */,
 				2713D132213ECB4A0026F412 /* GeneratedMocks.swift in Sources */,
+				27E9D358214A5115007729F4 /* TransportLayer.swift in Sources */,
 				2745A0732130331700A4F538 /* ConversionUtilsTests.swift in Sources */,
 				271EFFA0213830C90000CBAF /* ReadBinaryShortFileIDCommand.swift in Sources */,
 				2745A0752130338800A4F538 /* ConversionUtils.swift in Sources */,
 				27530A16213698150064B48B /* Constants.swift in Sources */,
 				271EFF8D2137E48D0000CBAF /* ResponseApduBuildTests.swift in Sources */,
+				27E9D34C214A5109007729F4 /* ApplicationLayer.swift in Sources */,
 				27530A1A213698180064B48B /* InstructionClass.swift in Sources */,
 				27530A22213698200064B48B /* DedicatedFileID.swift in Sources */,
-				2713D12D213EC9DF0026F412 /* TransportLayer.swift in Sources */,
+				27E9D34F214A5109007729F4 /* PresentationLayer.swift in Sources */,
 				27530A19213698180064B48B /* FileControlInfo.swift in Sources */,
 				27530A10213691A80064B48B /* SelectCommandBuildTests.swift in Sources */,
-				2713D12F213EC9DF0026F412 /* TransportLayerSimulator.swift in Sources */,
+				27E9D353214A5109007729F4 /* SessionLayer.swift in Sources */,
+				27E9D359214A5115007729F4 /* TransportLayerDelegate.swift in Sources */,
+				27E9D360214A54CF007729F4 /* ReaderIntegrationTests.swift in Sources */,
 				27BAE42621344EC900EEE5A1 /* StreamsTest.swift in Sources */,
 				271EFFA321383D5C0000CBAF /* ReadBinaryOffsetCommandParseTests.swift in Sources */,
+				27E9D355214A5109007729F4 /* ReaderSessionLayer.swift in Sources */,
+				27E9D351214A5109007729F4 /* BaseApduProtocolPresentationLayer.swift in Sources */,
 				27530A2821369CC50064B48B /* ExampleApp.swift in Sources */,
 				271EFF9F213830C90000CBAF /* ReadBinaryCommand.swift in Sources */,
 				271EFF902137E8260000CBAF /* ResponseApduParseTests.swift in Sources */,
@@ -712,18 +758,22 @@
 				27530A2A2136CD5A0064B48B /* SelectCommandParseTests.swift in Sources */,
 				271EFF9E213830C90000CBAF /* ResponseApdu.swift in Sources */,
 				27DB4BC12142806D005E0884 /* InternalAuthenticateCommandBuildTests.swift in Sources */,
+				27E9D350214A5109007729F4 /* PresentationLayerDelegate.swift in Sources */,
+				27E9D354214A5109007729F4 /* SessionLayerDelegate.swift in Sources */,
 				27530A0D213587FD0064B48B /* ApduErrors.swift in Sources */,
 				27E9D3332149518E007729F4 /* TLVInfo.swift in Sources */,
 				27530A14213698150064B48B /* Apdu.swift in Sources */,
 				271EFFA5213844A50000CBAF /* ReadBinaryShortFileIDCommandParseTests.swift in Sources */,
+				27E9D35E214A534A007729F4 /* TestReader.swift in Sources */,
 				27530A1B213698180064B48B /* InstructionCode.swift in Sources */,
-				2713D129213EC5820026F412 /* InterpreterErrors.swift in Sources */,
 				271EFF9D213830C90000CBAF /* SelectCommand.swift in Sources */,
 				2745A0782130441E00A4F538 /* ConversionUtilsErrors.swift in Sources */,
-				2713D12E213EC9DF0026F412 /* TransportLayerDelegate.swift in Sources */,
 				27530A23213698200064B48B /* ElementaryFileID.swift in Sources */,
 				27DB4BBF21427C82005E0884 /* ElementaryFileIDTests.swift in Sources */,
+				27E9D34E214A5109007729F4 /* ReaderApplicationLayer.swift in Sources */,
+				27E9D352214A5109007729F4 /* ApduProtocolPresentationLayer.swift in Sources */,
 				2713D136213ECDF00026F412 /* MatchableArray.swift in Sources */,
+				27E9D34D214A5109007729F4 /* HolderApplicationLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

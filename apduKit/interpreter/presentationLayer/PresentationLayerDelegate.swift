@@ -9,7 +9,15 @@
 import Foundation
 
 public protocol PresentationLayerDelegate {
-    func getLocalfile(id: ElementaryFileID) -> ApduFile
+    /**
+     * Sets the file for a particular file id on the holders side.
+     *
+     * @param id   the file id of the data
+     * @param data bytes of the file.
+     * @return boolean informing the caller if the file was successfully set.
+     */
+    func getLocalfile(id: ElementaryFileID) -> ApduFile?
+    
     func getAppId() -> DedicatedFileID
     func isFileAllowed(file: ElementaryFileID) -> Bool
     
