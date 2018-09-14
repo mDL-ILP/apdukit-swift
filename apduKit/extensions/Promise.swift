@@ -7,20 +7,14 @@
 //
 
 import Foundation
-import Promise
+import Promises
 
 extension Promise {
     public func getValue() throws -> Value {
-        let lock = DispatchSemaphore(value: 1)
-        self.always(on: DispatchQueue.global()) {
-            lock.signal()
-        }
-        lock.wait()
-        lock.wait()
-        lock.signal()
-        if let e = self.error {
-            throw e
-        }
-        return self.value!
+        return try await(self)
     }
+}
+
+extension DispatchQueue {
+    static var apduPromises = DispatchQueue.global(qos: .background)
 }

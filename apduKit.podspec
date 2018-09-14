@@ -26,5 +26,5 @@ Pod::Spec.new do |s|
   s.frameworks = 'Foundation'
 
   s.source_files = 'apduKit/**/*'
-  s.dependency 'Promises', '~> 2.0.1'
+  s.dependency 'PromisesSwift', '~> 1.2.3'
 end

@@ -55,7 +55,7 @@ class SelectCommandBuildTests: XCTestCase {
     
     func testValidation() {
         callValidation(expected: "fileID")
-        subject.fileID = ExampleApp.instance.ValidEF1
+        subject.fileID = ExampleApp.instance.ValidShortIdEF1
         callValidation(expected: "expectedResult")
         subject.fileControlInfo = FileControlInfo.NOFCIReturn
         try! subject.validate()

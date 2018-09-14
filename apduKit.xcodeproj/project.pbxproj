@@ -61,6 +61,8 @@
 		27530A2A2136CD5A0064B48B /* SelectCommandParseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27530A292136CD5A0064B48B /* SelectCommandParseTests.swift */; };
 		27530A2C2136DD3B0064B48B /* ResponseApdu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27530A2B2136DD3B0064B48B /* ResponseApdu.swift */; };
 		276EC057214A60DD0052DBC7 /* PromiseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276EC056214A60DD0052DBC7 /* PromiseTest.swift */; };
+		276EC058214A7ED70052DBC7 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9D33D2149D51B007729F4 /* Promise.swift */; };
+		276EC05A214BCE9D0052DBC7 /* HolderIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276EC059214BCE9C0052DBC7 /* HolderIntegrationTests.swift */; };
 		27BAE40A2133FDD000EEE5A1 /* InstructionCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BAE4092133FDD000EEE5A1 /* InstructionCode.swift */; };
 		27BAE40E21340D2800EEE5A1 /* FileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BAE40D21340D2800EEE5A1 /* FileType.swift */; };
 		27BAE41021340DFB00EEE5A1 /* StatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BAE40F21340DFB00EEE5A1 /* StatusCode.swift */; };
@@ -163,6 +165,7 @@
 		27530A292136CD5A0064B48B /* SelectCommandParseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCommandParseTests.swift; sourceTree = "<group>"; };
 		27530A2B2136DD3B0064B48B /* ResponseApdu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseApdu.swift; sourceTree = "<group>"; };
 		276EC056214A60DD0052DBC7 /* PromiseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromiseTest.swift; sourceTree = "<group>"; };
+		276EC059214BCE9C0052DBC7 /* HolderIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolderIntegrationTests.swift; sourceTree = "<group>"; };
 		27BAE4092133FDD000EEE5A1 /* InstructionCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionCode.swift; sourceTree = "<group>"; };
 		27BAE40D21340D2800EEE5A1 /* FileType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileType.swift; sourceTree = "<group>"; };
 		27BAE40F21340DFB00EEE5A1 /* StatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCode.swift; sourceTree = "<group>"; };
@@ -445,6 +448,7 @@
 				27E9D35B214A5310007729F4 /* TestHolder.swift */,
 				27E9D35D214A534A007729F4 /* TestReader.swift */,
 				27E9D35F214A54CF007729F4 /* ReaderIntegrationTests.swift */,
+				276EC059214BCE9C0052DBC7 /* HolderIntegrationTests.swift */,
 			);
 			path = interpreter;
 			sourceTree = "<group>";
@@ -616,7 +620,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Define output file. Change \"$PROJECT_DIR/${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"$PROJECT_DIR/${PROJECT_NAME}Tests/GeneratedMocks.swift\"\necho \"Generated Mocks File = $OUTPUT_FILE\"\n\n# Define input directory. Change \"${PROJECT_DIR}/${PROJECT_NAME}\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"${PROJECT_DIR}/${PROJECT_NAME}\"\necho \"Mocks Input Directory = $INPUT_DIR\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n\"${PODS_ROOT}/Cuckoo/run\" generate --testable \"$PROJECT_NAME\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"$INPUT_DIR/interpreter/transportLayer/TransportLayerSimulator.swift\" \\\n\"$INPUT_DIR/interpreter/transportLayer/TransportLayerDelegate.swift\" \\\n\"$INPUT_DIR/FileName3.swift\"\n# ... and so forth, the last line should never end with a backslash\n\n# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group.";
+			shellScript = "# Define output file. Change \"$PROJECT_DIR/${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"$PROJECT_DIR/${PROJECT_NAME}Tests/GeneratedMocks.swift\"\necho \"Generated Mocks File = $OUTPUT_FILE\"\n\n# Define input directory. Change \"${PROJECT_DIR}/${PROJECT_NAME}\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"${PROJECT_DIR}/${PROJECT_NAME}\"\necho \"Mocks Input Directory = $INPUT_DIR\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n\"${PODS_ROOT}/Cuckoo/run\" generate --testable \"$PROJECT_NAME\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"$INPUT_DIR/interpreter/transportLayer/TransportLayerSimulator.swift\" \\\n\"$INPUT_DIR/interpreter/transportLayer/TransportLayerDelegate.swift\" \\\n\"$INPUT_DIR/interpreter/applicationLayer/ReaderApplicationLayer.swift\"\n# ... and so forth, the last line should never end with a backslash\n\n# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group.";
 		};
 		F59CC65FE385AF32D437BBDD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -718,6 +722,7 @@
 				27DB4BBC2141775C005E0884 /* InternalAuthenticateCommand.swift in Sources */,
 				27530A24213698200064B48B /* ApduFile.swift in Sources */,
 				27C82251213EBB33005D7B9B /* ReadBinaryShortFileIDCommandBuildTests.swift in Sources */,
+				276EC058214A7ED70052DBC7 /* Promise.swift in Sources */,
 				271EFF98213824480000CBAF /* ReadBinaryOffsetCommandBuildTests.swift in Sources */,
 				27E9D35A214A5115007729F4 /* TransportLayerSimulator.swift in Sources */,
 				27E9D357214A5109007729F4 /* InterpreterErrors.swift in Sources */,
@@ -739,6 +744,7 @@
 				27530A1A213698180064B48B /* InstructionClass.swift in Sources */,
 				27530A22213698200064B48B /* DedicatedFileID.swift in Sources */,
 				27E9D34F214A5109007729F4 /* PresentationLayer.swift in Sources */,
+				276EC05A214BCE9D0052DBC7 /* HolderIntegrationTests.swift in Sources */,
 				27530A19213698180064B48B /* FileControlInfo.swift in Sources */,
 				27530A10213691A80064B48B /* SelectCommandBuildTests.swift in Sources */,
 				27E9D353214A5109007729F4 /* SessionLayer.swift in Sources */,

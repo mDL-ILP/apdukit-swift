@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Promise
+import Promises
 
 /**
  * The server session layer handles sending and receiving apdu messages. It decodes incoming bytes into Apdu objects and then calls the appropriate delegate message handle method.
@@ -22,7 +22,9 @@ public class HolderSessionLayer: SessionLayer {
     }
     
     public func send(command: CommandApdu) -> Promise<ResponseApdu> {
-        return Promise<ResponseApdu>.init(error: InterpeterErrors.Exception(message: "Following the APDU specification a holder cannot start a send"))
+        return Promise(on: DispatchQueue.apduPromises) { () -> ResponseApdu in
+            throw InterpeterErrors.Exception(message: "Following the APDU specification a holder cannot start a send")
+        }
     }
     
     public func set(delegate: SessionLayerDelegate) {

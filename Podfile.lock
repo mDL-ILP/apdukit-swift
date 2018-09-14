@@ -1,20 +1,24 @@
 PODS:
   - Cuckoo (0.11.3)
-  - Promises (2.0.1)
+  - PromisesObjC (1.2.3)
+  - PromisesSwift (1.2.3):
+    - PromisesObjC (= 1.2.3)
 
 DEPENDENCIES:
   - Cuckoo
-  - Promises (~> 2.0.1)
+  - PromisesSwift (~> 1.2.3)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Cuckoo
-    - Promises
+    - PromisesObjC
+    - PromisesSwift
 
 SPEC CHECKSUMS:
   Cuckoo: 97522dd7ac6f18adba6022bdc74aa69e82ca691a
-  Promises: e94e1d74d818d1d2f8933e1f4f12d443c3bb4f3b
+  PromisesObjC: a3a4263d8a9260214267e0b3788d0f83466ad449
+  PromisesSwift: f7f45c21986419e85f7c5b645ed8c6a2c10c04b4
 
-PODFILE CHECKSUM: 2ec372a904e10bdf6d479c0435d01d309d75631f
+PODFILE CHECKSUM: 601f80f6182854a0bf3d6e52d5f9c3cd6bcb25a5
 
 COCOAPODS: 1.5.3

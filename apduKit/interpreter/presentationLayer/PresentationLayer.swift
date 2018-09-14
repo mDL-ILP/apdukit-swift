@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Promise
+import Promises
 
 public protocol PresentationLayer {
     func select(DF fileID: DedicatedFileID) -> Promise<()>

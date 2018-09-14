@@ -31,7 +31,7 @@ class ReadBinaryShortFileIDCommandParseTests: XCTestCase {
         XCTAssertTrue(command is ReadBinaryShortFileIDCommand)
         let result = command as? ReadBinaryShortFileIDCommand
         
-        XCTAssertEqual(try ExampleApp.instance.ValidEF1.getShortIdentifier(), try result?.elementaryFileID?.getShortIdentifier())
+        XCTAssertEqual(try ExampleApp.instance.ValidShortIdEF1.getShortIdentifier(), try result?.elementaryFileID?.getShortIdentifier())
         XCTAssertEqual(40, result?.offset)
         XCTAssertEqual(259, result?.maximumExpectedLength)
     }

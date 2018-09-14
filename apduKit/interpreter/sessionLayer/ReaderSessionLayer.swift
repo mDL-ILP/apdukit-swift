@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Promise
+import Promises
 
 /**
  * The client session layer handles sending and receiving APDU messages. It also allows for sending APDU commands and keeping track of this open request. Then fulfilling the promise upon receiving data.
@@ -26,52 +26,33 @@ public class ReaderSessionLayer: SessionLayer {
     }
     
     private func commandToBytes(input: CommandApdu) -> Promise<[byte]> {
-        let p =  Promise<[byte]>(work: { fulfill, reject in
-            do {
-                usleep(1000)
-                let payload: [byte] = [0, 1, 2, 3]
-//                let payload = try input.toBytes().buffer
-                fulfill(payload)
-            } catch let e {
-                reject(e)
-            }
-        })
-        p.then({ (data) in
-            print(data)
-        })
-        return p
+        return Promise(on: DispatchQueue.apduPromises) { () -> [byte] in
+            let payload = try input.toBytes().buffer
+            return payload
+        }
     }
     
     public func send(command: CommandApdu) -> Promise<ResponseApdu> {
-//        if openRequestLock.wait(timeout: DispatchTime.now()) == DispatchTimeoutResult.timedOut {
-//            return Promise<ResponseApdu>(error: InterpeterErrors.OutOfSequenceException())
-//        }
-        let b = commandToBytes(input: command).then { (test) in
-            print("yesss")
+        if openRequestLock.wait(timeout: DispatchTime.now()) == DispatchTimeoutResult.timedOut {
+            return Promise(on: DispatchQueue.apduPromises) { () -> ResponseApdu in
+                throw InterpeterErrors.OutOfSequenceException()
+            }
         }
-        return Promise<ResponseApdu>(work: { fulfill, reject in
-            
-        })
-//        let p = commandToBytes(input: command).then(self.sendBytes)
-//        p.always {
-//            self.openRequestLock.signal()
-//        }
-//        return p
+        return commandToBytes(input: command)
+            .then(on: DispatchQueue.apduPromises, self.sendBytes)
+            .always(on: DispatchQueue.apduPromises, {
+                self.openRequestLock.signal()
+            })
     }
     
     public func sendBytes(data: [byte]) -> Promise<ResponseApdu> {
-        print("test")
-        let p = Promise<ResponseApdu>(work: { fulfill, reject in
-            do {
-                try self.transportLayer.write(data: data)
-            } catch let e {
-                reject(e)
-            }
-        })
-        openRequest = p
-        p.always {
-            self.openRequest = nil
+        let p = Promise<ResponseApdu>(on: DispatchQueue.apduPromises) { (fulfill, reject) in
+            try self.transportLayer.write(data: data)
         }
+        openRequest = p
+        p.always(on: DispatchQueue.apduPromises, {
+            self.openRequest = nil
+        })
         return p
     }
     
@@ -90,6 +71,7 @@ public class ReaderSessionLayer: SessionLayer {
             openRequest.fulfill(response)
         } catch let e {
             openRequest.reject(e)
+            self.delegate?.onReceiveInvalidApdu(exception: e)
         }
     }
     

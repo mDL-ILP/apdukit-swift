@@ -10,7 +10,7 @@ import Foundation
 
 class ReadBinaryShortFileIDCommand: ReadBinaryCommand {
     private(set) var elementaryFileID: ElementaryFileID!
-    private(set) var offset: byte?
+    private(set) var offset: byte!
     
     override init() {
         super.init()
@@ -56,6 +56,9 @@ class ReadBinaryShortFileIDCommand: ReadBinaryCommand {
         guard self.elementaryFileID != nil else {
             throw ApduErrors.ValueNotSetException(value: "elementaryFileID")
         }
+        guard self.offset != nil else {
+            throw ApduErrors.ValueNotSetException(value: "offset")
+        }
     }
     
     override func toBytes() throws -> ByteArrayOutputStream {
@@ -75,6 +78,10 @@ class ReadBinaryShortFileIDCommand: ReadBinaryCommand {
     func set(elementaryFileID: ElementaryFileID) -> ReadBinaryShortFileIDCommand {
         self.elementaryFileID = elementaryFileID
         return self
+    }
+    
+    override func getOffset() -> short {
+        return short(self.offset)
     }
     
 }

@@ -9,13 +9,13 @@
 import Foundation
 class ExampleApp {
 
-    let ValidEF1: ElementaryFileID
+    let ValidShortIdEF1: ElementaryFileID
     
     let ValidEF2: ElementaryFileID
     
     let ValidEF_NoShortId: ElementaryFileID
     
-    let InvalidShortFileId_ButValidNormalId: ElementaryFileID
+    let ValidNormalIdEF: ElementaryFileID
     
     
     let ValidDF_NormalLength1: DedicatedFileID
@@ -24,10 +24,10 @@ class ExampleApp {
     
     let ValidDF_ExtendedLength: DedicatedFileID
     
-    let Datagroup1: [byte] = [0x04, 0x01, 0x01] 
+    let DatagroupE: [byte] = [0x04, 0x01, 0x01] 
     
     private init() {
-        self.ValidEF1 = try! ElementaryFileID(
+        self.ValidShortIdEF1 = try! ElementaryFileID(
             shortIdentifier: 0x01,
             normalIdentifier: short(12337)
         )
@@ -42,7 +42,7 @@ class ExampleApp {
             normalIdentifier: short(284)
         )
         
-        self.InvalidShortFileId_ButValidNormalId = try! ElementaryFileID(
+        self.ValidNormalIdEF = try! ElementaryFileID(
             shortIdentifier: nil,
             normalIdentifier: short(12337)
         )

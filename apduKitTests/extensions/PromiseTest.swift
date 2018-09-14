@@ -7,41 +7,31 @@
 //
 
 import XCTest
-import Promise
+import Promises
 
 class PromiseTest: XCTestCase {
-    func testGetFileFulfill() throws {
-        let test = Promise<Bool>(work: { (fulfill, reject) in
+    func testGetValueFulfill() throws {
+        let expectation = self.expectation(description: "Catch called")
+        let test = Promise<Bool>(on: DispatchQueue.apduPromises) { () -> Bool in
             usleep(3000)
-            fulfill(true)
-        })
+            return true
+        }
         test.then { (res) in
-            print("test")
+            expectation.fulfill()
         }
         let result = try test.getValue()
         XCTAssertEqual(true, result)
+        waitForExpectations(timeout: 5, handler: nil)
     }
-    
-    func testGetFileReject() throws {
+
+    func testGetValueReject() throws {
         enum testError: Error {
             case Example(description: String)
         }
-        
-        let test = Promise<Bool>(work: { (fulfill, reject) in
+        let test = Promise<Bool>(on: DispatchQueue.apduPromises) { () -> Bool in
             usleep(3000)
-            reject(testError.Example(description: "example"))
-        })
+            throw testError.Example(description: "example")
+        }
         XCTAssertThrowsError(try test.getValue())
-    }
-    
-    func testEasyThen() throws {
-        let a = Promise<[byte]> { (fulfill, reject) in
-            let payload: [byte] = [0, 1, 2, 3]
-            fulfill(payload)
-        }
-        a.then { (result) in
-            print(result)
-        }
-        try a.getValue()
     }
 }

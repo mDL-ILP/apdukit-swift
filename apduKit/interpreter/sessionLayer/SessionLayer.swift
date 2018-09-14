@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Promise
+import Promises
 
 /**
  * The session layer handles sending and receiving apdu messages. It decodes incoming bytes into Apdu objects and then calls the appropriate delegate message handle method.

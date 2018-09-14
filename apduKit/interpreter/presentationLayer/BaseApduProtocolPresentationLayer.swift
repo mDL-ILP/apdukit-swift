@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Promise
+import Promises
 
 /**
  * The base APDU protocol presentation layer. It keeps state of what DF and EF are selected. Exposes methods to select DF or EF.
@@ -32,17 +32,19 @@ public class BaseApduProtocolPresentationLayer: PresentationLayer {
      */
     public func select(DF fileID: DedicatedFileID) -> Promise<()> {
         if self.selectedDF == fileID {
-            return Promise<()>(value: ())
+            return Promise(on: DispatchQueue.apduPromises) { () -> () in
+                return ()
+            }
         }
         let command = SelectCommand()
             .set(fileControlInfo: .NOFCIReturn)
             .set(fileID: fileID)
         return self.sessionLayer.send(command: command)
-            .then(readSelectResponse)
-            .then { (result) -> Promise<()> in
+            .then(on: DispatchQueue.apduPromises, readSelectResponse)
+            .then(on: DispatchQueue.apduPromises, { (result) -> () in
                 self.selectedDF = fileID
-                return Promise<()>(value: ())
-            }
+                return ()
+            })
     }
     
     /**
@@ -52,17 +54,19 @@ public class BaseApduProtocolPresentationLayer: PresentationLayer {
      */
     public func select(EF fileID: ElementaryFileID) -> Promise<()> {
         if self.selectedEF == fileID {
-            return Promise<()>(value: ())
+            return Promise(on: DispatchQueue.apduPromises) { () -> () in
+                return ()
+            }
         }
         let command = SelectCommand()
             .set(fileControlInfo: .NOFCIReturn)
             .set(fileID: fileID)
         return self.sessionLayer.send(command: command)
-            .then(self.readSelectResponse)
-            .then { (result) -> Promise<()> in
+            .then(on: DispatchQueue.apduPromises, readSelectResponse)
+            .then(on: DispatchQueue.apduPromises, { (result) -> () in
                 self.selectedEF = fileID
-                return Promise<()>(value: ())
-        }
+                return ()
+            })
     }
     
     /**
@@ -76,7 +80,7 @@ public class BaseApduProtocolPresentationLayer: PresentationLayer {
             .set(offset: offset)
             .set(elementaryFileID: fileID)
         _ = command.set(maximumExpectedLength: self.maxExpLength)
-        return self.sessionLayer.send(command: command).then(readReadBinaryResponse)
+        return self.sessionLayer.send(command: command).then(on: DispatchQueue.apduPromises, readReadBinaryResponse)
     }
     
     /**
@@ -88,7 +92,7 @@ public class BaseApduProtocolPresentationLayer: PresentationLayer {
         let command = ReadBinaryOffsetCommand()
             .set(offset: short(offset))
         _ = command.set(maximumExpectedLength: self.maxExpLength)
-        return self.sessionLayer.send(command: command).then(readReadBinaryResponse)
+        return self.sessionLayer.send(command: command).then(on: DispatchQueue.apduPromises, readReadBinaryResponse)
     }
     
     /**
@@ -99,9 +103,13 @@ public class BaseApduProtocolPresentationLayer: PresentationLayer {
     private func readSelectResponse(response: ResponseApdu) -> Promise<ResponseApdu> {
         let statusCode = response.statusCode!
         if statusCode == .SUCCESSFUL_PROCESSING {
-            return Promise<ResponseApdu>(value: response)
+            return Promise(on: DispatchQueue.apduPromises) { () -> ResponseApdu in
+                return response
+            }
         } else {
-            return Promise<ResponseApdu>(error: InterpeterErrors.ResponseApduStatusCodeError(code: statusCode))
+            return Promise(on: DispatchQueue.apduPromises) { () -> ResponseApdu in
+                throw InterpeterErrors.ResponseApduStatusCodeError(code: statusCode)
+            }
         }
     }
     
@@ -114,11 +122,17 @@ public class BaseApduProtocolPresentationLayer: PresentationLayer {
         let statusCode = response.statusCode!
         if statusCode == .SUCCESSFUL_PROCESSING || statusCode == .WARNING_END_OF_FILE {
             if let data = response.data {
-                return Promise<[byte]>(value: data)
+                return Promise(on: DispatchQueue.apduPromises) { () -> [byte] in
+                    return data
+                }
             }
-            return Promise<[byte]>(error: InterpeterErrors.Exception(message: "No data in response"))
+            return Promise(on: DispatchQueue.apduPromises) { () -> [byte] in
+                throw InterpeterErrors.Exception(message: "No data in response")
+            }
         }
-        return Promise<[byte]>(error: InterpeterErrors.ResponseApduStatusCodeError(code: statusCode))
+        return Promise(on: DispatchQueue.apduPromises) { () -> [byte] in
+            throw InterpeterErrors.ResponseApduStatusCodeError(code: statusCode)
+        }
     }
     
     

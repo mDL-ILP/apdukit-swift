@@ -57,4 +57,8 @@ public class ReadBinaryCommand: CommandApdu {
         self.maximumExpectedLength = maximumExpectedLength
         return self
     }
+    
+    func getOffset() -> short {
+        preconditionFailure("This method must be overridden")
+    }
 }

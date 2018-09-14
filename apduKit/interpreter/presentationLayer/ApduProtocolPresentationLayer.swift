@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Promise
+import Promises
 
 /**
  *  The handle apdu protocol presentation layer. Extends the base apdu protocol layer with methods to know of to handle requests
@@ -46,8 +46,7 @@ public class ApduProtocolPresentationLayer: BaseApduProtocolPresentationLayer, S
         guard delegate != nil && delegate!.isFileAllowed(file: fileId) else {
             return ResponseApdu().set(statusCode: .ERROR_SECURITY_STATUS_NOT_SATISFIED)
         }
-        
-        return ResponseApdu()
+        return buildResponseOnRead(file: file, offset: command.getOffset(), maximumExpectedLength: command.maximumExpectedLength)
     }
     
     private func buildResponseOnRead(file: ApduFile, offset: short, maximumExpectedLength: int) -> ResponseApdu {
@@ -57,10 +56,10 @@ public class ApduProtocolPresentationLayer: BaseApduProtocolPresentationLayer, S
         var readEndIndex: Int = Int(offset + short(maximumExpectedLength))
         let askedForTooMuch = readEndIndex > data.count//EndOffset is the index of how far we'll read.
         if readStartIndex > data.count {
-            readStartIndex = data.count
+            readStartIndex = data.count-1
         }
         if askedForTooMuch {//Cap it to the length of the data.
-            readEndIndex = data.count
+            readEndIndex = data.count-1
         }
         //If the given offset is too high or there is nothing to send back.
         if readStartIndex >= readEndIndex {

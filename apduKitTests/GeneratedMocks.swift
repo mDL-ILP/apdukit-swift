@@ -1,4 +1,357 @@
-// MARK: - Mocks generated from file: apduKit/interpreter/transportLayer/TransportLayerDelegate.swift at 2018-09-13 11:09:52 +0000
+// MARK: - Mocks generated from file: apduKit/interpreter/applicationLayer/ReaderApplicationLayer.swift at 2018-09-14 11:09:44 +0000
+
+//
+//  ReaderApplicationLayer.swift
+//  apduKit
+//
+//  Created by Iain Munro on 12/09/2018.
+//  Copyright © 2018 UL-TS. All rights reserved.
+//
+
+import Cuckoo
+@testable import apduKit
+
+import Foundation
+import Promises
+
+class MockReaderApplicationLayer: ReaderApplicationLayer, Cuckoo.ClassMock {
+    typealias MocksType = ReaderApplicationLayer
+    typealias Stubbing = __StubbingProxy_ReaderApplicationLayer
+    typealias Verification = __VerificationProxy_ReaderApplicationLayer
+    let cuckoo_manager = Cuckoo.MockManager(hasParent: true)
+
+    
+    // ["name": "appId", "stubType": "ClassToBeStubbedProperty", "@type": "InstanceVariable", "type": "DedicatedFileID", "isReadOnly": false, "accessibility": ""]
+     override var appId: DedicatedFileID {
+        get {
+            
+            return cuckoo_manager.getter("appId", superclassCall: super.appId)
+            
+        }
+        
+        set {
+            
+            cuckoo_manager.setter("appId", value: newValue, superclassCall: super.appId = newValue)
+            
+        }
+        
+    }
+    
+    // ["name": "presentationLayer", "stubType": "ClassToBeStubbedProperty", "@type": "InstanceVariable", "type": "PresentationLayer", "isReadOnly": false, "accessibility": ""]
+     override var presentationLayer: PresentationLayer {
+        get {
+            
+            return cuckoo_manager.getter("presentationLayer", superclassCall: super.presentationLayer)
+            
+        }
+        
+        set {
+            
+            cuckoo_manager.setter("presentationLayer", value: newValue, superclassCall: super.presentationLayer = newValue)
+            
+        }
+        
+    }
+    
+    // ["name": "getFileLock", "stubType": "ClassToBeStubbedProperty", "@type": "InstanceVariable", "type": "DispatchSemaphore", "isReadOnly": false, "accessibility": ""]
+     override var getFileLock: DispatchSemaphore {
+        get {
+            
+            return cuckoo_manager.getter("getFileLock", superclassCall: super.getFileLock)
+            
+        }
+        
+        set {
+            
+            cuckoo_manager.setter("getFileLock", value: newValue, superclassCall: super.getFileLock = newValue)
+            
+        }
+        
+    }
+    
+
+    
+
+    
+    // ["name": "test", "returnSignature": " -> Promise<()>", "fullyQualifiedName": "test(file: ElementaryFileID) -> Promise<()>", "parameterSignature": "file id: ElementaryFileID", "parameterSignatureWithoutNames": "id: ElementaryFileID", "inputTypes": "ElementaryFileID", "isThrowing": false, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "public", "parameterNames": "id", "call": "file: id", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("file"), name: "id", type: "ElementaryFileID", range: CountableRange(701..<726), nameRange: CountableRange(701..<705))], "returnType": "Promise<()>", "isOptional": false, "stubFunction": "Cuckoo.ClassStubFunction"]
+    public override func test(file id: ElementaryFileID)  -> Promise<()> {
+        
+            return cuckoo_manager.call("test(file: ElementaryFileID) -> Promise<()>",
+                parameters: (id),
+                superclassCall:
+                    
+                    super.test(file: id)
+                    )
+        
+    }
+    
+    // ["name": "read", "returnSignature": " -> Promise<[byte]>", "fullyQualifiedName": "read(file: ElementaryFileID) -> Promise<[byte]>", "parameterSignature": "file id: ElementaryFileID", "parameterSignatureWithoutNames": "id: ElementaryFileID", "inputTypes": "ElementaryFileID", "isThrowing": false, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "public", "parameterNames": "id", "call": "file: id", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("file"), name: "id", type: "ElementaryFileID", range: CountableRange(838..<863), nameRange: CountableRange(838..<842))], "returnType": "Promise<[byte]>", "isOptional": false, "stubFunction": "Cuckoo.ClassStubFunction"]
+    public override func read(file id: ElementaryFileID)  -> Promise<[byte]> {
+        
+            return cuckoo_manager.call("read(file: ElementaryFileID) -> Promise<[byte]>",
+                parameters: (id),
+                superclassCall:
+                    
+                    super.read(file: id)
+                    )
+        
+    }
+    
+    // ["name": "getLocalfile", "returnSignature": " -> ApduFile?", "fullyQualifiedName": "getLocalfile(id: ElementaryFileID) -> ApduFile?", "parameterSignature": "id: ElementaryFileID", "parameterSignatureWithoutNames": "id: ElementaryFileID", "inputTypes": "ElementaryFileID", "isThrowing": false, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "public", "parameterNames": "id", "call": "id: id", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("id"), name: "id", type: "ElementaryFileID", range: CountableRange(3223..<3243), nameRange: CountableRange(3223..<3225))], "returnType": "Optional<ApduFile>", "isOptional": false, "stubFunction": "Cuckoo.ClassStubFunction"]
+    public override func getLocalfile(id: ElementaryFileID)  -> ApduFile? {
+        
+            return cuckoo_manager.call("getLocalfile(id: ElementaryFileID) -> ApduFile?",
+                parameters: (id),
+                superclassCall:
+                    
+                    super.getLocalfile(id: id)
+                    )
+        
+    }
+    
+    // ["name": "getAppId", "returnSignature": " -> DedicatedFileID", "fullyQualifiedName": "getAppId() -> DedicatedFileID", "parameterSignature": "", "parameterSignatureWithoutNames": "", "inputTypes": "", "isThrowing": false, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "public", "parameterNames": "", "call": "", "parameters": [], "returnType": "DedicatedFileID", "isOptional": false, "stubFunction": "Cuckoo.ClassStubFunction"]
+    public override func getAppId()  -> DedicatedFileID {
+        
+            return cuckoo_manager.call("getAppId() -> DedicatedFileID",
+                parameters: (),
+                superclassCall:
+                    
+                    super.getAppId()
+                    )
+        
+    }
+    
+    // ["name": "isFileAllowed", "returnSignature": " -> Bool", "fullyQualifiedName": "isFileAllowed(file: ElementaryFileID) -> Bool", "parameterSignature": "file: ElementaryFileID", "parameterSignatureWithoutNames": "file: ElementaryFileID", "inputTypes": "ElementaryFileID", "isThrowing": false, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "public", "parameterNames": "file", "call": "file: file", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("file"), name: "file", type: "ElementaryFileID", range: CountableRange(3405..<3427), nameRange: CountableRange(3405..<3409))], "returnType": "Bool", "isOptional": false, "stubFunction": "Cuckoo.ClassStubFunction"]
+    public override func isFileAllowed(file: ElementaryFileID)  -> Bool {
+        
+            return cuckoo_manager.call("isFileAllowed(file: ElementaryFileID) -> Bool",
+                parameters: (file),
+                superclassCall:
+                    
+                    super.isFileAllowed(file: file)
+                    )
+        
+    }
+    
+    // ["name": "onSendFailure", "returnSignature": "", "fullyQualifiedName": "onSendFailure(exception: Error)", "parameterSignature": "exception: Error", "parameterSignatureWithoutNames": "exception: Error", "inputTypes": "Error", "isThrowing": false, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "public", "parameterNames": "exception", "call": "exception: exception", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("exception"), name: "exception", type: "Error", range: CountableRange(3524..<3540), nameRange: CountableRange(3524..<3533))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ClassStubNoReturnFunction"]
+    public override func onSendFailure(exception: Error)  {
+        
+            return cuckoo_manager.call("onSendFailure(exception: Error)",
+                parameters: (exception),
+                superclassCall:
+                    
+                    super.onSendFailure(exception: exception)
+                    )
+        
+    }
+    
+    // ["name": "onReceiveInvalidApdu", "returnSignature": "", "fullyQualifiedName": "onReceiveInvalidApdu(exception: Error)", "parameterSignature": "exception: Error", "parameterSignatureWithoutNames": "exception: Error", "inputTypes": "Error", "isThrowing": false, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "public", "parameterNames": "exception", "call": "exception: exception", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("exception"), name: "exception", type: "Error", range: CountableRange(3654..<3670), nameRange: CountableRange(3654..<3663))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ClassStubNoReturnFunction"]
+    public override func onReceiveInvalidApdu(exception: Error)  {
+        
+            return cuckoo_manager.call("onReceiveInvalidApdu(exception: Error)",
+                parameters: (exception),
+                superclassCall:
+                    
+                    super.onReceiveInvalidApdu(exception: exception)
+                    )
+        
+    }
+    
+
+	struct __StubbingProxy_ReaderApplicationLayer: Cuckoo.StubbingProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	
+	    init(manager: Cuckoo.MockManager) {
+	        self.cuckoo_manager = manager
+	    }
+	    
+	    var appId: Cuckoo.ClassToBeStubbedProperty<MockReaderApplicationLayer, DedicatedFileID> {
+	        return .init(manager: cuckoo_manager, name: "appId")
+	    }
+	    
+	    var presentationLayer: Cuckoo.ClassToBeStubbedProperty<MockReaderApplicationLayer, PresentationLayer> {
+	        return .init(manager: cuckoo_manager, name: "presentationLayer")
+	    }
+	    
+	    var getFileLock: Cuckoo.ClassToBeStubbedProperty<MockReaderApplicationLayer, DispatchSemaphore> {
+	        return .init(manager: cuckoo_manager, name: "getFileLock")
+	    }
+	    
+	    
+	    func test<M1: Cuckoo.Matchable>(file id: M1) -> Cuckoo.ClassStubFunction<(ElementaryFileID), Promise<()>> where M1.MatchedType == ElementaryFileID {
+	        let matchers: [Cuckoo.ParameterMatcher<(ElementaryFileID)>] = [wrap(matchable: id) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockReaderApplicationLayer.self, method: "test(file: ElementaryFileID) -> Promise<()>", parameterMatchers: matchers))
+	    }
+	    
+	    func read<M1: Cuckoo.Matchable>(file id: M1) -> Cuckoo.ClassStubFunction<(ElementaryFileID), Promise<[byte]>> where M1.MatchedType == ElementaryFileID {
+	        let matchers: [Cuckoo.ParameterMatcher<(ElementaryFileID)>] = [wrap(matchable: id) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockReaderApplicationLayer.self, method: "read(file: ElementaryFileID) -> Promise<[byte]>", parameterMatchers: matchers))
+	    }
+	    
+	    func getLocalfile<M1: Cuckoo.Matchable>(id: M1) -> Cuckoo.ClassStubFunction<(ElementaryFileID), Optional<ApduFile>> where M1.MatchedType == ElementaryFileID {
+	        let matchers: [Cuckoo.ParameterMatcher<(ElementaryFileID)>] = [wrap(matchable: id) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockReaderApplicationLayer.self, method: "getLocalfile(id: ElementaryFileID) -> ApduFile?", parameterMatchers: matchers))
+	    }
+	    
+	    func getAppId() -> Cuckoo.ClassStubFunction<(), DedicatedFileID> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return .init(stub: cuckoo_manager.createStub(for: MockReaderApplicationLayer.self, method: "getAppId() -> DedicatedFileID", parameterMatchers: matchers))
+	    }
+	    
+	    func isFileAllowed<M1: Cuckoo.Matchable>(file: M1) -> Cuckoo.ClassStubFunction<(ElementaryFileID), Bool> where M1.MatchedType == ElementaryFileID {
+	        let matchers: [Cuckoo.ParameterMatcher<(ElementaryFileID)>] = [wrap(matchable: file) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockReaderApplicationLayer.self, method: "isFileAllowed(file: ElementaryFileID) -> Bool", parameterMatchers: matchers))
+	    }
+	    
+	    func onSendFailure<M1: Cuckoo.Matchable>(exception: M1) -> Cuckoo.ClassStubNoReturnFunction<(Error)> where M1.MatchedType == Error {
+	        let matchers: [Cuckoo.ParameterMatcher<(Error)>] = [wrap(matchable: exception) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockReaderApplicationLayer.self, method: "onSendFailure(exception: Error)", parameterMatchers: matchers))
+	    }
+	    
+	    func onReceiveInvalidApdu<M1: Cuckoo.Matchable>(exception: M1) -> Cuckoo.ClassStubNoReturnFunction<(Error)> where M1.MatchedType == Error {
+	        let matchers: [Cuckoo.ParameterMatcher<(Error)>] = [wrap(matchable: exception) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockReaderApplicationLayer.self, method: "onReceiveInvalidApdu(exception: Error)", parameterMatchers: matchers))
+	    }
+	    
+	}
+
+	struct __VerificationProxy_ReaderApplicationLayer: Cuckoo.VerificationProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	    private let callMatcher: Cuckoo.CallMatcher
+	    private let sourceLocation: Cuckoo.SourceLocation
+	
+	    init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
+	        self.cuckoo_manager = manager
+	        self.callMatcher = callMatcher
+	        self.sourceLocation = sourceLocation
+	    }
+	
+	    
+	    var appId: Cuckoo.VerifyProperty<DedicatedFileID> {
+	        return .init(manager: cuckoo_manager, name: "appId", callMatcher: callMatcher, sourceLocation: sourceLocation)
+	    }
+	    
+	    var presentationLayer: Cuckoo.VerifyProperty<PresentationLayer> {
+	        return .init(manager: cuckoo_manager, name: "presentationLayer", callMatcher: callMatcher, sourceLocation: sourceLocation)
+	    }
+	    
+	    var getFileLock: Cuckoo.VerifyProperty<DispatchSemaphore> {
+	        return .init(manager: cuckoo_manager, name: "getFileLock", callMatcher: callMatcher, sourceLocation: sourceLocation)
+	    }
+	    
+	
+	    
+	    @discardableResult
+	    func test<M1: Cuckoo.Matchable>(file id: M1) -> Cuckoo.__DoNotUse<Promise<()>> where M1.MatchedType == ElementaryFileID {
+	        let matchers: [Cuckoo.ParameterMatcher<(ElementaryFileID)>] = [wrap(matchable: id) { $0 }]
+	        return cuckoo_manager.verify("test(file: ElementaryFileID) -> Promise<()>", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func read<M1: Cuckoo.Matchable>(file id: M1) -> Cuckoo.__DoNotUse<Promise<[byte]>> where M1.MatchedType == ElementaryFileID {
+	        let matchers: [Cuckoo.ParameterMatcher<(ElementaryFileID)>] = [wrap(matchable: id) { $0 }]
+	        return cuckoo_manager.verify("read(file: ElementaryFileID) -> Promise<[byte]>", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func getLocalfile<M1: Cuckoo.Matchable>(id: M1) -> Cuckoo.__DoNotUse<Optional<ApduFile>> where M1.MatchedType == ElementaryFileID {
+	        let matchers: [Cuckoo.ParameterMatcher<(ElementaryFileID)>] = [wrap(matchable: id) { $0 }]
+	        return cuckoo_manager.verify("getLocalfile(id: ElementaryFileID) -> ApduFile?", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func getAppId() -> Cuckoo.__DoNotUse<DedicatedFileID> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return cuckoo_manager.verify("getAppId() -> DedicatedFileID", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func isFileAllowed<M1: Cuckoo.Matchable>(file: M1) -> Cuckoo.__DoNotUse<Bool> where M1.MatchedType == ElementaryFileID {
+	        let matchers: [Cuckoo.ParameterMatcher<(ElementaryFileID)>] = [wrap(matchable: file) { $0 }]
+	        return cuckoo_manager.verify("isFileAllowed(file: ElementaryFileID) -> Bool", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func onSendFailure<M1: Cuckoo.Matchable>(exception: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == Error {
+	        let matchers: [Cuckoo.ParameterMatcher<(Error)>] = [wrap(matchable: exception) { $0 }]
+	        return cuckoo_manager.verify("onSendFailure(exception: Error)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func onReceiveInvalidApdu<M1: Cuckoo.Matchable>(exception: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == Error {
+	        let matchers: [Cuckoo.ParameterMatcher<(Error)>] = [wrap(matchable: exception) { $0 }]
+	        return cuckoo_manager.verify("onReceiveInvalidApdu(exception: Error)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	}
+
+}
+
+ class ReaderApplicationLayerStub: ReaderApplicationLayer {
+    
+     override var appId: DedicatedFileID {
+        get {
+            return DefaultValueRegistry.defaultValue(for: (DedicatedFileID).self)
+        }
+        
+        set { }
+        
+    }
+    
+     override var presentationLayer: PresentationLayer {
+        get {
+            return DefaultValueRegistry.defaultValue(for: (PresentationLayer).self)
+        }
+        
+        set { }
+        
+    }
+    
+     override var getFileLock: DispatchSemaphore {
+        get {
+            return DefaultValueRegistry.defaultValue(for: (DispatchSemaphore).self)
+        }
+        
+        set { }
+        
+    }
+    
+
+    
+
+    
+    public override func test(file id: ElementaryFileID)  -> Promise<()> {
+        return DefaultValueRegistry.defaultValue(for: Promise<()>.self)
+    }
+    
+    public override func read(file id: ElementaryFileID)  -> Promise<[byte]> {
+        return DefaultValueRegistry.defaultValue(for: Promise<[byte]>.self)
+    }
+    
+    public override func getLocalfile(id: ElementaryFileID)  -> ApduFile? {
+        return DefaultValueRegistry.defaultValue(for: Optional<ApduFile>.self)
+    }
+    
+    public override func getAppId()  -> DedicatedFileID {
+        return DefaultValueRegistry.defaultValue(for: DedicatedFileID.self)
+    }
+    
+    public override func isFileAllowed(file: ElementaryFileID)  -> Bool {
+        return DefaultValueRegistry.defaultValue(for: Bool.self)
+    }
+    
+    public override func onSendFailure(exception: Error)  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+    public override func onReceiveInvalidApdu(exception: Error)  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+}
+
+
+// MARK: - Mocks generated from file: apduKit/interpreter/transportLayer/TransportLayerDelegate.swift at 2018-09-14 11:09:44 +0000
 
 //
 //  TransportLayerDelegate.swift
@@ -89,7 +442,7 @@ class MockTransportLayerDelegate: TransportLayerDelegate, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: apduKit/interpreter/transportLayer/TransportLayerSimulator.swift at 2018-09-13 11:09:52 +0000
+// MARK: - Mocks generated from file: apduKit/interpreter/transportLayer/TransportLayerSimulator.swift at 2018-09-14 11:09:44 +0000
 
 //
 //  TransportLayerSimulator.swift

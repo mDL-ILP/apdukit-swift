@@ -7,13 +7,13 @@
 //
 
 import Foundation
-import Promise
+import Promises
 
 public class ReaderApplicationLayer: ApplicationLayer, PresentationLayerDelegate {
     var appId: DedicatedFileID
     var presentationLayer: PresentationLayer
     //A lock so that we only get one file at a time.
-    var getFileLock = DispatchSemaphore(value: 1)
+    var getFileLock: DispatchSemaphore = DispatchSemaphore(value: 1)
     
     init(presentationLayer: PresentationLayer, appId: DedicatedFileID) {
         self.appId = appId
@@ -21,15 +21,20 @@ public class ReaderApplicationLayer: ApplicationLayer, PresentationLayerDelegate
         self.presentationLayer.set(delegate: self)
     }
     
+    public func test(file id: ElementaryFileID) -> Promise<()> {
+        return self.presentationLayer.select(DF: self.appId)
+    }
+    
     public func read(file id: ElementaryFileID) -> Promise<[byte]> {
         self.getFileLock.wait()
         return self.presentationLayer.select(DF: self.appId)
-            .then({ (res) -> Promise<[byte]> in
-                return self.openApduFile(fileID: id).then(self.resolveApduFile)
+            .then(on: DispatchQueue.apduPromises, { (res) -> Promise<[byte]> in
+                return self.openApduFile(fileID: id)
+                    .then(on: DispatchQueue.apduPromises, self.resolveApduFile)
             })
-            .always {
+            .always(on: DispatchQueue.apduPromises, {
                 self.getFileLock.signal()
-            }
+            })
     }
     
     /**
@@ -45,17 +50,12 @@ public class ReaderApplicationLayer: ApplicationLayer, PresentationLayerDelegate
             firstChunk = self.presentationLayer.readBinary(EF: fileID, offset: 0)
         } else {
             firstChunk = self.presentationLayer.select(EF: fileID)
-                .then({ () -> Promise<[byte]> in
+                .then(on: DispatchQueue.apduPromises, { () -> Promise<[byte]> in
                     return self.presentationLayer.readBinary(offset: 0)
                 })
         }
-        return firstChunk.then({ (data) -> Promise<ApduFile> in
-            do {
-                let result = try ApduFile(data: data)
-                return Promise<ApduFile>(value: result)
-            } catch let e {
-                return Promise<ApduFile>(error: e)
-            }
+        return firstChunk.then(on: DispatchQueue.apduPromises, { (data) -> ApduFile in
+            return try ApduFile(data: data)
         })
     }
     
@@ -65,19 +65,15 @@ public class ReaderApplicationLayer: ApplicationLayer, PresentationLayerDelegate
      * @return
      */
     private func resolveApduFile(file: ApduFile) -> Promise<[byte]> {
-        return Promise<[byte]>(work: { fulfill, reject in
+        return Promise(on: DispatchQueue.apduPromises) { () -> [byte] in
             while(!file.isComplete()) {
                 let offset = file.getCurrentSize()
                 let promise = self.presentationLayer.readBinary(offset: byte(offset))
-//                do {
-//                    let data = try promise.getValue()
-//                    try file.appendValue(value: data)
-//                } catch let e {
-//                    reject(e)
-//                }
+                let data = try promise.getValue()
+                try file.appendValue(value: data)
             }
-            fulfill(file.getData())
-        })
+            return file.getData()
+        }
     }
     
     public func getLocalfile(id: ElementaryFileID) -> ApduFile? {

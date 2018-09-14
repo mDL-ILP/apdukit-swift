@@ -47,4 +47,8 @@ class ReadBinaryOffsetCommand: ReadBinaryCommand {
         self.offset = offset
         return self
     }
+    
+    override func getOffset() -> short {
+        return self.offset
+    }
 }

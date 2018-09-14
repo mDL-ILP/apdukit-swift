@@ -17,8 +17,8 @@ public class IntegrationTests: XCTestCase {
     public var holderPresentationLayer: PresentationLayer!
     public var readerPresentationLayer: PresentationLayer!
     
-    public var holder: TestHolder!
-    public var reader: TestReader!
+    public var holder: HolderApplicationLayer!
+    public var reader: ReaderApplicationLayer!
     
     public override func setUp() {
         setupTransportLayers()

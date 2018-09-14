@@ -55,7 +55,9 @@ class ReadBinaryShortFileIDCommandBuildTests: XCTestCase {
     
     func testValidation() {
         callValidation(expected: "elementaryFileID")
-        _ = subject.set(elementaryFileID: ExampleApp.instance.ValidEF1)
+        _ = subject.set(elementaryFileID: ExampleApp.instance.ValidShortIdEF1)
+        callValidation(expected: "offset")
+        _ = subject.set(offset: 0)
         try! subject.validate()
     }
     

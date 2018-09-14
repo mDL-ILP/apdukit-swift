@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Promise
+import Promises
 
 public class HolderApplicationLayer: ApplicationLayer, PresentationLayerDelegate {
     var appId: DedicatedFileID
