@@ -13,4 +13,9 @@ target 'apduKit' do
         pod "Cuckoo"
     end
 
+    target 'Example' do
+        inherit! :search_paths
+        project 'Example.xcodeprojx'
+    end
+
 end
