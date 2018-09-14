@@ -15,24 +15,17 @@ public class HolderIntegrationTests: IntegrationTests {
     public func testInvalidOnReceive() throws {
         //Mock transport layer so it doesn't actually write.
         let transportLayer = MockTransportLayerSimulator().withEnabledSuperclassSpy()
-        self.readerTransportLayer = transportLayer
+        self.holderTransportLayer = transportLayer
         setupSessionLayers()
 
-        let reader = MockReaderApplicationLayer(presentationLayer: self.readerPresentationLayer, appId: ExampleApp.instance.ValidDF_NormalLength2).withEnabledSuperclassSpy()
-        self.reader = reader
-        self.readerPresentationLayer.set(delegate: self.reader)
+        stub(transportLayer) { (transportLayerStub) in
+            when(transportLayerStub.write(data: any())).thenDoNothing()
 
-        stub(reader) { (readerStub) in
-            stub(transportLayer) { (transportLayerStub) in
+            //Then call the onReceive function with an invalid apdu.
+            holderSessionLayer.onReceive(data: [0, 0, 1])
 
-                when(readerStub.onReceiveInvalidApdu(exception: any())).thenDoNothing()
-
-                //Then call the onReceive function with an invalid apdu.
-                readerSessionLayer.onReceive(data: [0, 0, 1])
-
-                //Verify that the error was reported all the way back to the application
-                verify(reader, atLeastOnce()).onReceiveInvalidApdu(exception: any())
-            }
+            //Verify that it sent back a reply saying: Error unknown.
+            verify(transportLayer, atLeastOnce()).write(data: any())
         }
     }
     

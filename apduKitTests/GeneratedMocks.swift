@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: apduKit/interpreter/applicationLayer/ReaderApplicationLayer.swift at 2018-09-14 11:09:44 +0000
+// MARK: - Mocks generated from file: apduKit/interpreter/applicationLayer/ReaderApplicationLayer.swift at 2018-09-14 11:22:23 +0000
 
 //
 //  ReaderApplicationLayer.swift
@@ -351,7 +351,7 @@ class MockReaderApplicationLayer: ReaderApplicationLayer, Cuckoo.ClassMock {
 }
 
 
-// MARK: - Mocks generated from file: apduKit/interpreter/transportLayer/TransportLayerDelegate.swift at 2018-09-14 11:09:44 +0000
+// MARK: - Mocks generated from file: apduKit/interpreter/transportLayer/TransportLayerDelegate.swift at 2018-09-14 11:22:23 +0000
 
 //
 //  TransportLayerDelegate.swift
@@ -442,7 +442,7 @@ class MockTransportLayerDelegate: TransportLayerDelegate, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: apduKit/interpreter/transportLayer/TransportLayerSimulator.swift at 2018-09-14 11:09:44 +0000
+// MARK: - Mocks generated from file: apduKit/interpreter/transportLayer/TransportLayerSimulator.swift at 2018-09-14 11:22:23 +0000
 
 //
 //  TransportLayerSimulator.swift
