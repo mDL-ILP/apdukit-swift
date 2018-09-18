@@ -17,8 +17,5 @@ end
 target 'Example' do
     inherit! :search_paths
     project 'Example.xcodeprojx'
-    workspace 'apduKit.xcworkspace'
-    use_frameworks!
-
-    pod 'apduKit', :path => './'
+    pod "apduKit", :path => './'
 end
