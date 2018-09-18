@@ -12,10 +12,10 @@ target 'apduKit' do
         inherit! :search_paths
         pod "Cuckoo"
     end
+end
 
-    target 'Example' do
-        inherit! :search_paths
-        project 'Example.xcodeprojx'
-    end
-
+target 'Example' do
+    inherit! :search_paths
+    project 'Example.xcodeprojx'
+    pod "apduKit", :path => './'
 end

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import apduKit
 
 class HolderViewController: UIViewController {
 
