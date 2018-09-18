@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class TransportLayerSimulator: TransportLayer {
+internal class TransportLayerSimulator: NSObject, TransportLayer {
     var delegate: TransportLayerDelegate?
     var externalMockTransportLayer: TransportLayerSimulator?
     
@@ -31,7 +31,7 @@ public class TransportLayerSimulator: TransportLayer {
         self.delegate = delegate
     }
     
-    public func onReceive(data: [byte]) throws {
+    internal func onReceive(data: [byte]) throws {
         guard let delegate = self.delegate else {
             throw InterpeterErrors.SocketException()
         }

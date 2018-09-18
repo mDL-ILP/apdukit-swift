@@ -7,7 +7,7 @@
 //
 
 import Foundation
-public class ElementaryFileID: FileID, Equatable {
+internal class ElementaryFileID: FileID, Equatable {
     private(set) var shortIdentifier: byte?
     private(set) var normalIdentifier: [byte]?
     
@@ -38,7 +38,7 @@ public class ElementaryFileID: FileID, Equatable {
         return try ConversionUtils.fromBytesToShort([shortIdentifier])
     }
     
-    public func getValue() -> [byte]? {
+    internal func getValue() -> [byte]? {
         return self.normalIdentifier
     }
     
@@ -61,8 +61,8 @@ public class ElementaryFileID: FileID, Equatable {
         }
     }
     
-    //Like java: public boolean equals(Object obj)
-    static public func == (lhs: ElementaryFileID, rhs: ElementaryFileID) -> Bool {
+    //Like java: internal boolean equals(Object obj)
+    static internal func == (lhs: ElementaryFileID, rhs: ElementaryFileID) -> Bool {
         if lhs.shortIdentifier == rhs.shortIdentifier {
             return true
         }

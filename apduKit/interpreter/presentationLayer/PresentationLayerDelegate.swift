@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol PresentationLayerDelegate {
+internal protocol PresentationLayerDelegate {
     /**
      * Sets the file for a particular file id on the holders side.
      *

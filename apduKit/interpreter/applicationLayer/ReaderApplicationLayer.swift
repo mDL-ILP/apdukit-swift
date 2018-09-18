@@ -9,7 +9,7 @@
 import Foundation
 import Promises
 
-public class ReaderApplicationLayer: ApplicationLayer, PresentationLayerDelegate {
+internal class ReaderApplicationLayer: ApplicationLayer, PresentationLayerDelegate {
     var appId: DedicatedFileID
     var presentationLayer: PresentationLayer
     //A lock so that we only get one file at a time.
@@ -21,11 +21,11 @@ public class ReaderApplicationLayer: ApplicationLayer, PresentationLayerDelegate
         self.presentationLayer.set(delegate: self)
     }
     
-    public func test(file id: ElementaryFileID) -> Promise<()> {
+    internal func test(file id: ElementaryFileID) -> Promise<()> {
         return self.presentationLayer.select(DF: self.appId)
     }
     
-    public func read(file id: ElementaryFileID) -> Promise<[byte]> {
+    internal func read(file id: ElementaryFileID) -> Promise<[byte]> {
         self.getFileLock.wait()
         return self.presentationLayer.select(DF: self.appId)
             .then(on: DispatchQueue.apduPromises, { (res) -> Promise<[byte]> in
@@ -76,24 +76,24 @@ public class ReaderApplicationLayer: ApplicationLayer, PresentationLayerDelegate
         }
     }
     
-    public func getLocalfile(id: ElementaryFileID) -> ApduFile? {
+    internal func getLocalfile(id: ElementaryFileID) -> ApduFile? {
         return nil
     }
     
-    public func getAppId() -> DedicatedFileID {
+    internal func getAppId() -> DedicatedFileID {
         return self.appId
     }
     
-    public func isFileAllowed(file: ElementaryFileID) -> Bool {
+    internal func isFileAllowed(file: ElementaryFileID) -> Bool {
         return false
     }
     
     //Abstract methods
-    public func onSendFailure(exception: Error) {
+    internal func onSendFailure(exception: Error) {
         preconditionFailure("This method must be overridden")
     }
     
-    public func onReceiveInvalidApdu(exception: Error) {
+    internal func onReceiveInvalidApdu(exception: Error) {
         preconditionFailure("This method must be overridden")
     }
     

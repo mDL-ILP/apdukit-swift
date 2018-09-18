@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class ReadBinaryCommand: CommandApdu {
+internal class ReadBinaryCommand: CommandApdu {
     private(set) var maximumExpectedLength: int = 0//0 means EXTENDED_LENGTH. 65535.
     
     init() {
@@ -31,7 +31,7 @@ public class ReadBinaryCommand: CommandApdu {
         stream.write(bytes: maximumExpectedLengthBuffer)
     }
     
-    override public func validate() throws {
+    override internal func validate() throws {
         try super.validate()
         guard let instructionCode = self.instructionCode, instructionCode == .READ_BINARY else {
             throw ApduErrors.InvalidApduException(description: "InstructionCode is not READ_BINARY")
@@ -41,7 +41,7 @@ public class ReadBinaryCommand: CommandApdu {
     /**
      * Apdu from bytes. Routes and initializes the right read binary subclass depending on the file id bits.
      */
-    static public func fromBytes(stream: ByteArrayInputStream) throws -> ReadBinaryCommand {
+    static internal func fromBytes(stream: ByteArrayInputStream) throws -> ReadBinaryCommand {
         stream.skip(2)//Skip the instruction class + instruction code
         guard let fileIdFirstByte = stream.readByte() else {
             throw ApduErrors.ParseException(description: "Could not read first byte of file id")

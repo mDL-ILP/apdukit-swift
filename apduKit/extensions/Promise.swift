@@ -10,7 +10,7 @@ import Foundation
 import Promises
 
 extension Promise {
-    public func getValue() throws -> Value {
+    internal func getValue() throws -> Value {
         return try await(self)
     }
 }

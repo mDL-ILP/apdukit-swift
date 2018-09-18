@@ -8,7 +8,7 @@
 
 import XCTest
 
-public class IntegrationTests: XCTestCase {
+internal class IntegrationTests: XCTestCase {
     
     public var holderTransportLayer: TransportLayerSimulator!
     public var readerTransportLayer: TransportLayerSimulator!
@@ -20,7 +20,7 @@ public class IntegrationTests: XCTestCase {
     public var holder: HolderApplicationLayer!
     public var reader: ReaderApplicationLayer!
     
-    public override func setUp() {
+    internal override func setUp() {
         setupTransportLayers()
     }
     

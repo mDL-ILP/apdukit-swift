@@ -12,7 +12,7 @@ import Promises
 /**
  * The client session layer handles sending and receiving APDU messages. It also allows for sending APDU commands and keeping track of this open request. Then fulfilling the promise upon receiving data.
  */
-public class ReaderSessionLayer: SessionLayer {
+internal class ReaderSessionLayer: SessionLayer {
     
     private let transportLayer: TransportLayer
     private var delegate: SessionLayerDelegate?
@@ -32,7 +32,7 @@ public class ReaderSessionLayer: SessionLayer {
         }
     }
     
-    public func send(command: CommandApdu) -> Promise<ResponseApdu> {
+    internal func send(command: CommandApdu) -> Promise<ResponseApdu> {
         if openRequestLock.wait(timeout: DispatchTime.now()) == DispatchTimeoutResult.timedOut {
             return Promise(on: DispatchQueue.apduPromises) { () -> ResponseApdu in
                 throw InterpeterErrors.OutOfSequenceException()
@@ -45,7 +45,7 @@ public class ReaderSessionLayer: SessionLayer {
             })
     }
     
-    public func sendBytes(data: [byte]) -> Promise<ResponseApdu> {
+    internal func sendBytes(data: [byte]) -> Promise<ResponseApdu> {
         let p = Promise<ResponseApdu>(on: DispatchQueue.apduPromises) { (fulfill, reject) in
             try self.transportLayer.write(data: data)
         }
@@ -56,11 +56,11 @@ public class ReaderSessionLayer: SessionLayer {
         return p
     }
     
-    public func set(delegate: SessionLayerDelegate) {
+    internal func set(delegate: SessionLayerDelegate) {
         self.delegate = delegate
     }
     
-    public func onReceive(data: [byte]) {
+    internal func onReceive(data: [byte]) {
         //We received an unwanted response?
         guard let openRequest = self.openRequest else {
             self.delegate?.onReceiveInvalidApdu(exception: ApduErrors.InvalidApduException(description: "received unwanted response"))

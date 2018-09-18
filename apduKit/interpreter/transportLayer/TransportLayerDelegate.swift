@@ -7,6 +7,6 @@
 //
 
 import Foundation
-public protocol TransportLayerDelegate {
+@objc public protocol TransportLayerDelegate {
     func onReceive(data: [byte])
 }

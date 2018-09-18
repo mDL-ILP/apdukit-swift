@@ -9,7 +9,7 @@
 import Foundation
 import Promises
 
-public class HolderApplicationLayer: ApplicationLayer, PresentationLayerDelegate {
+internal class HolderApplicationLayer: ApplicationLayer, PresentationLayerDelegate {
     var appId: DedicatedFileID
     var presentationLayer: PresentationLayer
     
@@ -42,7 +42,7 @@ public class HolderApplicationLayer: ApplicationLayer, PresentationLayerDelegate
      * @param id elementaryFileID specifying the file
      * @return an ApduFile
      */
-    public func getLocalfile(id: ElementaryFileID) -> ApduFile? {
+    internal func getLocalfile(id: ElementaryFileID) -> ApduFile? {
         if let key = try! id.getShortIdentifier() {
             if let result = localFiles[short(key)] {
                 return result
@@ -60,20 +60,20 @@ public class HolderApplicationLayer: ApplicationLayer, PresentationLayerDelegate
      *  Delegate method that informs the presentation layer what the id is of this app.
      * @return the current dedicated file id
      */
-    public func getAppId() -> DedicatedFileID {
+    internal func getAppId() -> DedicatedFileID {
         return self.appId
     }
     
     //Abstract methods
-    public func isFileAllowed(file: ElementaryFileID) -> Bool {
+    internal func isFileAllowed(file: ElementaryFileID) -> Bool {
         preconditionFailure("This method must be overridden")
     }
     
-    public func onSendFailure(exception: Error) {
+    internal func onSendFailure(exception: Error) {
         preconditionFailure("This method must be overridden")
     }
     
-    public func onReceiveInvalidApdu(exception: Error) {
+    internal func onReceiveInvalidApdu(exception: Error) {
         preconditionFailure("This method must be overridden")
     }
     

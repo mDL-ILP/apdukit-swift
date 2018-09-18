@@ -8,16 +8,16 @@
 
 import Foundation
 
-public class TestReader: ReaderApplicationLayer {
+internal class TestReader: ReaderApplicationLayer {
     init(presentationLayer: PresentationLayer) {
         super.init(presentationLayer: presentationLayer, appId: ExampleApp.instance.ValidDF_NormalLength1)
     }
     
-    public override func onSendFailure(exception: Error) {
+    internal override func onSendFailure(exception: Error) {
         print(exception.localizedDescription)
     }
     
-    public override func onReceiveInvalidApdu(exception: Error) {
+    internal override func onReceiveInvalidApdu(exception: Error) {
         print(exception.localizedDescription)
     }
 }

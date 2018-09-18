@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum ApduErrors: Error {
+internal enum ApduErrors: Error {
     case ValueNotSetException(value: String)
     case ParseException(description: String)
     case InvalidApduException(description: String)

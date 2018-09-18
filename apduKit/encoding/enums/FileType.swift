@@ -12,7 +12,7 @@ import Foundation
  * FileType - indicates what kind type of file it should expect.
  *
  */
-public enum FileType: byte {
+internal enum FileType: byte {
     //Dedicated file
     case DF = 0x04
     //Elementary file

@@ -20,6 +20,8 @@ Pod::Spec.new do |s|
   s.author           = { 'UL-Transactions' => 'transactionsecurity@ul.com' }
   s.source           = { :git => 'ssh://git@git.ul-ts.com:5022/sl-advisory/RDW/swift-apdukit.git', :tag => s.version.to_s }
 
+  s.source           = { :git => 'https://github.com/iain17/BluetoothKit.git', :tag => '0.4.1' }
+
   s.ios.deployment_target = '9.0'
 
   s.swift_version = '3.2'
@@ -27,4 +29,6 @@ Pod::Spec.new do |s|
 
   s.source_files = 'apduKit/**/*'
   s.dependency 'PromisesSwift', '~> 1.2.3'
+  s.dependency 'BluetoothKit-fork', '~> 0.4.2'
+  
 end

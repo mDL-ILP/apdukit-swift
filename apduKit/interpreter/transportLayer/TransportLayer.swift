@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol TransportLayer {
+@objc public protocol TransportLayer: AnyObject {
     func write(data: [byte]) throws
     func close() throws
     func set(delegate: TransportLayerDelegate)

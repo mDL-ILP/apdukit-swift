@@ -26,6 +26,12 @@
 		271EFFA1213830C90000CBAF /* ReadBinaryOffsetCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271EFF99213826910000CBAF /* ReadBinaryOffsetCommand.swift */; };
 		271EFFA321383D5C0000CBAF /* ReadBinaryOffsetCommandParseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271EFFA221383D5C0000CBAF /* ReadBinaryOffsetCommandParseTests.swift */; };
 		271EFFA5213844A50000CBAF /* ReadBinaryShortFileIDCommandParseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271EFFA4213844A50000CBAF /* ReadBinaryShortFileIDCommandParseTests.swift */; };
+		2726B1C2214FDA010018FAB8 /* TransportLayerBuilderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2726B1C1214FDA010018FAB8 /* TransportLayerBuilderDelegate.swift */; };
+		2726B1C4214FDA210018FAB8 /* TransportLayerBuilderState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2726B1C3214FDA210018FAB8 /* TransportLayerBuilderState.swift */; };
+		2726B1C5214FDA3D0018FAB8 /* TransportLayerBuilderState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2726B1C3214FDA210018FAB8 /* TransportLayerBuilderState.swift */; };
+		2726B1C6214FDA530018FAB8 /* TransportLayerBuilderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2726B1C1214FDA010018FAB8 /* TransportLayerBuilderDelegate.swift */; };
+		2726B1CB214FF11E0018FAB8 /* BLETransportLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2726B1CA214FF11E0018FAB8 /* BLETransportLayer.swift */; };
+		2726B1CF214FF37C0018FAB8 /* TransportLayerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2757F20A214F996D0004C7F8 /* TransportLayerBuilder.swift */; };
 		2745A0422130016800A4F538 /* apduKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2745A0382130016700A4F538 /* apduKit.framework */; };
 		2745A057213001D500A4F538 /* Apdu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2745A056213001D500A4F538 /* Apdu.swift */; };
 		2745A0592130026E00A4F538 /* CommandApdu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2745A0582130026E00A4F538 /* CommandApdu.swift */; };
@@ -60,6 +66,10 @@
 		27530A2821369CC50064B48B /* ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27530A252136987A0064B48B /* ExampleApp.swift */; };
 		27530A2A2136CD5A0064B48B /* SelectCommandParseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27530A292136CD5A0064B48B /* SelectCommandParseTests.swift */; };
 		27530A2C2136DD3B0064B48B /* ResponseApdu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27530A2B2136DD3B0064B48B /* ResponseApdu.swift */; };
+		2757F20B214F996D0004C7F8 /* TransportLayerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2757F20A214F996D0004C7F8 /* TransportLayerBuilder.swift */; };
+		2757F20D214F99A00004C7F8 /* BLETransportLayerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2757F20C214F99A00004C7F8 /* BLETransportLayerBuilder.swift */; };
+		2757F20F214F99CD0004C7F8 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2757F20E214F99CD0004C7F8 /* DeviceType.swift */; };
+		2757F216214FCFA00004C7F8 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2757F20E214F99CD0004C7F8 /* DeviceType.swift */; };
 		276EC057214A60DD0052DBC7 /* PromiseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276EC056214A60DD0052DBC7 /* PromiseTest.swift */; };
 		276EC058214A7ED70052DBC7 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9D33D2149D51B007729F4 /* Promise.swift */; };
 		276EC05A214BCE9D0052DBC7 /* HolderIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276EC059214BCE9C0052DBC7 /* HolderIntegrationTests.swift */; };
@@ -80,6 +90,12 @@
 		27C82254213EC306005D7B9B /* TransportLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C82253213EC306005D7B9B /* TransportLayer.swift */; };
 		27C82257213EC3D6005D7B9B /* TransportLayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C82256213EC3D6005D7B9B /* TransportLayerDelegate.swift */; };
 		27C8225B213EC40F005D7B9B /* TransportLayerSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C8225A213EC40F005D7B9B /* TransportLayerSimulator.swift */; };
+		27CD02D621510DA10051D915 /* PeerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CD02D521510DA10051D915 /* PeerDelegate.swift */; };
+		27CD02D821510DF60051D915 /* BluetoothDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CD02D721510DF60051D915 /* BluetoothDevice.swift */; };
+		27CD02DB21510E3C0051D915 /* BluetoothDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CD02D721510DF60051D915 /* BluetoothDevice.swift */; };
+		27CD02DC21510E3C0051D915 /* BLETransportLayerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2757F20C214F99A00004C7F8 /* BLETransportLayerBuilder.swift */; };
+		27CD02DD21510E3C0051D915 /* BLETransportLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2726B1CA214FF11E0018FAB8 /* BLETransportLayer.swift */; };
+		27CD02DE21510E3C0051D915 /* PeerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CD02D521510DA10051D915 /* PeerDelegate.swift */; };
 		27DB4BBB2141775A005E0884 /* InternalAuthenticateCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DB4BBA2141775A005E0884 /* InternalAuthenticateCommand.swift */; };
 		27DB4BBC2141775C005E0884 /* InternalAuthenticateCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DB4BBA2141775A005E0884 /* InternalAuthenticateCommand.swift */; };
 		27DB4BBF21427C82005E0884 /* ElementaryFileIDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DB4BBE21427C82005E0884 /* ElementaryFileIDTests.swift */; };
@@ -144,6 +160,9 @@
 		271EFF99213826910000CBAF /* ReadBinaryOffsetCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadBinaryOffsetCommand.swift; sourceTree = "<group>"; };
 		271EFFA221383D5C0000CBAF /* ReadBinaryOffsetCommandParseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadBinaryOffsetCommandParseTests.swift; sourceTree = "<group>"; };
 		271EFFA4213844A50000CBAF /* ReadBinaryShortFileIDCommandParseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadBinaryShortFileIDCommandParseTests.swift; sourceTree = "<group>"; };
+		2726B1C1214FDA010018FAB8 /* TransportLayerBuilderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportLayerBuilderDelegate.swift; sourceTree = "<group>"; };
+		2726B1C3214FDA210018FAB8 /* TransportLayerBuilderState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportLayerBuilderState.swift; sourceTree = "<group>"; };
+		2726B1CA214FF11E0018FAB8 /* BLETransportLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLETransportLayer.swift; sourceTree = "<group>"; };
 		2745A0382130016700A4F538 /* apduKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = apduKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2745A03C2130016700A4F538 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2745A0412130016800A4F538 /* apduKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = apduKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,6 +183,9 @@
 		27530A252136987A0064B48B /* ExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleApp.swift; sourceTree = "<group>"; };
 		27530A292136CD5A0064B48B /* SelectCommandParseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCommandParseTests.swift; sourceTree = "<group>"; };
 		27530A2B2136DD3B0064B48B /* ResponseApdu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseApdu.swift; sourceTree = "<group>"; };
+		2757F20A214F996D0004C7F8 /* TransportLayerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportLayerBuilder.swift; sourceTree = "<group>"; };
+		2757F20C214F99A00004C7F8 /* BLETransportLayerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLETransportLayerBuilder.swift; sourceTree = "<group>"; };
+		2757F20E214F99CD0004C7F8 /* DeviceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
 		276EC056214A60DD0052DBC7 /* PromiseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromiseTest.swift; sourceTree = "<group>"; };
 		276EC059214BCE9C0052DBC7 /* HolderIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolderIntegrationTests.swift; sourceTree = "<group>"; };
 		27BAE4092133FDD000EEE5A1 /* InstructionCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionCode.swift; sourceTree = "<group>"; };
@@ -181,6 +203,8 @@
 		27C82253213EC306005D7B9B /* TransportLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportLayer.swift; sourceTree = "<group>"; };
 		27C82256213EC3D6005D7B9B /* TransportLayerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportLayerDelegate.swift; sourceTree = "<group>"; };
 		27C8225A213EC40F005D7B9B /* TransportLayerSimulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportLayerSimulator.swift; sourceTree = "<group>"; };
+		27CD02D521510DA10051D915 /* PeerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerDelegate.swift; sourceTree = "<group>"; };
+		27CD02D721510DF60051D915 /* BluetoothDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothDevice.swift; sourceTree = "<group>"; };
 		27DB4BBA2141775A005E0884 /* InternalAuthenticateCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalAuthenticateCommand.swift; sourceTree = "<group>"; };
 		27DB4BBE21427C82005E0884 /* ElementaryFileIDTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementaryFileIDTests.swift; sourceTree = "<group>"; };
 		27DB4BC02142806D005E0884 /* InternalAuthenticateCommandBuildTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalAuthenticateCommandBuildTests.swift; sourceTree = "<group>"; };
@@ -272,6 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				2745A06B21301A5800A4F538 /* Types.swift */,
+				2757F209214F95E60004C7F8 /* builder */,
 				27BAE4132134153300EEE5A1 /* extensions */,
 				2745A055213001B300A4F538 /* resources */,
 				2745A054213001A500A4F538 /* interpreter */,
@@ -330,6 +355,7 @@
 				27E9D31E21490496007729F4 /* sessionLayer */,
 				2713D126213EC5630026F412 /* exceptions */,
 				27C82252213EC2EC005D7B9B /* transportLayer */,
+				2757F20E214F99CD0004C7F8 /* DeviceType.swift */,
 			);
 			path = interpreter;
 			sourceTree = "<group>";
@@ -409,6 +435,28 @@
 				27530A0A21357DBE0064B48B /* ApduLengthUtilsTests.swift */,
 			);
 			path = utilities;
+			sourceTree = "<group>";
+		};
+		2757F209214F95E60004C7F8 /* builder */ = {
+			isa = PBXGroup;
+			children = (
+				2726B1C1214FDA010018FAB8 /* TransportLayerBuilderDelegate.swift */,
+				2726B1C3214FDA210018FAB8 /* TransportLayerBuilderState.swift */,
+				2757F210214F9A5C0004C7F8 /* BLE */,
+				2757F20A214F996D0004C7F8 /* TransportLayerBuilder.swift */,
+			);
+			path = builder;
+			sourceTree = "<group>";
+		};
+		2757F210214F9A5C0004C7F8 /* BLE */ = {
+			isa = PBXGroup;
+			children = (
+				27CD02D721510DF60051D915 /* BluetoothDevice.swift */,
+				2757F20C214F99A00004C7F8 /* BLETransportLayerBuilder.swift */,
+				2726B1CA214FF11E0018FAB8 /* BLETransportLayer.swift */,
+				27CD02D521510DA10051D915 /* PeerDelegate.swift */,
+			);
+			path = BLE;
 			sourceTree = "<group>";
 		};
 		27BAE4132134153300EEE5A1 /* extensions */ = {
@@ -665,6 +713,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2726B1C2214FDA010018FAB8 /* TransportLayerBuilderDelegate.swift in Sources */,
 				27C82254213EC306005D7B9B /* TransportLayer.swift in Sources */,
 				2745A06C21301A5800A4F538 /* Types.swift in Sources */,
 				2745A0662130094A00A4F538 /* Constants.swift in Sources */,
@@ -676,14 +725,18 @@
 				27BAE4232134484100EEE5A1 /* ApduLengthUtils.swift in Sources */,
 				27DB4BBB2141775A005E0884 /* InternalAuthenticateCommand.swift in Sources */,
 				27BAE41021340DFB00EEE5A1 /* StatusCode.swift in Sources */,
+				2757F20D214F99A00004C7F8 /* BLETransportLayerBuilder.swift in Sources */,
 				2745A0772130440300A4F538 /* ConversionUtilsErrors.swift in Sources */,
 				27BAE40E21340D2800EEE5A1 /* FileType.swift in Sources */,
 				2745A070213031FB00A4F538 /* InstructionClass.swift in Sources */,
 				2745A0622130034700A4F538 /* DedicatedFileID.swift in Sources */,
+				27CD02D621510DA10051D915 /* PeerDelegate.swift in Sources */,
 				27E9D32021490501007729F4 /* SessionLayer.swift in Sources */,
 				271EFF9A213826910000CBAF /* ReadBinaryOffsetCommand.swift in Sources */,
 				27530A2C2136DD3B0064B48B /* ResponseApdu.swift in Sources */,
 				27E9D33E2149D51B007729F4 /* Promise.swift in Sources */,
+				2726B1C4214FDA210018FAB8 /* TransportLayerBuilderState.swift in Sources */,
+				2757F20B214F996D0004C7F8 /* TransportLayerBuilder.swift in Sources */,
 				2745A0602130030500A4F538 /* FileID.swift in Sources */,
 				27E9D33221495047007729F4 /* TLVInfo.swift in Sources */,
 				27E9D33A21496474007729F4 /* ReaderApplicationLayer.swift in Sources */,
@@ -694,6 +747,7 @@
 				2745A057213001D500A4F538 /* Apdu.swift in Sources */,
 				27BAE41F2134283B00EEE5A1 /* FileControlInfo.swift in Sources */,
 				27E9D32421490B78007729F4 /* ReaderSessionLayer.swift in Sources */,
+				2757F20F214F99CD0004C7F8 /* DeviceType.swift in Sources */,
 				27C82257213EC3D6005D7B9B /* TransportLayerDelegate.swift in Sources */,
 				27E9D330214938D1007729F4 /* BaseApduProtocolPresentationLayer.swift in Sources */,
 				2745A0592130026E00A4F538 /* CommandApdu.swift in Sources */,
@@ -704,7 +758,9 @@
 				27E9D32E21493790007729F4 /* PresentationLayerDelegate.swift in Sources */,
 				27E9D32221490A88007729F4 /* SessionLayerDelegate.swift in Sources */,
 				2713D128213EC57D0026F412 /* InterpreterErrors.swift in Sources */,
+				27CD02D821510DF60051D915 /* BluetoothDevice.swift in Sources */,
 				27530A262136987A0064B48B /* ExampleApp.swift in Sources */,
+				2726B1CB214FF11E0018FAB8 /* BLETransportLayer.swift in Sources */,
 				27BAE41D213426DC00EEE5A1 /* SelectCommand.swift in Sources */,
 				27E9D32921492ED9007729F4 /* HolderSessionLayer.swift in Sources */,
 				2745A06A2130176700A4F538 /* ConversionUtils.swift in Sources */,
@@ -738,16 +794,20 @@
 				2745A0732130331700A4F538 /* ConversionUtilsTests.swift in Sources */,
 				271EFFA0213830C90000CBAF /* ReadBinaryShortFileIDCommand.swift in Sources */,
 				2745A0752130338800A4F538 /* ConversionUtils.swift in Sources */,
+				27CD02DC21510E3C0051D915 /* BLETransportLayerBuilder.swift in Sources */,
 				27530A16213698150064B48B /* Constants.swift in Sources */,
 				271EFF8D2137E48D0000CBAF /* ResponseApduBuildTests.swift in Sources */,
 				27E9D34C214A5109007729F4 /* ApplicationLayer.swift in Sources */,
 				27530A1A213698180064B48B /* InstructionClass.swift in Sources */,
 				27530A22213698200064B48B /* DedicatedFileID.swift in Sources */,
+				2726B1C5214FDA3D0018FAB8 /* TransportLayerBuilderState.swift in Sources */,
 				27E9D34F214A5109007729F4 /* PresentationLayer.swift in Sources */,
+				27CD02DD21510E3C0051D915 /* BLETransportLayer.swift in Sources */,
 				276EC05A214BCE9D0052DBC7 /* HolderIntegrationTests.swift in Sources */,
 				27530A19213698180064B48B /* FileControlInfo.swift in Sources */,
 				27530A10213691A80064B48B /* SelectCommandBuildTests.swift in Sources */,
 				27E9D353214A5109007729F4 /* SessionLayer.swift in Sources */,
+				2726B1C6214FDA530018FAB8 /* TransportLayerBuilderDelegate.swift in Sources */,
 				27E9D359214A5115007729F4 /* TransportLayerDelegate.swift in Sources */,
 				27E9D360214A54CF007729F4 /* ReaderIntegrationTests.swift in Sources */,
 				27BAE42621344EC900EEE5A1 /* StreamsTest.swift in Sources */,
@@ -759,6 +819,7 @@
 				271EFF902137E8260000CBAF /* ResponseApduParseTests.swift in Sources */,
 				27BAE42B21353FDD00EEE5A1 /* ByteArrayOutputStream.swift in Sources */,
 				27530A0C21357ED10064B48B /* ApduLengthUtils.swift in Sources */,
+				27CD02DB21510E3C0051D915 /* BluetoothDevice.swift in Sources */,
 				2713D12B213EC8670026F412 /* TransportLayerSimulatorTests.swift in Sources */,
 				271EFF9C213830C90000CBAF /* Types.swift in Sources */,
 				27530A2A2136CD5A0064B48B /* SelectCommandParseTests.swift in Sources */,
@@ -767,7 +828,9 @@
 				27E9D350214A5109007729F4 /* PresentationLayerDelegate.swift in Sources */,
 				27E9D354214A5109007729F4 /* SessionLayerDelegate.swift in Sources */,
 				27530A0D213587FD0064B48B /* ApduErrors.swift in Sources */,
+				2726B1CF214FF37C0018FAB8 /* TransportLayerBuilder.swift in Sources */,
 				27E9D3332149518E007729F4 /* TLVInfo.swift in Sources */,
+				2757F216214FCFA00004C7F8 /* DeviceType.swift in Sources */,
 				27530A14213698150064B48B /* Apdu.swift in Sources */,
 				271EFFA5213844A50000CBAF /* ReadBinaryShortFileIDCommandParseTests.swift in Sources */,
 				27E9D35E214A534A007729F4 /* TestReader.swift in Sources */,
@@ -777,6 +840,7 @@
 				27530A23213698200064B48B /* ElementaryFileID.swift in Sources */,
 				27DB4BBF21427C82005E0884 /* ElementaryFileIDTests.swift in Sources */,
 				27E9D34E214A5109007729F4 /* ReaderApplicationLayer.swift in Sources */,
+				27CD02DE21510E3C0051D915 /* PeerDelegate.swift in Sources */,
 				27E9D352214A5109007729F4 /* ApduProtocolPresentationLayer.swift in Sources */,
 				2713D136213ECDF00026F412 /* MatchableArray.swift in Sources */,
 				27E9D34D214A5109007729F4 /* HolderApplicationLayer.swift in Sources */,

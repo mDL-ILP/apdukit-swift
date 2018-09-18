@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol SessionLayerDelegate {
+internal protocol SessionLayerDelegate {
     /// Responds with the binary data of that EF file.
     func receivedReadCommand(command: ReadBinaryCommand) -> ResponseApdu
     /// Responds with the appropriate status code.

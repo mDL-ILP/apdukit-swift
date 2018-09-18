@@ -7,7 +7,7 @@
 //
 
 import Foundation
-public class ResponseApdu: Apdu {
+internal class ResponseApdu: Apdu {
     var statusCode: StatusCode!
     var data: [byte]?
     
@@ -54,13 +54,13 @@ public class ResponseApdu: Apdu {
         return try ResponseApdu(stream: ByteArrayInputStream(bytes: buf))
     }
     
-    public func validate() throws {
+    internal func validate() throws {
         guard self.statusCode != nil else {
             throw ApduErrors.ValueNotSetException(value: "statusCode")
         }
     }
     
-    public func toBytes() throws -> ByteArrayOutputStream {
+    internal func toBytes() throws -> ByteArrayOutputStream {
         try self.validate()
         let stream = ByteArrayOutputStream()
         try self.encodeData(stream)
@@ -68,12 +68,12 @@ public class ResponseApdu: Apdu {
         return stream
     }
     
-    public func set(statusCode: StatusCode) -> ResponseApdu {
+    internal func set(statusCode: StatusCode) -> ResponseApdu {
         self.statusCode = statusCode
         return self
     }
     
-    public func set(data: [byte]) -> ResponseApdu {
+    internal func set(data: [byte]) -> ResponseApdu {
         self.data = data
         return self
     }

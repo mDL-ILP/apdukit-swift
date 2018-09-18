@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class TLVInfo {
+internal class TLVInfo {
     /// Tag
     private(set) var tag: int
     /// Length of the TLV structure

@@ -12,7 +12,7 @@ import Foundation
  * FileControlInfo - the file control information (FCI) is the string of data bytes available in response to a SELECT FILE command. #5.1.5 File control information
  * English: Indicates what kind of data we want returned in the ResponseApdu after a command
  */
-public enum FileControlInfo: byte {
+internal enum FileControlInfo: byte {
     /// Return no file control info.
     case NOFCIReturn = 0x0C
     

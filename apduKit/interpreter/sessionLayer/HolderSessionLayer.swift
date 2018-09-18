@@ -12,7 +12,7 @@ import Promises
 /**
  * The server session layer handles sending and receiving apdu messages. It decodes incoming bytes into Apdu objects and then calls the appropriate delegate message handle method.
  */
-public class HolderSessionLayer: SessionLayer {
+internal class HolderSessionLayer: SessionLayer {
     private let transportLayer: TransportLayer
     private var delegate: SessionLayerDelegate?
     
@@ -21,13 +21,13 @@ public class HolderSessionLayer: SessionLayer {
         self.transportLayer.set(delegate: self)
     }
     
-    public func send(command: CommandApdu) -> Promise<ResponseApdu> {
+    internal func send(command: CommandApdu) -> Promise<ResponseApdu> {
         return Promise(on: DispatchQueue.apduPromises) { () -> ResponseApdu in
             throw InterpeterErrors.Exception(message: "Following the APDU specification a holder cannot start a send")
         }
     }
     
-    public func set(delegate: SessionLayerDelegate) {
+    internal func set(delegate: SessionLayerDelegate) {
         self.delegate = delegate
     }
     
@@ -44,7 +44,7 @@ public class HolderSessionLayer: SessionLayer {
         }
     }
     
-    public func onReceive(data: [byte]) {
+    internal func onReceive(data: [byte]) {
         var response: ResponseApdu? = nil
         do {
             let request = try CommandApdu.fromBytes(data)

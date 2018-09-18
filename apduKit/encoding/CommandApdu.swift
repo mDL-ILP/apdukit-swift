@@ -12,7 +12,7 @@ import Foundation
  * CommandApdu is an abstract class that defines the base apdu request. Selects, reads etc.
  *
 */
-public class CommandApdu: Apdu {
+internal class CommandApdu: Apdu {
     //Indicates the type of command, e.g. inter industry or proprietary
     var instructionClass: InstructionClass? = InstructionClass.DEFAULT
     //Indicates the specific command, e.g. "select file"
@@ -53,7 +53,7 @@ public class CommandApdu: Apdu {
     /**
      * Validate Apdu. Each type will throw if values aren't set etc.
      */
-    public func validate() throws {
+    internal func validate() throws {
         guard self.instructionClass != nil else {
             throw ApduErrors.ValueNotSetException(value: "instructionClass")
         }
@@ -65,7 +65,7 @@ public class CommandApdu: Apdu {
     /**
      * Apdu to bytes.
      */
-    public func toBytes() throws -> ByteArrayOutputStream {
+    internal func toBytes() throws -> ByteArrayOutputStream {
         try self.validate()
         let stream = ByteArrayOutputStream()
         stream.write(byte: self.instructionClass!.getValue())

@@ -12,7 +12,7 @@ import Promises
 /**
  * The base APDU protocol presentation layer. It keeps state of what DF and EF are selected. Exposes methods to select DF or EF.
  */
-public class BaseApduProtocolPresentationLayer: PresentationLayer {
+internal class BaseApduProtocolPresentationLayer: PresentationLayer {
     var delegate: PresentationLayerDelegate?
     var sessionLayer: SessionLayer
     
@@ -30,7 +30,7 @@ public class BaseApduProtocolPresentationLayer: PresentationLayer {
      * @param fileID
      * @return
      */
-    public func select(DF fileID: DedicatedFileID) -> Promise<()> {
+    internal func select(DF fileID: DedicatedFileID) -> Promise<()> {
         if self.selectedDF == fileID {
             return Promise(on: DispatchQueue.apduPromises) { () -> () in
                 return ()
@@ -52,7 +52,7 @@ public class BaseApduProtocolPresentationLayer: PresentationLayer {
      * @param fileID
      * @return
      */
-    public func select(EF fileID: ElementaryFileID) -> Promise<()> {
+    internal func select(EF fileID: ElementaryFileID) -> Promise<()> {
         if self.selectedEF == fileID {
             return Promise(on: DispatchQueue.apduPromises) { () -> () in
                 return ()
@@ -75,7 +75,7 @@ public class BaseApduProtocolPresentationLayer: PresentationLayer {
      * @param offset the offset of the data. Cannot exceed the file size.
      * @return bytes of the file
      */
-    public func readBinary(EF fileID: ElementaryFileID, offset: byte) -> Promise<[byte]> {
+    internal func readBinary(EF fileID: ElementaryFileID, offset: byte) -> Promise<[byte]> {
         let command = ReadBinaryShortFileIDCommand()
             .set(offset: offset)
             .set(elementaryFileID: fileID)
@@ -88,7 +88,7 @@ public class BaseApduProtocolPresentationLayer: PresentationLayer {
      * @param offset the offset of the data. Cannot exceed the file size.
      * @return bytes of the file
      */
-    public func readBinary(offset: byte) -> Promise<[byte]> {
+    internal func readBinary(offset: byte) -> Promise<[byte]> {
         let command = ReadBinaryOffsetCommand()
             .set(offset: short(offset))
         _ = command.set(maximumExpectedLength: self.maxExpLength)
@@ -136,7 +136,7 @@ public class BaseApduProtocolPresentationLayer: PresentationLayer {
     }
     
     
-    public func set(delegate: PresentationLayerDelegate) {
+    internal func set(delegate: PresentationLayerDelegate) {
         self.delegate = delegate
     }
 }

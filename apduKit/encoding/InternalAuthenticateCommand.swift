@@ -7,7 +7,7 @@
 //
 import Foundation
 
-public class InternalAuthenticateCommand: CommandApdu {
+internal class InternalAuthenticateCommand: CommandApdu {
     var algorithmInfo: byte?
     var referenceDataQualifier: byte?
     var challenge: [byte]?
@@ -52,7 +52,7 @@ public class InternalAuthenticateCommand: CommandApdu {
         stream.write(bytes: maximumExpectedLengthBuffer)
     }
     
-    override public func validate() throws {
+    override internal func validate() throws {
         try super.validate()
         guard let instructionCode = self.instructionCode, instructionCode == .INTERNAL_AUTHENTICATE else {
             throw ApduErrors.InvalidApduException(description: "Instruction code is not INTERNAL_AUTHENTICATE")
@@ -68,7 +68,7 @@ public class InternalAuthenticateCommand: CommandApdu {
         }
     }
     
-    public override func toBytes() throws -> ByteArrayOutputStream {
+    internal override func toBytes() throws -> ByteArrayOutputStream {
         try validate()
         let stream = try super.toBytes()
         stream.write(byte: self.algorithmInfo!)

@@ -14,7 +14,7 @@ class ConversionUtils {
      * @param value that needs to be converted
      * @return bytes that represent the given short value
      */
-    public static func fromShortToBytes(_ value: short) -> [byte] {
+    internal static func fromShortToBytes(_ value: short) -> [byte] {
         let byte1 = byte((value >> 8) & 0xFF)
         let byte2 = byte(value & 0xFF)
         return [byte1, byte2]
@@ -25,7 +25,7 @@ class ConversionUtils {
      * @param value that needs to be converted
      * @return short that represent the given byte value
      */
-    public static func fromBytesToShort(_ value: [byte]) throws -> short {
+    internal static func fromBytesToShort(_ value: [byte]) throws -> short {
         //We will only do shorts.
         if value.count > 2 {
             throw ConversionUtilsErrors.InvalidNumericValueException(description: "Too many bytes to represent a short. Short is 2 bytes long.")
@@ -44,7 +44,7 @@ class ConversionUtils {
      * @param b bytes
      * @return array of bits for each byte. b.lenght * 8
      */
-    public static func bytesToBits(bytes: [byte]) -> [byte] {
+    internal static func bytesToBits(bytes: [byte]) -> [byte] {
         var result: [byte] = []
         result.reserveCapacity(bytes.count * 8)
         for byte in bytes {
@@ -59,7 +59,7 @@ class ConversionUtils {
      * @param value byte
      * @return array of bits max 8 long.
      */
-    public static func byteToBits(byte value: byte) -> [byte] {
+    internal static func byteToBits(byte value: byte) -> [byte] {
         var result = Array<byte>(repeating: 0, count: 8)
         result[7] = (value & 0x01) != 0 ? 1 : 0
         result[6] = (value & 0x02) != 0 ? 1 : 0
@@ -77,7 +77,7 @@ class ConversionUtils {
      * @param bits 8 bits.
      * @return The byte of the bits.
      */
-    public static func bitsToByte(bits: [byte]) -> byte {
+    internal static func bitsToByte(bits: [byte]) -> byte {
         if(bits.count != 8) {
             return 0;
         }
@@ -114,7 +114,7 @@ class ConversionUtils {
      * @param value that needs to be replaced
      * @return replaced value
      */
-    public static func replaceBit8with0(_ value: byte) -> byte{
+    internal static func replaceBit8with0(_ value: byte) -> byte{
         return (value & ~(1 << 7))
     }
     
@@ -123,7 +123,7 @@ class ConversionUtils {
      * @param value that needs to be replaced
      * @return replaced value
      */
-    public static func replaceBit8with1(_ value: byte) -> byte{
+    internal static func replaceBit8with1(_ value: byte) -> byte{
         return (value | (1 << 7))
     }
     
@@ -132,7 +132,7 @@ class ConversionUtils {
      * @param value that needs to be checked
      * @return boolean returning if the statement is true
      */
-    public static func areTheFirstThreeBitsZero(value: byte) -> Bool {
+    internal static func areTheFirstThreeBitsZero(value: byte) -> Bool {
         let bits = byteToBits(byte: value)
         return bits[0] == 0 && bits[1] == 0 && bits[2] == 0
     }
@@ -142,7 +142,7 @@ class ConversionUtils {
      * @param value that needs to be checked
      * @return boolean returning if the statement is true
      */
-    public static func areTheFirstThreeBits100(value: byte) -> Bool {
+    internal static func areTheFirstThreeBits100(value: byte) -> Bool {
         let bits = byteToBits(byte: value)
         return bits[0] == 1 && bits[1] == 0 && bits[2] == 0
     }

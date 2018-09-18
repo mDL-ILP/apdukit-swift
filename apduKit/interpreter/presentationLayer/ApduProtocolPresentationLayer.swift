@@ -12,14 +12,14 @@ import Promises
 /**
  *  The handle apdu protocol presentation layer. Extends the base apdu protocol layer with methods to know of to handle requests
  */
-public class ApduProtocolPresentationLayer: BaseApduProtocolPresentationLayer, SessionLayerDelegate {
+internal class ApduProtocolPresentationLayer: BaseApduProtocolPresentationLayer, SessionLayerDelegate {
     
     override init(sessionLayer: SessionLayer) {
         super.init(sessionLayer: sessionLayer)
         self.sessionLayer.set(delegate: self)
     }
     
-    public func receivedSelectCommand(command: SelectCommand) -> ResponseApdu {
+    internal func receivedSelectCommand(command: SelectCommand) -> ResponseApdu {
         let type = command.fileType!
         let requestedFileId = command.fileID
         var success = false
@@ -34,7 +34,7 @@ public class ApduProtocolPresentationLayer: BaseApduProtocolPresentationLayer, S
         return ResponseApdu().set(statusCode: success ? StatusCode.SUCCESSFUL_PROCESSING : StatusCode.ERROR_FILE_NOT_FOUND)
     }
     
-    public func receivedReadCommand(command: ReadBinaryCommand) -> ResponseApdu {
+    internal func receivedReadCommand(command: ReadBinaryCommand) -> ResponseApdu {
         var id = self.selectedEF
         if let readShortCommand = command as? ReadBinaryShortFileIDCommand {
             id = readShortCommand.elementaryFileID
@@ -99,11 +99,11 @@ public class ApduProtocolPresentationLayer: BaseApduProtocolPresentationLayer, S
         return true
     }
     
-    public func onSendFailure(exception: Error) {
+    internal func onSendFailure(exception: Error) {
         self.delegate?.onSendFailure(exception: exception)
     }
     
-    public func onReceiveInvalidApdu(exception: Error) {
+    internal func onReceiveInvalidApdu(exception: Error) {
         self.delegate?.onReceiveInvalidApdu(exception: exception)
     }
 }

@@ -10,7 +10,7 @@ import Foundation
 /**
  * Application Protocol Data Unit base type. Upon both requests and responses types are built.
  */
-public protocol Apdu {
+internal protocol Apdu {
     /**
     * Validate Apdu. Each type will throw if values aren't set etc.
     */

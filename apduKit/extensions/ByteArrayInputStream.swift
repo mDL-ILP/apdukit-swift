@@ -9,7 +9,7 @@
 
 import Foundation
 
-public class ByteArrayInputStream /*: InputStream*/ {
+internal class ByteArrayInputStream /*: InputStream*/ {
     enum StreamErrors: Error {
         case OutOfBytes()
     }

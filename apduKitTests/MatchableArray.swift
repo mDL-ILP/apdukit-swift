@@ -10,7 +10,7 @@ import Foundation
 import Cuckoo
 //
 //extension Array: Matchable {
-//    public var matcher: ParameterMatcher<Array> {
+//    internal var matcher: ParameterMatcher<Array> {
 //        return self.elementsEqual($0)
 //    }
 //}

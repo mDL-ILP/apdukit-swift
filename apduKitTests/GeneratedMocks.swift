@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: apduKit/interpreter/applicationLayer/ReaderApplicationLayer.swift at 2018-09-14 11:22:23 +0000
+// MARK: - Mocks generated from file: apduKit/interpreter/applicationLayer/ReaderApplicationLayer.swift at 2018-09-17 12:54:17 +0000
 
 //
 //  ReaderApplicationLayer.swift
@@ -73,8 +73,8 @@ class MockReaderApplicationLayer: ReaderApplicationLayer, Cuckoo.ClassMock {
     
 
     
-    // ["name": "test", "returnSignature": " -> Promise<()>", "fullyQualifiedName": "test(file: ElementaryFileID) -> Promise<()>", "parameterSignature": "file id: ElementaryFileID", "parameterSignatureWithoutNames": "id: ElementaryFileID", "inputTypes": "ElementaryFileID", "isThrowing": false, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "public", "parameterNames": "id", "call": "file: id", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("file"), name: "id", type: "ElementaryFileID", range: CountableRange(701..<726), nameRange: CountableRange(701..<705))], "returnType": "Promise<()>", "isOptional": false, "stubFunction": "Cuckoo.ClassStubFunction"]
-    public override func test(file id: ElementaryFileID)  -> Promise<()> {
+    // ["name": "test", "returnSignature": " -> Promise<()>", "fullyQualifiedName": "test(file: ElementaryFileID) -> Promise<()>", "parameterSignature": "file id: ElementaryFileID", "parameterSignatureWithoutNames": "id: ElementaryFileID", "inputTypes": "ElementaryFileID", "isThrowing": false, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "", "parameterNames": "id", "call": "file: id", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("file"), name: "id", type: "ElementaryFileID", range: CountableRange(705..<730), nameRange: CountableRange(705..<709))], "returnType": "Promise<()>", "isOptional": false, "stubFunction": "Cuckoo.ClassStubFunction"]
+     override func test(file id: ElementaryFileID)  -> Promise<()> {
         
             return cuckoo_manager.call("test(file: ElementaryFileID) -> Promise<()>",
                 parameters: (id),
@@ -85,8 +85,8 @@ class MockReaderApplicationLayer: ReaderApplicationLayer, Cuckoo.ClassMock {
         
     }
     
-    // ["name": "read", "returnSignature": " -> Promise<[byte]>", "fullyQualifiedName": "read(file: ElementaryFileID) -> Promise<[byte]>", "parameterSignature": "file id: ElementaryFileID", "parameterSignatureWithoutNames": "id: ElementaryFileID", "inputTypes": "ElementaryFileID", "isThrowing": false, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "public", "parameterNames": "id", "call": "file: id", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("file"), name: "id", type: "ElementaryFileID", range: CountableRange(838..<863), nameRange: CountableRange(838..<842))], "returnType": "Promise<[byte]>", "isOptional": false, "stubFunction": "Cuckoo.ClassStubFunction"]
-    public override func read(file id: ElementaryFileID)  -> Promise<[byte]> {
+    // ["name": "read", "returnSignature": " -> Promise<[byte]>", "fullyQualifiedName": "read(file: ElementaryFileID) -> Promise<[byte]>", "parameterSignature": "file id: ElementaryFileID", "parameterSignatureWithoutNames": "id: ElementaryFileID", "inputTypes": "ElementaryFileID", "isThrowing": false, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "", "parameterNames": "id", "call": "file: id", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("file"), name: "id", type: "ElementaryFileID", range: CountableRange(844..<869), nameRange: CountableRange(844..<848))], "returnType": "Promise<[byte]>", "isOptional": false, "stubFunction": "Cuckoo.ClassStubFunction"]
+     override func read(file id: ElementaryFileID)  -> Promise<[byte]> {
         
             return cuckoo_manager.call("read(file: ElementaryFileID) -> Promise<[byte]>",
                 parameters: (id),
@@ -97,8 +97,8 @@ class MockReaderApplicationLayer: ReaderApplicationLayer, Cuckoo.ClassMock {
         
     }
     
-    // ["name": "getLocalfile", "returnSignature": " -> ApduFile?", "fullyQualifiedName": "getLocalfile(id: ElementaryFileID) -> ApduFile?", "parameterSignature": "id: ElementaryFileID", "parameterSignatureWithoutNames": "id: ElementaryFileID", "inputTypes": "ElementaryFileID", "isThrowing": false, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "public", "parameterNames": "id", "call": "id: id", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("id"), name: "id", type: "ElementaryFileID", range: CountableRange(3223..<3243), nameRange: CountableRange(3223..<3225))], "returnType": "Optional<ApduFile>", "isOptional": false, "stubFunction": "Cuckoo.ClassStubFunction"]
-    public override func getLocalfile(id: ElementaryFileID)  -> ApduFile? {
+    // ["name": "getLocalfile", "returnSignature": " -> ApduFile?", "fullyQualifiedName": "getLocalfile(id: ElementaryFileID) -> ApduFile?", "parameterSignature": "id: ElementaryFileID", "parameterSignatureWithoutNames": "id: ElementaryFileID", "inputTypes": "ElementaryFileID", "isThrowing": false, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "", "parameterNames": "id", "call": "id: id", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("id"), name: "id", type: "ElementaryFileID", range: CountableRange(3231..<3251), nameRange: CountableRange(3231..<3233))], "returnType": "Optional<ApduFile>", "isOptional": false, "stubFunction": "Cuckoo.ClassStubFunction"]
+     override func getLocalfile(id: ElementaryFileID)  -> ApduFile? {
         
             return cuckoo_manager.call("getLocalfile(id: ElementaryFileID) -> ApduFile?",
                 parameters: (id),
@@ -109,8 +109,8 @@ class MockReaderApplicationLayer: ReaderApplicationLayer, Cuckoo.ClassMock {
         
     }
     
-    // ["name": "getAppId", "returnSignature": " -> DedicatedFileID", "fullyQualifiedName": "getAppId() -> DedicatedFileID", "parameterSignature": "", "parameterSignatureWithoutNames": "", "inputTypes": "", "isThrowing": false, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "public", "parameterNames": "", "call": "", "parameters": [], "returnType": "DedicatedFileID", "isOptional": false, "stubFunction": "Cuckoo.ClassStubFunction"]
-    public override func getAppId()  -> DedicatedFileID {
+    // ["name": "getAppId", "returnSignature": " -> DedicatedFileID", "fullyQualifiedName": "getAppId() -> DedicatedFileID", "parameterSignature": "", "parameterSignatureWithoutNames": "", "inputTypes": "", "isThrowing": false, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "", "parameterNames": "", "call": "", "parameters": [], "returnType": "DedicatedFileID", "isOptional": false, "stubFunction": "Cuckoo.ClassStubFunction"]
+     override func getAppId()  -> DedicatedFileID {
         
             return cuckoo_manager.call("getAppId() -> DedicatedFileID",
                 parameters: (),
@@ -121,8 +121,8 @@ class MockReaderApplicationLayer: ReaderApplicationLayer, Cuckoo.ClassMock {
         
     }
     
-    // ["name": "isFileAllowed", "returnSignature": " -> Bool", "fullyQualifiedName": "isFileAllowed(file: ElementaryFileID) -> Bool", "parameterSignature": "file: ElementaryFileID", "parameterSignatureWithoutNames": "file: ElementaryFileID", "inputTypes": "ElementaryFileID", "isThrowing": false, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "public", "parameterNames": "file", "call": "file: file", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("file"), name: "file", type: "ElementaryFileID", range: CountableRange(3405..<3427), nameRange: CountableRange(3405..<3409))], "returnType": "Bool", "isOptional": false, "stubFunction": "Cuckoo.ClassStubFunction"]
-    public override func isFileAllowed(file: ElementaryFileID)  -> Bool {
+    // ["name": "isFileAllowed", "returnSignature": " -> Bool", "fullyQualifiedName": "isFileAllowed(file: ElementaryFileID) -> Bool", "parameterSignature": "file: ElementaryFileID", "parameterSignatureWithoutNames": "file: ElementaryFileID", "inputTypes": "ElementaryFileID", "isThrowing": false, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "", "parameterNames": "file", "call": "file: file", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("file"), name: "file", type: "ElementaryFileID", range: CountableRange(3417..<3439), nameRange: CountableRange(3417..<3421))], "returnType": "Bool", "isOptional": false, "stubFunction": "Cuckoo.ClassStubFunction"]
+     override func isFileAllowed(file: ElementaryFileID)  -> Bool {
         
             return cuckoo_manager.call("isFileAllowed(file: ElementaryFileID) -> Bool",
                 parameters: (file),
@@ -133,8 +133,8 @@ class MockReaderApplicationLayer: ReaderApplicationLayer, Cuckoo.ClassMock {
         
     }
     
-    // ["name": "onSendFailure", "returnSignature": "", "fullyQualifiedName": "onSendFailure(exception: Error)", "parameterSignature": "exception: Error", "parameterSignatureWithoutNames": "exception: Error", "inputTypes": "Error", "isThrowing": false, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "public", "parameterNames": "exception", "call": "exception: exception", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("exception"), name: "exception", type: "Error", range: CountableRange(3524..<3540), nameRange: CountableRange(3524..<3533))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ClassStubNoReturnFunction"]
-    public override func onSendFailure(exception: Error)  {
+    // ["name": "onSendFailure", "returnSignature": "", "fullyQualifiedName": "onSendFailure(exception: Error)", "parameterSignature": "exception: Error", "parameterSignatureWithoutNames": "exception: Error", "inputTypes": "Error", "isThrowing": false, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "", "parameterNames": "exception", "call": "exception: exception", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("exception"), name: "exception", type: "Error", range: CountableRange(3538..<3554), nameRange: CountableRange(3538..<3547))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ClassStubNoReturnFunction"]
+     override func onSendFailure(exception: Error)  {
         
             return cuckoo_manager.call("onSendFailure(exception: Error)",
                 parameters: (exception),
@@ -145,8 +145,8 @@ class MockReaderApplicationLayer: ReaderApplicationLayer, Cuckoo.ClassMock {
         
     }
     
-    // ["name": "onReceiveInvalidApdu", "returnSignature": "", "fullyQualifiedName": "onReceiveInvalidApdu(exception: Error)", "parameterSignature": "exception: Error", "parameterSignatureWithoutNames": "exception: Error", "inputTypes": "Error", "isThrowing": false, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "public", "parameterNames": "exception", "call": "exception: exception", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("exception"), name: "exception", type: "Error", range: CountableRange(3654..<3670), nameRange: CountableRange(3654..<3663))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ClassStubNoReturnFunction"]
-    public override func onReceiveInvalidApdu(exception: Error)  {
+    // ["name": "onReceiveInvalidApdu", "returnSignature": "", "fullyQualifiedName": "onReceiveInvalidApdu(exception: Error)", "parameterSignature": "exception: Error", "parameterSignatureWithoutNames": "exception: Error", "inputTypes": "Error", "isThrowing": false, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "", "parameterNames": "exception", "call": "exception: exception", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("exception"), name: "exception", type: "Error", range: CountableRange(3670..<3686), nameRange: CountableRange(3670..<3679))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ClassStubNoReturnFunction"]
+     override func onReceiveInvalidApdu(exception: Error)  {
         
             return cuckoo_manager.call("onReceiveInvalidApdu(exception: Error)",
                 parameters: (exception),
@@ -320,38 +320,38 @@ class MockReaderApplicationLayer: ReaderApplicationLayer, Cuckoo.ClassMock {
     
 
     
-    public override func test(file id: ElementaryFileID)  -> Promise<()> {
+     override func test(file id: ElementaryFileID)  -> Promise<()> {
         return DefaultValueRegistry.defaultValue(for: Promise<()>.self)
     }
     
-    public override func read(file id: ElementaryFileID)  -> Promise<[byte]> {
+     override func read(file id: ElementaryFileID)  -> Promise<[byte]> {
         return DefaultValueRegistry.defaultValue(for: Promise<[byte]>.self)
     }
     
-    public override func getLocalfile(id: ElementaryFileID)  -> ApduFile? {
+     override func getLocalfile(id: ElementaryFileID)  -> ApduFile? {
         return DefaultValueRegistry.defaultValue(for: Optional<ApduFile>.self)
     }
     
-    public override func getAppId()  -> DedicatedFileID {
+     override func getAppId()  -> DedicatedFileID {
         return DefaultValueRegistry.defaultValue(for: DedicatedFileID.self)
     }
     
-    public override func isFileAllowed(file: ElementaryFileID)  -> Bool {
+     override func isFileAllowed(file: ElementaryFileID)  -> Bool {
         return DefaultValueRegistry.defaultValue(for: Bool.self)
     }
     
-    public override func onSendFailure(exception: Error)  {
+     override func onSendFailure(exception: Error)  {
         return DefaultValueRegistry.defaultValue(for: Void.self)
     }
     
-    public override func onReceiveInvalidApdu(exception: Error)  {
+     override func onReceiveInvalidApdu(exception: Error)  {
         return DefaultValueRegistry.defaultValue(for: Void.self)
     }
     
 }
 
 
-// MARK: - Mocks generated from file: apduKit/interpreter/transportLayer/TransportLayerDelegate.swift at 2018-09-14 11:22:23 +0000
+// MARK: - Mocks generated from file: apduKit/interpreter/transportLayer/TransportLayerDelegate.swift at 2018-09-17 12:54:17 +0000
 
 //
 //  TransportLayerDelegate.swift
@@ -377,7 +377,7 @@ class MockTransportLayerDelegate: TransportLayerDelegate, Cuckoo.ProtocolMock {
     
 
     
-    // ["name": "onReceive", "returnSignature": "", "fullyQualifiedName": "onReceive(data: [byte])", "parameterSignature": "data: [byte]", "parameterSignatureWithoutNames": "data: [byte]", "inputTypes": "[byte]", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "public", "parameterNames": "data", "call": "data: data", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("data"), name: "data", type: "[byte]", range: CountableRange(224..<236), nameRange: CountableRange(224..<228))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
+    // ["name": "onReceive", "returnSignature": "", "fullyQualifiedName": "onReceive(data: [byte])", "parameterSignature": "data: [byte]", "parameterSignatureWithoutNames": "data: [byte]", "inputTypes": "[byte]", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "public", "parameterNames": "data", "call": "data: data", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("data"), name: "data", type: "[byte]", range: CountableRange(230..<242), nameRange: CountableRange(230..<234))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
     public func onReceive(data: [byte])  {
         
             return cuckoo_manager.call("onReceive(data: [byte])",
@@ -442,7 +442,7 @@ class MockTransportLayerDelegate: TransportLayerDelegate, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: apduKit/interpreter/transportLayer/TransportLayerSimulator.swift at 2018-09-14 11:22:23 +0000
+// MARK: - Mocks generated from file: apduKit/interpreter/transportLayer/TransportLayerSimulator.swift at 2018-09-17 12:54:17 +0000
 
 //
 //  TransportLayerSimulator.swift
@@ -500,7 +500,7 @@ class MockTransportLayerSimulator: TransportLayerSimulator, Cuckoo.ClassMock {
     
 
     
-    // ["name": "connect", "returnSignature": "", "fullyQualifiedName": "connect(transportLayer: TransportLayerSimulator)", "parameterSignature": "transportLayer: TransportLayerSimulator", "parameterSignatureWithoutNames": "transportLayer: TransportLayerSimulator", "inputTypes": "TransportLayerSimulator", "isThrowing": false, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "", "parameterNames": "transportLayer", "call": "transportLayer: transportLayer", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("transportLayer"), name: "transportLayer", type: "TransportLayerSimulator", range: CountableRange(346..<385), nameRange: CountableRange(346..<360))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ClassStubNoReturnFunction"]
+    // ["name": "connect", "returnSignature": "", "fullyQualifiedName": "connect(transportLayer: TransportLayerSimulator)", "parameterSignature": "transportLayer: TransportLayerSimulator", "parameterSignatureWithoutNames": "transportLayer: TransportLayerSimulator", "inputTypes": "TransportLayerSimulator", "isThrowing": false, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "", "parameterNames": "transportLayer", "call": "transportLayer: transportLayer", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("transportLayer"), name: "transportLayer", type: "TransportLayerSimulator", range: CountableRange(358..<397), nameRange: CountableRange(358..<372))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ClassStubNoReturnFunction"]
      override func connect(transportLayer: TransportLayerSimulator)  {
         
             return cuckoo_manager.call("connect(transportLayer: TransportLayerSimulator)",
@@ -512,7 +512,7 @@ class MockTransportLayerSimulator: TransportLayerSimulator, Cuckoo.ClassMock {
         
     }
     
-    // ["name": "write", "returnSignature": " throws", "fullyQualifiedName": "write(data: [byte]) throws", "parameterSignature": "data: [byte]", "parameterSignatureWithoutNames": "data: [byte]", "inputTypes": "[byte]", "isThrowing": true, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "", "parameterNames": "data", "call": "data: data", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("data"), name: "data", type: "[byte]", range: CountableRange(472..<484), nameRange: CountableRange(472..<476))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ClassStubNoReturnThrowingFunction"]
+    // ["name": "write", "returnSignature": " throws", "fullyQualifiedName": "write(data: [byte]) throws", "parameterSignature": "data: [byte]", "parameterSignatureWithoutNames": "data: [byte]", "inputTypes": "[byte]", "isThrowing": true, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "", "parameterNames": "data", "call": "data: data", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("data"), name: "data", type: "[byte]", range: CountableRange(484..<496), nameRange: CountableRange(484..<488))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ClassStubNoReturnThrowingFunction"]
      override func write(data: [byte])  throws {
         
             return try cuckoo_manager.callThrows("write(data: [byte]) throws",
@@ -536,7 +536,7 @@ class MockTransportLayerSimulator: TransportLayerSimulator, Cuckoo.ClassMock {
         
     }
     
-    // ["name": "set", "returnSignature": "", "fullyQualifiedName": "set(delegate: TransportLayerDelegate)", "parameterSignature": "delegate: TransportLayerDelegate", "parameterSignatureWithoutNames": "delegate: TransportLayerDelegate", "inputTypes": "TransportLayerDelegate", "isThrowing": false, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "", "parameterNames": "delegate", "call": "delegate: delegate", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("delegate"), name: "delegate", type: "TransportLayerDelegate", range: CountableRange(788..<820), nameRange: CountableRange(788..<796))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ClassStubNoReturnFunction"]
+    // ["name": "set", "returnSignature": "", "fullyQualifiedName": "set(delegate: TransportLayerDelegate)", "parameterSignature": "delegate: TransportLayerDelegate", "parameterSignatureWithoutNames": "delegate: TransportLayerDelegate", "inputTypes": "TransportLayerDelegate", "isThrowing": false, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "", "parameterNames": "delegate", "call": "delegate: delegate", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("delegate"), name: "delegate", type: "TransportLayerDelegate", range: CountableRange(800..<832), nameRange: CountableRange(800..<808))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ClassStubNoReturnFunction"]
      override func set(delegate: TransportLayerDelegate)  {
         
             return cuckoo_manager.call("set(delegate: TransportLayerDelegate)",
@@ -548,8 +548,8 @@ class MockTransportLayerSimulator: TransportLayerSimulator, Cuckoo.ClassMock {
         
     }
     
-    // ["name": "onReceive", "returnSignature": " throws", "fullyQualifiedName": "onReceive(data: [byte]) throws", "parameterSignature": "data: [byte]", "parameterSignatureWithoutNames": "data: [byte]", "inputTypes": "[byte]", "isThrowing": true, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "public", "parameterNames": "data", "call": "data: data", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("data"), name: "data", type: "[byte]", range: CountableRange(894..<906), nameRange: CountableRange(894..<898))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ClassStubNoReturnThrowingFunction"]
-    public override func onReceive(data: [byte])  throws {
+    // ["name": "onReceive", "returnSignature": " throws", "fullyQualifiedName": "onReceive(data: [byte]) throws", "parameterSignature": "data: [byte]", "parameterSignatureWithoutNames": "data: [byte]", "inputTypes": "[byte]", "isThrowing": true, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "", "parameterNames": "data", "call": "data: data", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("data"), name: "data", type: "[byte]", range: CountableRange(908..<920), nameRange: CountableRange(908..<912))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ClassStubNoReturnThrowingFunction"]
+     override func onReceive(data: [byte])  throws {
         
             return try cuckoo_manager.callThrows("onReceive(data: [byte]) throws",
                 parameters: (data),
@@ -700,7 +700,7 @@ class MockTransportLayerSimulator: TransportLayerSimulator, Cuckoo.ClassMock {
         return DefaultValueRegistry.defaultValue(for: Void.self)
     }
     
-    public override func onReceive(data: [byte])  throws {
+     override func onReceive(data: [byte])  throws {
         return DefaultValueRegistry.defaultValue(for: Void.self)
     }
     

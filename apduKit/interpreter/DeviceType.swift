@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+public enum TransportProfile {
+    case holder
+    case reader
+}

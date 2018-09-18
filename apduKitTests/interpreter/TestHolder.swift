@@ -8,20 +8,20 @@
 
 import Foundation
 
-public class TestHolder: HolderApplicationLayer {
+internal class TestHolder: HolderApplicationLayer {
     init(presentationLayer: PresentationLayer) {
         super.init(presentationLayer: presentationLayer, appId: ExampleApp.instance.ValidDF_NormalLength1)
     }
     
-    public override func isFileAllowed(file: ElementaryFileID) -> Bool {
+    internal override func isFileAllowed(file: ElementaryFileID) -> Bool {
         return true
     }
     
-    public override func onSendFailure(exception: Error) {
+    internal override func onSendFailure(exception: Error) {
         print(exception.localizedDescription)
     }
     
-    public override func onReceiveInvalidApdu(exception: Error) {
+    internal override func onReceiveInvalidApdu(exception: Error) {
         print(exception.localizedDescription)
     }
     

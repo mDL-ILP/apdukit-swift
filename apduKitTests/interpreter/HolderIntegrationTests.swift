@@ -10,9 +10,9 @@ import XCTest
 import Promises
 import Cuckoo
 
-public class HolderIntegrationTests: IntegrationTests {
+internal class HolderIntegrationTests: IntegrationTests {
 
-    public func testInvalidOnReceive() throws {
+    internal func testInvalidOnReceive() throws {
         //Mock transport layer so it doesn't actually write.
         let transportLayer = MockTransportLayerSimulator().withEnabledSuperclassSpy()
         self.holderTransportLayer = transportLayer

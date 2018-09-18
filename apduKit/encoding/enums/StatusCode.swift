@@ -13,7 +13,7 @@ import Foundation
  * StatusCode - indicates the status code of the response. Success, warning, error.
  *
  */
-public enum StatusCode: short {
+internal enum StatusCode: short {
     //Indicates successful processing of the command APDU
     case SUCCESSFUL_PROCESSING = 0x9000
     //Indicates warning that the read APDU worked but that this is the end of the file

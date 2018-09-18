@@ -7,7 +7,7 @@
 //
 
 import Foundation
-public class ApduFile {
+internal class ApduFile {
     
     private(set) var info: TLVInfo
     private(set) var declaredSize: short = 0
@@ -31,11 +31,11 @@ public class ApduFile {
     }
     
     
-    public func isComplete() -> Bool {
+    internal func isComplete() -> Bool {
         return getCurrentSize() >= getDeclaredSize()
     }
     
-    public func getTag() -> byte {
+    internal func getTag() -> byte {
         return self.data.buffer[0]
     }
     
@@ -46,26 +46,26 @@ public class ApduFile {
         }
     }
     
-    public func getData() -> [byte] {
+    internal func getData() -> [byte] {
         return data.buffer
     }
     
-    public func appendValue(value: [byte]) throws {
+    internal func appendValue(value: [byte]) throws {
         if value.count > remainingBytes() {
             throw ApduErrors.InvalidApduFileException(description: "Actual data exceeds expected data")
         }
         self.data.write(bytes: value)
     }
     
-    public func getDeclaredSize() -> short {
+    internal func getDeclaredSize() -> short {
         return self.declaredSize
     }
     
-    public func getCurrentSize() -> short {
+    internal func getCurrentSize() -> short {
         return short(data.buffer.count)
     }
     
-    public func remainingBytes() -> short {
+    internal func remainingBytes() -> short {
         if isComplete() {
             return 0
         }

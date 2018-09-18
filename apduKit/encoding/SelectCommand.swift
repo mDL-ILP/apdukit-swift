@@ -10,7 +10,7 @@ import Foundation
 /**
 * SelectCommand - Is a apdu command that allows to select a file. This is done by specifying a dedicated or elementary file id.
 */
-public class SelectCommand: CommandApdu {
+internal class SelectCommand: CommandApdu {
     private(set) var fileType: FileType!
     var fileControlInfo: FileControlInfo!
     var fileID: FileID! {
@@ -57,7 +57,7 @@ public class SelectCommand: CommandApdu {
         stream.write(bytes: fileId)
     }
     
-    override public func validate() throws {
+    override internal func validate() throws {
         try super.validate()
         guard let instructionCode = self.instructionCode, instructionCode == .SELECT else {
             throw ApduErrors.InvalidApduException(description: "InstructionCode is not SELECT")
@@ -80,7 +80,7 @@ public class SelectCommand: CommandApdu {
         }
     }
     
-    override public func toBytes() throws -> ByteArrayOutputStream {
+    override internal func toBytes() throws -> ByteArrayOutputStream {
         try validate()
         let stream = try super.toBytes()
         stream.write(byte: fileType!.getValue())
@@ -89,12 +89,12 @@ public class SelectCommand: CommandApdu {
         return stream
     }
     
-    public func set(fileControlInfo: FileControlInfo) -> SelectCommand {
+    internal func set(fileControlInfo: FileControlInfo) -> SelectCommand {
         self.fileControlInfo = fileControlInfo
         return self
     }
     
-    public func set(fileID: FileID) -> SelectCommand {
+    internal func set(fileID: FileID) -> SelectCommand {
         self.fileID = fileID
         return self
     }

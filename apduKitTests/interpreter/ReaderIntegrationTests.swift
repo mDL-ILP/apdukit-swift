@@ -10,15 +10,15 @@ import XCTest
 import Promises
 import Cuckoo
 
-public class ReaderIntegrationTests: IntegrationTests {
+internal class ReaderIntegrationTests: IntegrationTests {
 
-    public func testDisconnected() throws {
+    internal func testDisconnected() throws {
         try self.readerTransportLayer.close()
         let p = self.reader.test(file: ExampleApp.instance.ValidEF_NoShortId)
         XCTAssertThrowsError(try p.getValue())
     }
     
-    public func testWrongApplication() throws {
+    internal func testWrongApplication() throws {
         let fileData: [byte] = [01, 02, 03, 07]
         //Set the file on the holder side.
         XCTAssertTrue(try self.holder.setLocalFile(id: ExampleApp.instance.ValidShortIdEF1, data: fileData))
@@ -29,7 +29,7 @@ public class ReaderIntegrationTests: IntegrationTests {
         XCTAssertThrowsError(try p.getValue())
     }
     
-    public func testGetFileWithShortId() throws {
+    internal func testGetFileWithShortId() throws {
         let fileData: [byte] = [01, 02, 03, 07]
         //Set the file on the holder side.
         XCTAssertTrue(try self.holder.setLocalFile(id: ExampleApp.instance.ValidShortIdEF1, data: fileData))
@@ -38,7 +38,7 @@ public class ReaderIntegrationTests: IntegrationTests {
         XCTAssertEqual(fileData, try p.getValue())
     }
     
-    public func testGetFileWithNormalId() throws {
+    internal func testGetFileWithNormalId() throws {
         let fileData: [byte] = [01, 02, 03, 07]
         //Set the file on the holder side.
         XCTAssertTrue(try self.holder.setLocalFile(id: ExampleApp.instance.ValidNormalIdEF, data: fileData))
@@ -47,17 +47,17 @@ public class ReaderIntegrationTests: IntegrationTests {
         XCTAssertEqual(fileData, try p.getValue())
     }
     
-    public func testGetFileUsingShortIdDoesNotExist() throws {
+    internal func testGetFileUsingShortIdDoesNotExist() throws {
         let p = self.reader.read(file: ExampleApp.instance.ValidShortIdEF1)
         XCTAssertThrowsError(try p.getValue())
     }
     
-    public func testGetFileUsingNormalIdDoesNotExist() throws {
+    internal func testGetFileUsingNormalIdDoesNotExist() throws {
         let p = self.reader.read(file: ExampleApp.instance.ValidNormalIdEF)
         XCTAssertThrowsError(try p.getValue())
     }
     
-    public func testGetLargeFileUsingNormalId() throws {
+    internal func testGetLargeFileUsingNormalId() throws {
         let fileData: [byte] = ExampleApp.instance.DatagroupE
         //Set the file on the holder side.
         XCTAssertTrue(try self.holder.setLocalFile(id: ExampleApp.instance.ValidNormalIdEF, data: fileData))
@@ -66,7 +66,7 @@ public class ReaderIntegrationTests: IntegrationTests {
         XCTAssertEqual(fileData, try p.getValue())
     }
     
-    public func testOutOfSequence() throws {
+    internal func testOutOfSequence() throws {
         let message = SelectCommand().set(fileID: ExampleApp.instance.ValidDF_NormalLength2).set(fileControlInfo: .NOFCIReturn)
         readerSessionLayer.send(command: message)//Send once.
         let p2 = readerSessionLayer.send(command: message).then(on: DispatchQueue.apduPromises) { (e) in//Double send. Out of sequence!!
@@ -75,7 +75,7 @@ public class ReaderIntegrationTests: IntegrationTests {
         XCTAssertThrowsError(try p2.getValue())
     }
     
-//    public func testInvalidOnReceiveWithOpenRequest() throws {
+//    internal func testInvalidOnReceiveWithOpenRequest() throws {
 //        class TestTransportLayer: TransportLayerSimulator {
 //            override func write(data: [byte]) throws {}
 //            override func close() throws {}
@@ -109,7 +109,7 @@ public class ReaderIntegrationTests: IntegrationTests {
 //
 //    }
     
-//    public func testInvalidOnReceiveWithoutARequest() throws {
+//    internal func testInvalidOnReceiveWithoutARequest() throws {
 //        //Mock transport layer so it doesn't actually write.
 //        let transportLayer = MockTransportLayerSimulator().withEnabledSuperclassSpy()
 //        self.readerTransportLayer = transportLayer
@@ -133,7 +133,7 @@ public class ReaderIntegrationTests: IntegrationTests {
 //        }
 //    }
     
-    public func testConcurrentGetFile() throws {
+    internal func testConcurrentGetFile() throws {
         let expected: [byte] = [01, 02, 03, 07]
         try holder.setLocalFile(id: ExampleApp.instance.ValidShortIdEF1, data: expected)
         let expection = self.expectation(description: "thread done")
